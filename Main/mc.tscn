@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://n23yng8jsymk"]
+
+[ext_resource type="PackedScene" uid="uid://das0mhog2b3q6" path="res://Main/Camera.tscn" id="1_lt44s"]
+[ext_resource type="Script" uid="uid://betxx8afkqre0" path="res://Main/mc.gd" id="1_s3sm3"]
+[ext_resource type="Texture2D" uid="uid://bkrcrnead2sml" path="res://Main/03eb4f3604e0ad89add26959a5aac169_icon.png" id="2_wnxlu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0n8a5"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lt44s"]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+collision_mask = 3
+script = ExtResource("1_s3sm3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_0n8a5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(2, 2)
+shape = SubResource("CapsuleShape2D_lt44s")
+debug_color = Color(0, 0.539414, 0.960476, 0.42)
+
+[node name="Camera2D" parent="." instance=ExtResource("1_lt44s")]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, -0.999998)
+scale = Vector2(0.114844, 0.114844)
+texture = ExtResource("2_wnxlu")
