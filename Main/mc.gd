@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var Speed: int = 200
 @export var knockback_raw_pow = 500
-
+@onready var hit_anim = $HitAnimation
 func _ready() -> void:
 	Global.Player = self
 
@@ -24,3 +24,5 @@ func _physics_process(delta):
 		await get_tree().create_timer(0.5).timeout
 		Global.CanCharMove = true
 	move_and_slide()
+func play_hitted():
+	hit_anim.play("hit")

@@ -41,9 +41,7 @@ func process_attack():
 	play_attack_anim()
 	if na.overlaps_body(Global.Player):
 		print("Overlap")
-		var direction = Global.Player.global_position - self.global_position
-		direction = Vector2(1 if direction.x >= 0 else -1, 1 if direction.y >= 0 else -1)
-		Global.McKnockBack(knockback_pwr, direction)
+		Global.McKnockBack(knockback_pwr, self.global_position)
 		Global.take_damage(self.damage_dealt_na)
 
 func play_attack_anim():

@@ -1,12 +1,60 @@
-[gd_scene load_steps=6 format=3 uid="uid://n23yng8jsymk"]
+[gd_scene load_steps=12 format=3 uid="uid://n23yng8jsymk"]
 
 [ext_resource type="PackedScene" uid="uid://das0mhog2b3q6" path="res://Main/Camera.tscn" id="1_lt44s"]
 [ext_resource type="Script" uid="uid://betxx8afkqre0" path="res://Main/mc.gd" id="1_s3sm3"]
+[ext_resource type="Shader" uid="uid://cx2omw8wkf4sr" path="res://Main/mc.tres" id="2_24loc"]
 [ext_resource type="Texture2D" uid="uid://bkrcrnead2sml" path="res://Main/03eb4f3604e0ad89add26959a5aac169_icon.png" id="2_wnxlu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k8jie"]
+shader = ExtResource("2_24loc")
+shader_parameter/enabled = true
+shader_parameter/hit_color = Color(1, 1, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0n8a5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lt44s"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5m4p7"]
+shader = ExtResource("2_24loc")
+shader_parameter/enabled = false
+shader_parameter/hit_color = Color(1, 0, 0.12549, 1)
+
+[sub_resource type="Animation" id="Animation_vs5uf"]
+resource_name = "hit"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:material:shader_parameter/enabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_oiiq8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:material:shader_parameter/enabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4ja62"]
+_data = {
+&"RESET": SubResource("Animation_oiiq8"),
+&"hit": SubResource("Animation_vs5uf")
+}
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 z_index = 10
@@ -15,16 +63,26 @@ collision_mask = 3
 script = ExtResource("1_s3sm3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_k8jie")
 sprite_frames = SubResource("SpriteFrames_0n8a5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 scale = Vector2(2, 2)
 shape = SubResource("CapsuleShape2D_lt44s")
 debug_color = Color(0, 0.539414, 0.960476, 0.42)
 
 [node name="Camera2D" parent="." instance=ExtResource("1_lt44s")]
+visible = false
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_5m4p7")
 position = Vector2(-1, -0.999998)
 scale = Vector2(0.114844, 0.114844)
 texture = ExtResource("2_wnxlu")
+
+[node name="HitAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_4ja62")
+}

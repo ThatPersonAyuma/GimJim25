@@ -36,6 +36,11 @@ func take_damage(amount: int):
 	self.McHealth -= amount
 	if self.McHealth <= 0:
 		self.McDeath()
-func McKnockBack(power: float, direction:Vector2):
+	#else:
+		#print("!!!!")
+	self.Player.play_hitted()
+		
+func McKnockBack(power: float, obj_glob_pstn:Vector2):
+	var direction = self.Player.global_position - obj_glob_pstn
+	self.knockback_direction = Vector2(1 if direction.x >= 0 else -1, 1 if direction.y >= 0 else -1)
 	self.knocback_pow = power
-	self.knockback_direction = direction

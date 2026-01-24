@@ -441,7 +441,7 @@ script = ExtResource("1_jpc7i")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_e6mmf")
 autoplay = "default"
-frame_progress = 0.743706
+frame_progress = 0.25533
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 5)
@@ -470,4 +470,4 @@ polygon = PackedVector2Array(-17.6398, 6.70483e-07, 17.6398, -6.70483e-07, 50.80
 [node name="Angin" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.184411, 0.184411)
 sprite_frames = SubResource("SpriteFrames_g3ys7")
-frame_progress = 0.507583
+frame_progress = 0.577376
