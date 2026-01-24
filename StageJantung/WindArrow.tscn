@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://7gd78ark1xxw"]
+
+[ext_resource type="Texture2D" uid="uid://1thy2b2q1igv" path="res://StageJantung/assets/PanahAngin.png" id="1_55rng"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_55rng"]
+atlas = ExtResource("1_55rng")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q5mmh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_55rng")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1erlc"]
+radius = 2.0
+height = 24.0
+
+[node name="Node2D" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_q5mmh")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1, 1)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_1erlc")

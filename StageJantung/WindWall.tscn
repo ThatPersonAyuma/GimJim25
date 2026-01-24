@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://celhuo87tvgl3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8fw6f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h3lat"]
+size = Vector2(139, 20)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8fw6f")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_h3lat")

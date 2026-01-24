@@ -4,7 +4,6 @@ extends CharacterBody2D
 @export var damage_dealt_na = 100
 @export var health = 1000
 @export var knockback_pwr: float = 0.4
-
 @export var hurricane_duration = 10
 @export var hurricane_push_pwr: float = 0.2
 
@@ -14,7 +13,7 @@ extends CharacterBody2D
 @onready var str_wind_node = $Angin
 
 var current_health = self.health
-var is_attacking = false
+var attack_cooldown = attack_interval
 var is_mc_in_range = false
 
 func _ready() -> void:
@@ -24,11 +23,12 @@ func _ready() -> void:
 	summon_strong_wind()
 
 func _physics_process(delta):
-	if not is_attacking:
-		is_attacking = true
+	if attack_cooldown >= attack_interval:
+		attack_cooldown = 0
 		attack()
-		await get_tree().create_timer(attack_interval).timeout
-		is_attacking = false
+	else:
+		if attack_cooldown < attack_interval:
+			attack_cooldown+=delta
 
 func attack():
 	if is_mc_in_range:

@@ -1,8 +1,9 @@
-[gd_scene load_steps=66 format=3 uid="uid://baffhr3k8yw5j"]
+[gd_scene load_steps=69 format=3 uid="uid://baffhr3k8yw5j"]
 
 [ext_resource type="Script" uid="uid://bhg3anscnjqoq" path="res://StageJantung/boss_jantung.gd" id="1_jpc7i"]
 [ext_resource type="Texture2D" uid="uid://by8qypm84angs" path="res://StageJantung/assets/mage-1-85x94.png" id="1_rc5ba"]
 [ext_resource type="Texture2D" uid="uid://5jp20maoe1x3" path="res://StageJantung/assets/1769229481490.png" id="3_kuh7k"]
+[ext_resource type="Texture2D" uid="uid://cvk8rb4ubp3a" path="res://StageJantung/assets/SemburanAngin.png" id="3_r8xfg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jpc7i"]
 atlas = ExtResource("1_rc5ba")
@@ -74,6 +75,21 @@ height = 70.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kuh7k"]
 radius = 138.463
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g3ys7"]
+atlas = ExtResource("3_r8xfg")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k6evo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g3ys7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e6mmf"]
 atlas = ExtResource("3_kuh7k")
@@ -441,7 +457,7 @@ script = ExtResource("1_jpc7i")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_e6mmf")
 autoplay = "default"
-frame_progress = 0.25533
+frame_progress = 0.227906
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 5)
@@ -467,7 +483,14 @@ polygon = PackedVector2Array(25, -1.09278e-06, -25, 1.09278e-06, -72, 116, 0.465
 scale = Vector2(1.41725, 1.62985)
 polygon = PackedVector2Array(-17.6398, 6.70483e-07, 17.6398, -6.70483e-07, 50.8026, 71.1723, 0.284843, 71.1723, -50.8026, 71.1723)
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Nearby Attack"]
+position = Vector2(-1.90735e-06, 57)
+rotation = -1.5708
+scale = Vector2(2.14926, 2.02231)
+sprite_frames = SubResource("SpriteFrames_k6evo")
+
 [node name="Angin" type="AnimatedSprite2D" parent="."]
+visible = false
 scale = Vector2(0.184411, 0.184411)
 sprite_frames = SubResource("SpriteFrames_g3ys7")
-frame_progress = 0.577376
+frame_progress = 0.413183
