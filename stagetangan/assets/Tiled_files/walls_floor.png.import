@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dno5soku8p12u"
-path="res://.godot/imported/walls_floor.png-bb08e83fda32272dfdca397e35d2fd9a.ctex"
+path="res://.godot/imported/walls_floor.png-8adbb7df9af599c330ecaa1d729fcef9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://StageTangan/assets/Tiled_files/walls_floor.png"
-dest_files=["res://.godot/imported/walls_floor.png-bb08e83fda32272dfdca397e35d2fd9a.ctex"]
+source_file="res://stagetangan/assets/Tiled_files/walls_floor.png"
+dest_files=["res://.godot/imported/walls_floor.png-8adbb7df9af599c330ecaa1d729fcef9.ctex"]
 
 [params]
 

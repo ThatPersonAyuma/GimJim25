@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ds7eoqqavlbbs"
-path="res://.godot/imported/water_details_animation.png-0fd04ac29a7f58b741eb57a246f2b504.ctex"
+uid="uid://byri42ieuqkpd"
+path="res://.godot/imported/C300-2.png-dad2523f8ea11bef959337f1b90c6d09.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://stagetangan/assets/Tiled_files/water_details_animation.png"
-dest_files=["res://.godot/imported/water_details_animation.png-0fd04ac29a7f58b741eb57a246f2b504.ctex"]
+source_file="res://stagetangan/assets/Tiled_files/C300-2.png"
+dest_files=["res://.godot/imported/C300-2.png-dad2523f8ea11bef959337f1b90c6d09.ctex"]
 
 [params]
 
