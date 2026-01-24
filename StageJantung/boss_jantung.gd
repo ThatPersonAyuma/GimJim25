@@ -2,25 +2,33 @@ extends CharacterBody2D
 
 @export var attack_interval = 4
 @export var damage_dealt_na = 100
-@export var healt = 1000
+@export var health = 1000
+@export var knockback_pwr: float = 0.4
+
+@export var hurricane_duration = 10
+@export var hurricane_push_pwr: float = 0.2
 
 @onready var  na_range = $NA_range
 @onready var na = $"Nearby Attack"
 @onready var na_col = $"Nearby Attack/CollisionShape2D"
+@onready var str_wind_node = $Angin
 
+var current_health = self.health
+var is_attacking = false
 var is_mc_in_range = false
-var attack_cooldown = 0
 
 func _ready() -> void:
+	self.remove_child(str_wind_node)
 	na_range.connect("body_entered", body_entered)
 	na_range.connect("body_exited", body_exited)
+	summon_strong_wind()
 
 func _physics_process(delta):
-	if attack_cooldown >= attack_interval:
+	if not is_attacking:
+		is_attacking = true
 		attack()
-		attack_cooldown = 0
-	else:
-		attack_cooldown+=delta
+		await get_tree().create_timer(attack_interval).timeout
+		is_attacking = false
 
 func attack():
 	if is_mc_in_range:
@@ -28,13 +36,20 @@ func attack():
 
 func process_attack():
 	if Global.Player not in na.get_overlapping_bodies():
-		look_At_player()
+		look_at_player()
 	await get_tree().create_timer(0.5).timeout
+	play_attack_anim()
 	if na.overlaps_body(Global.Player):
 		print("Overlap")
+		var direction = Global.Player.global_position - self.global_position
+		direction = Vector2(1 if direction.x >= 0 else -1, 1 if direction.y >= 0 else -1)
+		Global.McKnockBack(knockback_pwr, direction)
 		Global.take_damage(self.damage_dealt_na)
 
-func look_At_player():
+func play_attack_anim():
+	pass
+
+func look_at_player():
 	var enemy_pos = global_position
 	var player_pos = Global.Player.global_position
 
@@ -51,10 +66,22 @@ func look_At_player():
 
 	na.rotate(rotation_needed)
 
+func summon_strong_wind():
+	Global.Player.add_child(str_wind_node)
+	Global.MovePush(Vector2(-hurricane_push_pwr, 0))
+	await get_tree().create_timer(self.hurricane_duration).timeout
+	Global.Player.remove_child(str_wind_node)
+	Global.MovePush(Vector2(0, 0))
+	
+func take_damage(amount: int):
+	self.current_health -= amount
+	if self.current_health <= 0:
+		self.queue_free()
+
 func body_entered(body: CharacterBody2D):
 	self.is_mc_in_range = true
 	print("Character: ", body.name)
+
 func body_exited(_body):
 	print("Status: ", is_mc_in_range)
-	self.is_mc_in_range = false
-	
+	self.is_mc_in_range = false	

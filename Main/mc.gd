@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
-@export var Speed: int = 100
+@export var Speed: int = 200
+@export var knockback_raw_pow = 500
 
 func _ready() -> void:
 	Global.Player = self
@@ -14,6 +15,12 @@ func _physics_process(delta):
 
 		if direction != Vector2.ZERO:
 			direction = direction.normalized()
-
-		velocity = direction * Speed * 250 * delta
-		move_and_slide()
+		
+		velocity = direction * Speed * Global.slow_mov + Global.mov_push * Speed
+	if Global.knocback_pow > 0:
+		Global.CanCharMove = false
+		velocity = Global.knockback_direction * knockback_raw_pow * Global.knocback_pow
+		Global.knocback_pow = 0
+		await get_tree().create_timer(0.5).timeout
+		Global.CanCharMove = true
+	move_and_slide()
