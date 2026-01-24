@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ckwrev0pgy77f"
-path="res://.godot/imported/tangan-d.png-7c6c3c0b46815b7feef221e24e5f8ec8.ctex"
+path="res://.godot/imported/tangan-d.png-2a653b66f1792e41199d4e3eee941a68.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://stagetangan/assets/boss/tangan-d.png"
-dest_files=["res://.godot/imported/tangan-d.png-7c6c3c0b46815b7feef221e24e5f8ec8.ctex"]
+source_file="res://StageTangan/assets/boss/tangan-d.png"
+dest_files=["res://.godot/imported/tangan-d.png-2a653b66f1792e41199d4e3eee941a68.ctex"]
 
 [params]
 

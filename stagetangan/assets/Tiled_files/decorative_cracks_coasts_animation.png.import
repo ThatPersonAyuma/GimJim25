@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://css0hoi42gmaf"
-path="res://.godot/imported/decorative_cracks_coasts_animation.png-9c0f3765c81a6b073319617338b02d3d.ctex"
+path="res://.godot/imported/decorative_cracks_coasts_animation.png-25442d916fc26de61229487df77aebbf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://stagetangan/assets/Tiled_files/decorative_cracks_coasts_animation.png"
-dest_files=["res://.godot/imported/decorative_cracks_coasts_animation.png-9c0f3765c81a6b073319617338b02d3d.ctex"]
+source_file="res://StageTangan/assets/Tiled_files/decorative_cracks_coasts_animation.png"
+dest_files=["res://.godot/imported/decorative_cracks_coasts_animation.png-25442d916fc26de61229487df77aebbf.ctex"]
 
 [params]
 
