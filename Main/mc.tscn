@@ -9,6 +9,8 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lt44s"]
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+z_index = 10
+collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_s3sm3")
 

@@ -14,3 +14,13 @@ func _on_timeline_ended():
 
 func change_scene(path: String):
 	get_tree().change_scene_to_file.call_deferred(path)
+
+func McDeath():
+	print("Death")
+	pass
+	#var node = "res://Main/Camera.tscn"
+	#get_tree().current_scene.add_child(node)
+func take_damage(amount: int):
+	self.McHealth -= amount
+	if self.McHealth <= 0:
+		self.McDeath()

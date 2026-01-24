@@ -1,0 +1,109 @@
+[gd_scene load_steps=14 format=3 uid="uid://baffhr3k8yw5j"]
+
+[ext_resource type="Script" uid="uid://bhg3anscnjqoq" path="res://StageJantung/boss_jantung.gd" id="1_jpc7i"]
+[ext_resource type="Texture2D" uid="uid://by8qypm84angs" path="res://StageJantung/assets/mage-1-85x94.png" id="1_rc5ba"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jpc7i"]
+atlas = ExtResource("1_rc5ba")
+region = Rect2(0, 0, 85, 94)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kuh7k"]
+atlas = ExtResource("1_rc5ba")
+region = Rect2(85, 0, 85, 94)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r8xfg"]
+atlas = ExtResource("1_rc5ba")
+region = Rect2(170, 0, 85, 94)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kjvne"]
+atlas = ExtResource("1_rc5ba")
+region = Rect2(255, 0, 85, 94)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r4fw0"]
+atlas = ExtResource("1_rc5ba")
+region = Rect2(0, 94, 85, 94)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_77kii"]
+atlas = ExtResource("1_rc5ba")
+region = Rect2(85, 94, 85, 94)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_csa0m"]
+atlas = ExtResource("1_rc5ba")
+region = Rect2(170, 94, 85, 94)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h2w12"]
+atlas = ExtResource("1_rc5ba")
+region = Rect2(255, 94, 85, 94)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e6mmf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jpc7i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kuh7k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r8xfg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kjvne")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r4fw0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_77kii")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_csa0m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h2w12")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gok1i"]
+radius = 12.0
+height = 70.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kuh7k"]
+radius = 138.463
+
+[node name="BossJantung" type="CharacterBody2D"]
+collision_layer = 9
+collision_mask = 0
+script = ExtResource("1_jpc7i")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_e6mmf")
+autoplay = "default"
+frame_progress = 0.842488
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5)
+shape = SubResource("CapsuleShape2D_gok1i")
+
+[node name="NA_range" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NA_range"]
+shape = SubResource("CircleShape2D_kuh7k")
+
+[node name="Nearby Attack" type="Area2D" parent="."]
+rotation = -1.5708
+collision_layer = 0
+collision_mask = 4
+
+[node name="Polygon2D" type="Polygon2D" parent="Nearby Attack"]
+color = Color(0.980392, 0, 0.337255, 0.698039)
+polygon = PackedVector2Array(25, -1.09278e-06, -25, 1.09278e-06, -72, 116, 0.465302, 116, 72, 116)
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Nearby Attack"]
+scale = Vector2(1.41725, 1.62985)
+polygon = PackedVector2Array(-17.6398, 6.70483e-07, 17.6398, -6.70483e-07, 50.8026, 71.1723, 0.284843, 71.1723, -50.8026, 71.1723)

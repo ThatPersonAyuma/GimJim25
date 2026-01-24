@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="DialogicStyle" load_steps=6 format=3 uid="uid://c1lv7stp158cl"]
+
+[ext_resource type="Script" uid="uid://bwg6yncmh2cml" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="1_0qmxn"]
+[ext_resource type="PackedScene" uid="uid://dhk6j6eb6e3q" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Choices/vn_choice_layer.tscn" id="2_3rxvi"]
+[ext_resource type="Script" uid="uid://dv08k6ljua6fm" path="res://addons/dialogic/Resources/dialogic_style.gd" id="2_sf067"]
+
+[sub_resource type="Resource" id="Resource_3rxvi"]
+script = ExtResource("1_0qmxn")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_66hs0"]
+script = ExtResource("1_0qmxn")
+scene = ExtResource("2_3rxvi")
+overrides = {}
+
+[resource]
+script = ExtResource("2_sf067")
+name = "NeCUstomStylew_File"
+layer_list = Array[String](["10"])
+layer_info = {
+"": SubResource("Resource_3rxvi"),
+"10": SubResource("Resource_66hs0")
+}
+base_overrides = {}
+layers = Array[ExtResource("1_0qmxn")]([])
+metadata/_latest_layer = "10"
