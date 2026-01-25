@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://ds55jfqs2ybn7"]
+
+[ext_resource type="Texture2D" uid="uid://ljy03mo68xwg" path="res://Main/assets/arrow/Arrows_pack.png" id="1_wyebo"]
+[ext_resource type="Script" uid="uid://b7vyu57kunqp6" path="res://Main/arrow.gd" id="2_0vso8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0vso8"]
+atlas = ExtResource("1_wyebo")
+region = Rect2(0, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cuig3"]
+atlas = ExtResource("1_wyebo")
+region = Rect2(2048, 0, 1024, 1024)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7qun8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0vso8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cuig3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cuig3"]
+size = Vector2(415, 92.5)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+visible = false
+position = Vector2(2, 2)
+scale = Vector2(0.05, 0.05)
+sprite_frames = SubResource("SpriteFrames_7qun8")
+frame_progress = 0.0907811
+script = ExtResource("2_0vso8")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 9
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-40, -40)
+shape = SubResource("RectangleShape2D_cuig3")

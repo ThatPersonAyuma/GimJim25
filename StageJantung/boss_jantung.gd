@@ -21,6 +21,7 @@ func _ready() -> void:
 	na_range.connect("body_entered", body_entered)
 	na_range.connect("body_exited", body_exited)
 	summon_strong_wind()
+	Global.Enemy = self
 
 func _physics_process(delta):
 	if attack_cooldown >= attack_interval:
@@ -35,12 +36,15 @@ func attack():
 		process_attack()
 
 func process_attack():
+	na.monitoring = true
 	if Global.Player not in na.get_overlapping_bodies():
 		look_at_player()
+	var flag = 6
 	await get_tree().create_timer(0.5).timeout
+	if flag != 6:
+		return
 	play_attack_anim()
 	if na.overlaps_body(Global.Player):
-		print("Overlap")
 		Global.McKnockBack(knockback_pwr, self.global_position)
 		Global.take_damage(self.damage_dealt_na)
 
@@ -72,13 +76,15 @@ func summon_strong_wind():
 	Global.MovePush(Vector2(0, 0))
 	
 func take_damage(amount: int):
+	$AnimationPlayer.play("hitted")
 	self.current_health -= amount
 	if self.current_health <= 0:
 		self.queue_free()
 
 func body_entered(body: CharacterBody2D):
-	self.is_mc_in_range = true
-	print("Character: ", body.name)
+	if body == Global.Player:
+		self.is_mc_in_range = true
+		print("Character: ", body.name)
 
 func body_exited(_body):
 	print("Status: ", is_mc_in_range)

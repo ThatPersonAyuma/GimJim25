@@ -1,9 +1,15 @@
-[gd_scene load_steps=69 format=3 uid="uid://baffhr3k8yw5j"]
+[gd_scene load_steps=74 format=3 uid="uid://baffhr3k8yw5j"]
 
 [ext_resource type="Script" uid="uid://bhg3anscnjqoq" path="res://StageJantung/boss_jantung.gd" id="1_jpc7i"]
 [ext_resource type="Texture2D" uid="uid://by8qypm84angs" path="res://StageJantung/assets/mage-1-85x94.png" id="1_rc5ba"]
+[ext_resource type="Shader" uid="uid://cx2omw8wkf4sr" path="res://Main/mc.tres" id="2_kjvne"]
 [ext_resource type="Texture2D" uid="uid://5jp20maoe1x3" path="res://StageJantung/assets/1769229481490.png" id="3_kuh7k"]
 [ext_resource type="Texture2D" uid="uid://cvk8rb4ubp3a" path="res://StageJantung/assets/SemburanAngin.png" id="3_r8xfg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r4fw0"]
+shader = ExtResource("2_kjvne")
+shader_parameter/enabled = false
+shader_parameter/hit_color = Color(1, 0, 0, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jpc7i"]
 atlas = ExtResource("1_rc5ba")
@@ -449,12 +455,50 @@ animations = [{
 "speed": 30.0
 }]
 
-[node name="BossJantung" type="CharacterBody2D"]
+[sub_resource type="Animation" id="Animation_csa0m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:material:shader_parameter/enabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_77kii"]
+resource_name = "hitted"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:material:shader_parameter/enabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h2w12"]
+_data = {
+&"RESET": SubResource("Animation_csa0m"),
+&"hitted": SubResource("Animation_77kii")
+}
+
+[node name="BossJantung" type="CharacterBody2D" groups=["Enemies"]]
 collision_layer = 9
 collision_mask = 0
 script = ExtResource("1_jpc7i")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_r4fw0")
 sprite_frames = SubResource("SpriteFrames_e6mmf")
 autoplay = "default"
 frame_progress = 0.227906
@@ -474,6 +518,7 @@ shape = SubResource("CircleShape2D_kuh7k")
 rotation = -1.5708
 collision_layer = 0
 collision_mask = 4
+monitoring = false
 
 [node name="Polygon2D" type="Polygon2D" parent="Nearby Attack"]
 color = Color(0.980392, 0, 0.337255, 0.698039)
@@ -481,7 +526,7 @@ polygon = PackedVector2Array(25, -1.09278e-06, -25, 1.09278e-06, -72, 116, 0.465
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="Nearby Attack"]
 scale = Vector2(1.41725, 1.62985)
-polygon = PackedVector2Array(-17.6398, 6.70483e-07, 17.6398, -6.70483e-07, 50.8026, 71.1723, 0.284843, 71.1723, -50.8026, 71.1723)
+polygon = PackedVector2Array(-17.6398, 6.70483e-07, 17.6398, -6.70483e-07, 50.8026, 71.1723, -0.000352484, 84.6704, -50.8026, 71.1723)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Nearby Attack"]
 position = Vector2(-1.90735e-06, 57)
@@ -494,3 +539,8 @@ visible = false
 scale = Vector2(0.184411, 0.184411)
 sprite_frames = SubResource("SpriteFrames_g3ys7")
 frame_progress = 0.413183
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_h2w12")
+}

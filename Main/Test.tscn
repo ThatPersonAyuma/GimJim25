@@ -17,7 +17,7 @@ scale = Vector2(2048, 2048)
 texture = SubResource("GradientTexture1D_v486t")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_etyje")]
-position = Vector2(6, 11)
+position = Vector2(1, 5)
 
-[node name="CharacterBody2D2" parent="." instance=ExtResource("2_4tte7")]
+[node name="Enemy" parent="." instance=ExtResource("2_4tte7")]
 position = Vector2(224, 118)

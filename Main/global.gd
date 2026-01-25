@@ -8,6 +8,8 @@ var slow_mov: float = 1
 var mov_push: Vector2 = Vector2(0,0)
 var knocback_pow: float = 0   
 var knockback_direction: Vector2 = Vector2(0,0)
+var is_invincible: bool = false
+var Enemy: CharacterBody2D
 
 func _ready() -> void:
 	Dialogic.timeline_ended.connect(_on_timeline_ended)
@@ -33,12 +35,11 @@ func MovePush(amounts: Vector2):
 	self.mov_push = amounts
 	
 func take_damage(amount: int):
-	self.McHealth -= amount
-	if self.McHealth <= 0:
-		self.McDeath()
-	#else:
-		#print("!!!!")
-	self.Player.play_hitted()
+	if not self.Player.is_dashing:
+		self.McHealth -= amount
+		if self.McHealth <= 0:
+			self.McDeath()
+		self.Player.play_hitted()
 		
 func McKnockBack(power: float, obj_glob_pstn:Vector2):
 	var direction = self.Player.global_position - obj_glob_pstn
