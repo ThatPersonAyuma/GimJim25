@@ -37,3 +37,7 @@ func _physics_process(delta):
 
 func play_hitted():
 	hit_anim.play("hit")
+	
+	
+
+	

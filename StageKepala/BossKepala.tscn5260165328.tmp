@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://b4nxaprfcegg3"]
+[gd_scene load_steps=31 format=3 uid="uid://b4nxaprfcegg3"]
 
 [ext_resource type="Script" uid="uid://chmjgqw4t4uq8" path="res://StageKepala/BossKepala.gd" id="1_a84m7"]
 [ext_resource type="Texture2D" uid="uid://brwc1fc4hkpd8" path="res://StageKepala/Assets/mino_v1.1_free/animations/idle/idle_1.png" id="2_tpy4p"]
@@ -11,19 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cphd2lfc83v3f" path="res://StageKepala/Assets/mino_v1.1_free/animations/idle/idle_8.png" id="9_rgvyn"]
 [ext_resource type="Texture2D" uid="uid://ba3243v1sbieo" path="res://StageKepala/Assets/mino_v1.1_free/animations/idle/idle_9.png" id="10_6lwey"]
 [ext_resource type="Texture2D" uid="uid://dmlqlyx227ifm" path="res://StageKepala/Assets/mino_v1.1_free/animations/idle/idle_10.png" id="11_a2ib1"]
-[ext_resource type="Texture2D" uid="uid://bwx6pec2ujfp6" path="res://StageKepala/Assets/mino_v1.1_free/animations/walk/walk_1.png" id="12_fs3h7"]
 [ext_resource type="Texture2D" uid="uid://d3ne0t61yq2ha" path="res://StageKepala/Assets/Water Effect and Bullet 16x16.png" id="12_tpy4p"]
-[ext_resource type="Texture2D" uid="uid://wmgahly4wkjk" path="res://StageKepala/Assets/mino_v1.1_free/animations/walk/walk_2.png" id="13_u7bvu"]
-[ext_resource type="Texture2D" uid="uid://b4cy1torrnbsv" path="res://StageKepala/Assets/mino_v1.1_free/animations/walk/walk_3.png" id="14_ye2he"]
-[ext_resource type="Texture2D" uid="uid://c7jh5rmemgmid" path="res://StageKepala/Assets/mino_v1.1_free/animations/walk/walk_4.png" id="15_dfri0"]
-[ext_resource type="Texture2D" uid="uid://bschmc037kysj" path="res://StageKepala/Assets/mino_v1.1_free/animations/walk/walk_5.png" id="16_5txt3"]
-[ext_resource type="Texture2D" uid="uid://rshxst7yf28e" path="res://StageKepala/Assets/mino_v1.1_free/animations/walk/walk_6.png" id="17_c4lkh"]
-[ext_resource type="Texture2D" uid="uid://m5c0u75wlswt" path="res://StageKepala/Assets/mino_v1.1_free/animations/walk/walk_7.png" id="18_sqmcm"]
-[ext_resource type="Texture2D" uid="uid://dch2pgmnv6xfk" path="res://StageKepala/Assets/mino_v1.1_free/animations/walk/walk_8.png" id="19_fyjua"]
-[ext_resource type="Texture2D" uid="uid://d4isri1tevtei" path="res://StageKepala/Assets/mino_v1.1_free/animations/walk/walk_9.png" id="20_brlk1"]
-[ext_resource type="Texture2D" uid="uid://bhwm54uwgo6ti" path="res://StageKepala/Assets/mino_v1.1_free/animations/walk/walk_10.png" id="21_sw6sb"]
-[ext_resource type="Texture2D" uid="uid://cu26o2m4npy1b" path="res://StageKepala/Assets/mino_v1.1_free/animations/walk/walk_11.png" id="22_urjlb"]
-[ext_resource type="Texture2D" uid="uid://dwwswy63kty35" path="res://StageKepala/Assets/mino_v1.1_free/animations/walk/walk_12.png" id="23_tjfam"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_k2dxg"]
 animations = [{
@@ -61,47 +49,6 @@ animations = [{
 "loop": true,
 "name": &"idle",
 "speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("12_fs3h7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_u7bvu")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_ye2he")
-}, {
-"duration": 1.0,
-"texture": ExtResource("15_dfri0")
-}, {
-"duration": 1.0,
-"texture": ExtResource("16_5txt3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("17_c4lkh")
-}, {
-"duration": 1.0,
-"texture": ExtResource("18_sqmcm")
-}, {
-"duration": 1.0,
-"texture": ExtResource("19_fyjua")
-}, {
-"duration": 1.0,
-"texture": ExtResource("20_brlk1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("21_sw6sb")
-}, {
-"duration": 1.0,
-"texture": ExtResource("22_urjlb")
-}, {
-"duration": 1.0,
-"texture": ExtResource("23_tjfam")
-}],
-"loop": true,
-"name": &"walk",
-"speed": 8.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oyb4n"]
@@ -109,7 +56,7 @@ radius = 47.0
 height = 104.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rp83y"]
-radius = 211.149
+radius = 106.118
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o8h82"]
 atlas = ExtResource("12_tpy4p")
@@ -215,24 +162,19 @@ animations = [{
 radius = 7.9943
 height = 638.41
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_fs3h7"]
-
 [node name="CharacterBody2D" type="CharacterBody2D"]
-collision_mask = 12
 script = ExtResource("1_a84m7")
+speed = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_k2dxg")
-animation = &"walk"
-frame_progress = 0.736414
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, 14)
 shape = SubResource("CapsuleShape2D_oyb4n")
 
 [node name="NA_range" type="Area2D" parent="."]
-collision_layer = 0
-collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NA_range"]
 shape = SubResource("CircleShape2D_rp83y")
@@ -267,20 +209,10 @@ position = Vector2(132, 310)
 rotation = 2.75238
 scale = Vector2(6.625, 22.7247)
 sprite_frames = SubResource("SpriteFrames_oyb4n")
-frame_progress = 0.117167
+frame_progress = 0.808253
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WaterBeam"]
 light_mask = 5
 position = Vector2(124, 296)
 rotation = 2.75238
 shape = SubResource("CapsuleShape2D_tpy4p")
-
-[node name="Tsunami" type="Area2D" parent="."]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Tsunami"]
-texture_filter = 1
-position = Vector2(72, 62)
-rotation = -6.28319
-scale = Vector2(2.57761, 3.04695)
-sprite_frames = SubResource("SpriteFrames_fs3h7")
-frame_progress = 0.253277
