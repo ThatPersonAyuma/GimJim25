@@ -1,17 +1,17 @@
 [gd_scene load_steps=19 format=4 uid="uid://b1nr6h13nak2h"]
 
-[ext_resource type="Texture2D" uid="uid://bdcfhk6a428p4" path="res://stagetangan/assets/Tiled_files/decorative_cracks_floor.png" id="1_4a645"]
-[ext_resource type="Texture2D" uid="uid://wsalmpc5jhrf" path="res://stagetangan/assets/Tiled_files/Dungeon tileset.png" id="2_vs010"]
-[ext_resource type="Texture2D" uid="uid://css0hoi42gmaf" path="res://stagetangan/assets/Tiled_files/decorative_cracks_coasts_animation.png" id="3_4j2hp"]
-[ext_resource type="Texture2D" uid="uid://dno5soku8p12u" path="res://stagetangan/assets/Tiled_files/walls_floor.png" id="4_708ee"]
-[ext_resource type="Texture2D" uid="uid://bbpgwk7t7qtmn" path="res://stagetangan/assets/Tiled_files/C300-1.png" id="5_4j2hp"]
-[ext_resource type="Texture2D" uid="uid://byri42ieuqkpd" path="res://stagetangan/assets/Tiled_files/C300-2.png" id="6_708ee"]
-[ext_resource type="Texture2D" uid="uid://dn6sre3rcux5s" path="res://stagetangan/assets/Tiled_files/C300-3.png" id="7_etrw5"]
-[ext_resource type="Texture2D" uid="uid://5b5smxi56ymb" path="res://stagetangan/assets/boss/tangan-c.png" id="8_etrw5"]
-[ext_resource type="Texture2D" uid="uid://ckwrev0pgy77f" path="res://stagetangan/assets/boss/tangan-d.png" id="9_mbkqa"]
+[ext_resource type="Texture2D" uid="uid://bdcfhk6a428p4" path="res://stagetangan/assets/Tiled_files/decorative_cracks_floor.png" id="1_54a64"]
+[ext_resource type="Texture2D" uid="uid://wsalmpc5jhrf" path="res://stagetangan/assets/Tiled_files/Dungeon tileset.png" id="2_kdugs"]
+[ext_resource type="Texture2D" uid="uid://css0hoi42gmaf" path="res://stagetangan/assets/Tiled_files/decorative_cracks_coasts_animation.png" id="3_yk171"]
+[ext_resource type="Texture2D" uid="uid://dno5soku8p12u" path="res://stagetangan/assets/Tiled_files/walls_floor.png" id="4_1nowv"]
+[ext_resource type="Texture2D" uid="uid://bbpgwk7t7qtmn" path="res://stagetangan/assets/Tiled_files/C300-1.png" id="5_ewcxv"]
+[ext_resource type="Texture2D" uid="uid://byri42ieuqkpd" path="res://stagetangan/assets/Tiled_files/C300-2.png" id="6_gow5e"]
+[ext_resource type="Texture2D" uid="uid://dn6sre3rcux5s" path="res://stagetangan/assets/Tiled_files/C300-3.png" id="7_3gltl"]
+[ext_resource type="Texture2D" uid="uid://5b5smxi56ymb" path="res://stagetangan/assets/boss/tangan-c.png" id="8_mwa0n"]
+[ext_resource type="Texture2D" uid="uid://ckwrev0pgy77f" path="res://stagetangan/assets/boss/tangan-d.png" id="9_dtq8q"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mbkqa"]
-texture = ExtResource("1_4a645")
+texture = ExtResource("1_54a64")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -134,7 +134,7 @@ texture = ExtResource("1_4a645")
 7:14/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3goed"]
-texture = ExtResource("2_vs010")
+texture = ExtResource("2_kdugs")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -308,7 +308,7 @@ texture = ExtResource("2_vs010")
 14:11/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m114a"]
-texture = ExtResource("3_4j2hp")
+texture = ExtResource("3_yk171")
 1:1/0 = 0
 2:1/0 = 0
 3:1/0 = 0
@@ -647,7 +647,7 @@ texture = ExtResource("3_4j2hp")
 17:23/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_js48u"]
-texture = ExtResource("4_708ee")
+texture = ExtResource("4_1nowv")
 1:1/0 = 0
 2:1/0 = 0
 3:1/0 = 0
@@ -930,7 +930,7 @@ texture = ExtResource("4_708ee")
 15:27/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gcp87"]
-texture = ExtResource("3_4j2hp")
+texture = ExtResource("3_yk171")
 1:1/0 = 0
 2:1/0 = 0
 3:1/0 = 0
@@ -1288,13 +1288,13 @@ sources/9 = SubResource("TileSetAtlasSource_gcp87")
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_4j2hp")
+"texture": ExtResource("5_ewcxv")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_708ee")
+"texture": ExtResource("6_gow5e")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_etrw5")
+"texture": ExtResource("7_3gltl")
 }],
 "loop": true,
 "name": &"default",
@@ -1305,10 +1305,10 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("8_etrw5")
+"texture": ExtResource("8_mwa0n")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_mbkqa")
+"texture": ExtResource("9_dtq8q")
 }],
 "loop": true,
 "name": &"default",
@@ -1347,5 +1347,5 @@ frame = 1
 frame_progress = 0.196252
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="AnimatedSprite2D"]
-position = Vector2(22, 2)
+position = Vector2(2, -6)
 shape = SubResource("CapsuleShape2D_4a645")

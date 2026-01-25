@@ -457,7 +457,7 @@ script = ExtResource("1_jpc7i")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_e6mmf")
 autoplay = "default"
-frame_progress = 0.227906
+frame_progress = 0.385033
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 5)
@@ -488,9 +488,9 @@ position = Vector2(-1.90735e-06, 57)
 rotation = -1.5708
 scale = Vector2(2.14926, 2.02231)
 sprite_frames = SubResource("SpriteFrames_k6evo")
+frame_progress = 0.208361
 
 [node name="Angin" type="AnimatedSprite2D" parent="."]
-visible = false
 scale = Vector2(0.184411, 0.184411)
 sprite_frames = SubResource("SpriteFrames_g3ys7")
 frame_progress = 0.413183

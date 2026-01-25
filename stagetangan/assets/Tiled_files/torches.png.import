@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dp26oslxjw2yp"
-path="res://.godot/imported/torches.png-3d2dddf4aa39a27fc62b6ed8880a5809.ctex"
+path="res://.godot/imported/torches.png-40d0a0d6d888b558d6af29d7b99dc1bd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://stagetangan/assets/Tiled_files/torches.png"
-dest_files=["res://.godot/imported/torches.png-3d2dddf4aa39a27fc62b6ed8880a5809.ctex"]
+source_file="res://StageTangan/assets/Tiled_files/torches.png"
+dest_files=["res://.godot/imported/torches.png-40d0a0d6d888b558d6af29d7b99dc1bd.ctex"]
 
 [params]
 
