@@ -105,11 +105,11 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oyb4n"]
-radius = 47.0
-height = 104.0
+radius = 40.0
+height = 118.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rp83y"]
-radius = 211.149
+radius = 53.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o8h82"]
 atlas = ExtResource("12_tpy4p")
@@ -227,7 +227,7 @@ animation = &"walk"
 frame_progress = 0.736414
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2, 14)
+position = Vector2(0, 8)
 shape = SubResource("CapsuleShape2D_oyb4n")
 
 [node name="NA_range" type="Area2D" parent="."]
@@ -235,12 +235,13 @@ collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NA_range"]
+position = Vector2(0, 18)
 shape = SubResource("CircleShape2D_rp83y")
 
 [node name="NearbyAttack" type="Area2D" parent="."]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="NearbyAttack"]
-position = Vector2(38, 41)
+position = Vector2(37, 43)
 rotation = 0.837758
 scale = Vector2(6.54991, 6.88299)
 sprite_frames = SubResource("SpriteFrames_h3nl0")
