@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnxh2na1phfm6"
-path="res://.godot/imported/decorative_cracks_walls.png-fff452a692b8387790322897b1502224.ctex"
+uid="uid://3qtnuv1cdrp"
+path="res://.godot/imported/tangan-a.png-89b6efa419646dc1ff8733ab028e2d20.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://StageTangan/assets/Tiled_files/decorative_cracks_walls.png"
-dest_files=["res://.godot/imported/decorative_cracks_walls.png-fff452a692b8387790322897b1502224.ctex"]
+source_file="res://StageTangan/Sprite/Boss/tangan-a.png"
+dest_files=["res://.godot/imported/tangan-a.png-89b6efa419646dc1ff8733ab028e2d20.ctex"]
 
 [params]
 

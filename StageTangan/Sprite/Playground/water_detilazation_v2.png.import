@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdcfhk6a428p4"
-path="res://.godot/imported/decorative_cracks_floor.png-f76a505794adcff635f4ecd75efe07fd.ctex"
+uid="uid://cffnypp557lob"
+path="res://.godot/imported/water_detilazation_v2.png-a48c19e360872f13da41c0fff64376ab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://StageTangan/assets/Tiled_files/decorative_cracks_floor.png"
-dest_files=["res://.godot/imported/decorative_cracks_floor.png-f76a505794adcff635f4ecd75efe07fd.ctex"]
+source_file="res://StageTangan/Sprite/Playground/water_detilazation_v2.png"
+dest_files=["res://.godot/imported/water_detilazation_v2.png-a48c19e360872f13da41c0fff64376ab.ctex"]
 
 [params]
 

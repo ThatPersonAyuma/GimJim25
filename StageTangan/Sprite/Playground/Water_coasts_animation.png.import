@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5b5smxi56ymb"
-path="res://.godot/imported/tangan-c.png-ae77688250cb1235631a7fba9a8528e9.ctex"
+uid="uid://cj8wx0ohqs353"
+path="res://.godot/imported/Water_coasts_animation.png-dd00d6feb3c03b2bef8f4273a1568d23.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://StageTangan/assets/boss/tangan-c.png"
-dest_files=["res://.godot/imported/tangan-c.png-ae77688250cb1235631a7fba9a8528e9.ctex"]
+source_file="res://StageTangan/Sprite/Playground/Water_coasts_animation.png"
+dest_files=["res://.godot/imported/Water_coasts_animation.png-dd00d6feb3c03b2bef8f4273a1568d23.ctex"]
 
 [params]
 

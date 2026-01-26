@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ds7eoqqavlbbs"
-path="res://.godot/imported/water_details_animation.png-cfe7680aa065416073c21e04153984ce.ctex"
+uid="uid://byri42ieuqkpd"
+path="res://.godot/imported/C300-2.png-bd8fd889ddbc3dda19bc9fd76c4d6382.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://StageTangan/assets/Tiled_files/water_details_animation.png"
-dest_files=["res://.godot/imported/water_details_animation.png-cfe7680aa065416073c21e04153984ce.ctex"]
+source_file="res://StageTangan/Sprite/Playground/C300-2.png"
+dest_files=["res://.godot/imported/C300-2.png-bd8fd889ddbc3dda19bc9fd76c4d6382.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://svfs01smxqnp"
-path="res://.godot/imported/tangan-b.png-94de43131590fcc1e18b1ed8c29b9827.ctex"
+uid="uid://btu6qdv4ps1a7"
+path="res://.godot/imported/doors_lever_chest_animation.png-b59b4c5f7a98943356df6cbc8829e3f4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://StageTangan/assets/boss/tangan-b.png"
-dest_files=["res://.godot/imported/tangan-b.png-94de43131590fcc1e18b1ed8c29b9827.ctex"]
+source_file="res://StageTangan/Sprite/Playground/doors_lever_chest_animation.png"
+dest_files=["res://.godot/imported/doors_lever_chest_animation.png-b59b4c5f7a98943356df6cbc8829e3f4.ctex"]
 
 [params]
 

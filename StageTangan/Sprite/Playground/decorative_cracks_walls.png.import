@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7u3ghd512jbf"
-path="res://.godot/imported/pixil-frame-0.png-376df3711a2b8dcf0b08dcc4d7b01cfd.ctex"
+uid="uid://cnxh2na1phfm6"
+path="res://.godot/imported/decorative_cracks_walls.png-545e4afea76c15bdf8cfab039123d70e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://StageTangan/assets/Tiled_files/pixil-frame-0.png"
-dest_files=["res://.godot/imported/pixil-frame-0.png-376df3711a2b8dcf0b08dcc4d7b01cfd.ctex"]
+source_file="res://StageTangan/Sprite/Playground/decorative_cracks_walls.png"
+dest_files=["res://.godot/imported/decorative_cracks_walls.png-545e4afea76c15bdf8cfab039123d70e.ctex"]
 
 [params]
 

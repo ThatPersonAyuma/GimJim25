@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgfauu1h0ctay"
-path="res://.godot/imported/fire_animation2.png-aa7defdcc3a2f44c2730f2f0dcbc192a.ctex"
+uid="uid://wsalmpc5jhrf"
+path="res://.godot/imported/Dungeon tileset.png-c9dd1fed68f760f4c38c8f64ebb129b8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://StageTangan/assets/Tiled_files/fire_animation2.png"
-dest_files=["res://.godot/imported/fire_animation2.png-aa7defdcc3a2f44c2730f2f0dcbc192a.ctex"]
+source_file="res://StageTangan/Sprite/Playground/Dungeon tileset.png"
+dest_files=["res://.godot/imported/Dungeon tileset.png-c9dd1fed68f760f4c38c8f64ebb129b8.ctex"]
 
 [params]
 

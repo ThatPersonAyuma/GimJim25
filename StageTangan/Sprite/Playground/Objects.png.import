@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3qtnuv1cdrp"
-path="res://.godot/imported/tangan-a.png-5816f108ae6a923401e6bd395c0e31ef.ctex"
+uid="uid://dsafn2gxynb1m"
+path="res://.godot/imported/Objects.png-3db929ff42a9c88db69561abc4fca8b3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://StageTangan/assets/boss/tangan-a.png"
-dest_files=["res://.godot/imported/tangan-a.png-5816f108ae6a923401e6bd395c0e31ef.ctex"]
+source_file="res://StageTangan/Sprite/Playground/Objects.png"
+dest_files=["res://.godot/imported/Objects.png-3db929ff42a9c88db69561abc4fca8b3.ctex"]
 
 [params]
 

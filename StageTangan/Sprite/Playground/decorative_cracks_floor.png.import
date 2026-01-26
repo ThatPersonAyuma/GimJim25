@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://btu6qdv4ps1a7"
-path="res://.godot/imported/doors_lever_chest_animation.png-470a1bcea60fb6b0cc3400e23d71d8ab.ctex"
+uid="uid://bdcfhk6a428p4"
+path="res://.godot/imported/decorative_cracks_floor.png-976662c3bd336cdb4ebad8c3b227e672.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://StageTangan/assets/Tiled_files/doors_lever_chest_animation.png"
-dest_files=["res://.godot/imported/doors_lever_chest_animation.png-470a1bcea60fb6b0cc3400e23d71d8ab.ctex"]
+source_file="res://StageTangan/Sprite/Playground/decorative_cracks_floor.png"
+dest_files=["res://.godot/imported/decorative_cracks_floor.png-976662c3bd336cdb4ebad8c3b227e672.ctex"]
 
 [params]
 

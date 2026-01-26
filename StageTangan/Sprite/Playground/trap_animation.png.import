@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbpgwk7t7qtmn"
-path="res://.godot/imported/C300-1.png-51847d045f09ea907c50b11d7ddcfc89.ctex"
+uid="uid://cbivn82vstd6p"
+path="res://.godot/imported/trap_animation.png-50c720238aef14cfa743a463bb59699d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://StageTangan/assets/Tiled_files/C300-1.png"
-dest_files=["res://.godot/imported/C300-1.png-51847d045f09ea907c50b11d7ddcfc89.ctex"]
+source_file="res://StageTangan/Sprite/Playground/trap_animation.png"
+dest_files=["res://.godot/imported/trap_animation.png-50c720238aef14cfa743a463bb59699d.ctex"]
 
 [params]
 

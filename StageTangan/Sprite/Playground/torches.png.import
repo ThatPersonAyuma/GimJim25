@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dsafn2gxynb1m"
-path="res://.godot/imported/Objects.png-0d152babf7b9fbfcccb9fd80922bb24f.ctex"
+uid="uid://dp26oslxjw2yp"
+path="res://.godot/imported/torches.png-da8e21809cec6ad6b81a9e0840f5d654.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://StageTangan/assets/Tiled_files/Objects.png"
-dest_files=["res://.godot/imported/Objects.png-0d152babf7b9fbfcccb9fd80922bb24f.ctex"]
+source_file="res://StageTangan/Sprite/Playground/torches.png"
+dest_files=["res://.godot/imported/torches.png-da8e21809cec6ad6b81a9e0840f5d654.ctex"]
 
 [params]
 

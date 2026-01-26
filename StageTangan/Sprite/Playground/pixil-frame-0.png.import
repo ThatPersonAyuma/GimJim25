@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cj8wx0ohqs353"
-path="res://.godot/imported/Water_coasts_animation.png-5b32178bbe00f4ed49e78593323ea7e8.ctex"
+uid="uid://7u3ghd512jbf"
+path="res://.godot/imported/pixil-frame-0.png-9482363dc35811cf26307799c9db493c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://StageTangan/assets/Tiled_files/Water_coasts_animation.png"
-dest_files=["res://.godot/imported/Water_coasts_animation.png-5b32178bbe00f4ed49e78593323ea7e8.ctex"]
+source_file="res://StageTangan/Sprite/Playground/pixil-frame-0.png"
+dest_files=["res://.godot/imported/pixil-frame-0.png-9482363dc35811cf26307799c9db493c.ctex"]
 
 [params]
 
