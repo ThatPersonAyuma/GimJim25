@@ -1,0 +1,60 @@
+[gd_scene load_steps=8 format=3 uid="uid://cq7ql42qitpd2"]
+
+[ext_resource type="Script" uid="uid://bgnvf4jpd1jfu" path="res://StageKepala/bullet.gd" id="1_qkv83"]
+[ext_resource type="Texture2D" uid="uid://d3ne0t61yq2ha" path="res://StageKepala/Assets/Water Effect and Bullet 16x16.png" id="2_qmptf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6imoo"]
+atlas = ExtResource("2_qmptf")
+region = Rect2(160, 52, 16, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kruaw"]
+atlas = ExtResource("2_qmptf")
+region = Rect2(176, 52, 16, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uxc76"]
+atlas = ExtResource("2_qmptf")
+region = Rect2(192, 52, 16, 26)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5lu6t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6imoo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kruaw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uxc76")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6imoo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kruaw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uxc76")
+}],
+"loop": true,
+"name": &"waves",
+"speed": 8.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bccvo"]
+height = 70.0
+
+[node name="Area2D" type="Area2D"]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_qkv83")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(8.5, 1.5)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_5lu6t")
+animation = &"waves"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, -4)
+shape = SubResource("CapsuleShape2D_bccvo")
