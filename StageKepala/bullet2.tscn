@@ -1,0 +1,83 @@
+[gd_scene load_steps=12 format=3 uid="uid://bjyyack6p0n4k"]
+
+[ext_resource type="Texture2D" uid="uid://d3ne0t61yq2ha" path="res://StageKepala/Assets/Water Effect and Bullet 16x16.png" id="1_0kisp"]
+[ext_resource type="Script" uid="uid://ceg6tf4fgpcp1" path="res://StageKepala/bullet2.gd" id="1_w4itd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w4itd"]
+atlas = ExtResource("1_0kisp")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s7pyn"]
+atlas = ExtResource("1_0kisp")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5qjj6"]
+atlas = ExtResource("1_0kisp")
+region = Rect2(0, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6wkgj"]
+atlas = ExtResource("1_0kisp")
+region = Rect2(0, 80, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bmkut"]
+atlas = ExtResource("1_0kisp")
+region = Rect2(0, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_braef"]
+atlas = ExtResource("1_0kisp")
+region = Rect2(0, 112, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o4d47"]
+atlas = ExtResource("1_0kisp")
+region = Rect2(0, 128, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_541k3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w4itd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s7pyn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5qjj6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6wkgj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bmkut")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_braef")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o4d47")
+}],
+"loop": false,
+"name": &"bullet",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s7pyn"]
+radius = 4.0
+height = 46.0
+
+[node name="Area2D" type="Area2D"]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_w4itd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(21.25, 4)
+scale = Vector2(5.21875, 0.875)
+sprite_frames = SubResource("SpriteFrames_541k3")
+animation = &"bullet"
+frame = 6
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(22, 4)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_s7pyn")
