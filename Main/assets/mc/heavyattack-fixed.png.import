@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dyop1hyxxoybo"
-path="res://.godot/imported/mage-3-87x110.png-fb24262231459ac0a69ace901507b0ae.ctex"
+uid="uid://bcj7f8467q3wc"
+path="res://.godot/imported/heavyattack-fixed.png-f85cd328189714a11b8e3c74c67dabc2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://StageJantung/assets/mage-3-87x110.png"
-dest_files=["res://.godot/imported/mage-3-87x110.png-fb24262231459ac0a69ace901507b0ae.ctex"]
+source_file="res://Main/assets/mc/heavyattack-fixed.png"
+dest_files=["res://.godot/imported/heavyattack-fixed.png-f85cd328189714a11b8e3c74c67dabc2.ctex"]
 
 [params]
 

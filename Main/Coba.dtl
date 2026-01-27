@@ -1,4 +1,5 @@
 MC: Pilih Satu
 - Pilihan Satu mengambil\ningat
+	[signal arg="forget"]
 - Pilihan Dua
 - Pilihan Tiga

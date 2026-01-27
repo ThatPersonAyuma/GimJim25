@@ -1,0 +1,7 @@
+[style name="Nyoba"]
+You regain your consciousness.
+What will you do?
+- Go to fight the monster
+	[signal arg="fight"]
+- Explore the other door
+	[signal arg="explore"]

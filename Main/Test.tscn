@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://djkbd2871v0g7"]
+[gd_scene load_steps=6 format=3 uid="uid://djkbd2871v0g7"]
 
 [ext_resource type="PackedScene" uid="uid://n23yng8jsymk" path="res://Main/mc.tscn" id="1_etyje"]
 [ext_resource type="PackedScene" uid="uid://baffhr3k8yw5j" path="res://StageJantung/BossJantung.tscn" id="2_4tte7"]
+[ext_resource type="PackedScene" uid="uid://b2ijkbnuulycv" path="res://StageJantung/boundaries.tscn" id="3_v486t"]
 
 [sub_resource type="Gradient" id="Gradient_4tte7"]
 
@@ -12,12 +13,22 @@ width = 1
 [node name="Node2D" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1020, 1026)
+position = Vector2(2, 5)
 scale = Vector2(2048, 2048)
 texture = SubResource("GradientTexture1D_v486t")
 
+[node name="Boundaries" parent="." instance=ExtResource("3_v486t")]
+z_index = 20
+scale = Vector2(0.8, 0.8)
+
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_etyje")]
-position = Vector2(1, 5)
+position = Vector2(7, 154)
+max_cam_left = -700
+max_cam_top = -700
+max_cam_right = 700
+max_cam_bottom = 700
 
 [node name="Enemy" parent="." instance=ExtResource("2_4tte7")]
-position = Vector2(224, 118)
+scale = Vector2(0.4, 0.4)
+health = 100
+current_health = 100

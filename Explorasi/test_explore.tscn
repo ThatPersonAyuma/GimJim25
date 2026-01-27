@@ -1,0 +1,98 @@
+[gd_scene load_steps=10 format=3 uid="uid://bom6my7udkie7"]
+
+[ext_resource type="Script" uid="uid://c5b5ortrpjsqk" path="res://Explorasi/test_explore.gd" id="1_4sc1v"]
+[ext_resource type="PackedScene" uid="uid://n23yng8jsymk" path="res://Main/mc.tscn" id="1_vld2w"]
+[ext_resource type="Texture2D" uid="uid://bt6sh5ii28cvh" path="res://Explorasi/assets/Sprite-0002-Sheet.png" id="2_mp2eo"]
+[ext_resource type="Texture2D" uid="uid://ddknfdelevb10" path="res://Explorasi/assets/BossDoor.png" id="3_4sc1v"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4sc1v"]
+radius = 24.5967
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_baql7"]
+radius = 22.8035
+
+[sub_resource type="Animation" id="Animation_baql7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect2:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_4sc1v"]
+resource_name = "fadeout"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect2:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_li6q4"]
+_data = {
+&"RESET": SubResource("Animation_baql7"),
+&"fadeout": SubResource("Animation_4sc1v")
+}
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_4sc1v")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 640.0
+offset_bottom = 358.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(342, 73)
+texture = ExtResource("2_mp2eo")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(587, 185)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_4sc1v")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_vld2w")]
+position = Vector2(320, 180)
+max_cam_left = 0
+max_cam_top = 0
+max_cam_right = 640
+max_cam_bottom = 360
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(162, 92)
+shape = SubResource("CircleShape2D_4sc1v")
+
+[node name="Area2D2" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(557, 187)
+shape = SubResource("CircleShape2D_baql7")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+z_index = 20
+offset_right = 640.0
+offset_bottom = 360.0
+color = Color(0, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_li6q4")
+}

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://de7flpmlh4t4s"
-path="res://.godot/imported/mage-2-122x110.png-4d085140fed572c2ef0a6894f6dfa054.ctex"
+uid="uid://4nubbbupt78e"
+path="res://.godot/imported/stun_effect.png-ece5c38eedb6e79d3564b5dccb79bb0f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://StageJantung/assets/mage-2-122x110.png"
-dest_files=["res://.godot/imported/mage-2-122x110.png-4d085140fed572c2ef0a6894f6dfa054.ctex"]
+source_file="res://Main/assets/mc/stun_effect.png"
+dest_files=["res://.godot/imported/stun_effect.png-ece5c38eedb6e79d3564b5dccb79bb0f.ctex"]
 
 [params]
 

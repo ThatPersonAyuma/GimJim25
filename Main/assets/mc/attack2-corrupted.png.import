@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://by8qypm84angs"
-path="res://.godot/imported/mage-1-85x94.png-997e6205fbc9e7b47cb236a9be89d08e.ctex"
+uid="uid://b4c5gd2macqhd"
+path="res://.godot/imported/attack2-corrupted.png-167aec43b56461a44cd40044c612750e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://StageJantung/assets/mage-1-85x94.png"
-dest_files=["res://.godot/imported/mage-1-85x94.png-997e6205fbc9e7b47cb236a9be89d08e.ctex"]
+source_file="res://Main/assets/mc/attack2-corrupted.png"
+dest_files=["res://.godot/imported/attack2-corrupted.png-167aec43b56461a44cd40044c612750e.ctex"]
 
 [params]
 
