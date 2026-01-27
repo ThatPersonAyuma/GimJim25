@@ -240,6 +240,7 @@ scale = Vector2(0.867944, 0.771771)
 
 [node name="Player" parent="." instance=ExtResource("1_0jbw6")]
 position = Vector2(-550, -350)
+collision_mask = 11
 
 [node name="BossLeg" parent="." instance=ExtResource("3_31g71")]
 z_index = 15

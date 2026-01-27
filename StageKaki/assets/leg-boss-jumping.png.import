@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbtytq22yebl2"
-path="res://.godot/imported/mage-1-85x94.png-d407307d61ebc20f6713cac3406b313e.ctex"
+uid="uid://b6mkve7pixiye"
+path="res://.godot/imported/leg-boss-jumping.png-9c374ee6578f73231064de2c5b93fda5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://StageKaki/assets/mage-1-85x94.png"
-dest_files=["res://.godot/imported/mage-1-85x94.png-d407307d61ebc20f6713cac3406b313e.ctex"]
+source_file="res://StageKaki/assets/leg-boss-jumping.png"
+dest_files=["res://.godot/imported/leg-boss-jumping.png-9c374ee6578f73231064de2c5b93fda5.ctex"]
 
 [params]
 
