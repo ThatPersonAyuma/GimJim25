@@ -4,6 +4,7 @@ const FIREBALL_SCENE = preload("res://StageTangan/fireball.tscn")
 const SHOCKWAVE_SCENE = preload("res://StageTangan/shockwave.tscn")
 const PUNCH_HITBOX_SCENE = preload("res://StageTangan/punch_hitbox.tscn")
 const SWEEP_HITBOX_SCENE = preload("res://StageTangan/sweep_hitbox.tscn")
+const SMALL_FIREBALL_SCENE = preload("res://StageTangan/small_fireball.tscn")
 
 @export var max_health: int = 500
 @export var speed: float = 100.0
@@ -32,6 +33,13 @@ var is_punching: bool = false
 @export var sweep_max_range: float = 120.0
 var sweep_timer: float = 0.0
 var is_sweeping: bool = false
+
+@export var projectile_cooldown: float = 5.0
+@export var projectile_count: int = 5          
+@export var projectile_spread: float = 45.0    
+@export var projectile_range: float = 150.0
+var projectile_timer: float = 0.0
+var is_shooting_projectiles: bool = false
 
 var current_health: int
 var can_attack: bool = true 
@@ -92,8 +100,16 @@ func _update_skill_timers(delta: float) -> void:
 			perform_sweep()
 			return
 
+	projectile_timer += delta
+	if projectile_timer >= projectile_cooldown:
+		if dist > projectile_range:
+			projectile_timer = 0.0
+			shoot_projectiles()
+			return
+
+
 func move_towards_player() -> void:
-	if is_bouncing or is_casting_fireball or is_casting_shockwave or is_punching or is_sweeping:
+	if is_bouncing or is_casting_fireball or is_casting_shockwave or is_punching or is_sweeping or is_shooting_projectiles:
 		return
 
 	var target_pos = Global.Player.global_position
@@ -196,6 +212,43 @@ func perform_sweep() -> void:
 	await get_tree().create_timer(0.6).timeout
 	is_sweeping = false
 	
+func shoot_projectiles() -> void:
+	is_shooting_projectiles = true
+	velocity = Vector2.ZERO
+	
+	modulate = Color(1.5, 0.8, 0.3)
+	
+	print("BOSS: Charging Projectiles...")
+	
+	await get_tree().create_timer(0.6).timeout
+	
+	if Global.McHealth > 0 and is_instance_valid(Global.Player):
+		var base_dir = global_position.direction_to(Global.Player.global_position)
+		var base_angle = base_dir.angle()
+		
+		var half_spread = deg_to_rad(projectile_spread / 2.0)
+		var angle_step = deg_to_rad(projectile_spread) / (projectile_count - 1)
+		
+		for i in range(projectile_count):
+			var angle_offset = -half_spread + (i * angle_step)
+			var final_angle = base_angle + angle_offset
+			var dir = Vector2(cos(final_angle), sin(final_angle))
+			
+			var projectile = SMALL_FIREBALL_SCENE.instantiate()
+			projectile.direction = dir
+			projectile.rotation = final_angle
+			
+			get_tree().current_scene.add_child(projectile)
+			projectile.global_position = global_position
+		
+		print("BOSS: Projectiles released! Count: ", projectile_count)
+	
+	modulate = Color.WHITE
+	
+	await get_tree().create_timer(0.5).timeout
+	is_shooting_projectiles = false
+
+
 func attack_player() -> void:
 	if Global.McHealth <= 0 or not can_attack:
 		return
