@@ -10,12 +10,15 @@ extends CharacterBody2D
 @export var max_cam_top = -10000000
 @export var max_cam_right = 10000000
 @export var max_cam_bottom = 10000000
+@export var cam_zoom: float = 1
 
+@onready var camera = $Camera2D
 @onready var anim_player = $Animation
 @onready var anim_sprite = $AnimatedSprite2D
 @onready var melee_attack_cooldown = $MeeleCooldownTimer
 @onready var arrow_cooldown = $RangeCooldownTimer
 @onready var dash_cooldown = $DashCooldownTimer
+
 
 var is_attacking = false
 var attacks_max = 4
@@ -38,14 +41,18 @@ var heavy_attack_cooldown = 5
 var is_heavy_attack_ready = true
 var is_heavy_running = false
 
+
+func _enter_tree():
+	Global.Player = self
+
 func _ready() -> void:
 	print("Sprite: ", anim_sprite.sprite_frames.get_animation_names())
-	var camera = $Camera2D
 	camera.limit_left = max_cam_left
 	camera.limit_top = max_cam_top
 	camera.limit_right = max_cam_right
 	camera.limit_bottom = max_cam_bottom
-	Global.Player = self
+	camera.zoom = Vector2(cam_zoom, cam_zoom)
+	
 	$Area2D.connect("body_entered", give_damage)
 	anim_player.animation_finished.connect(_on_animation_player_animation_finished)
 	var arrow = preload("res://Main/arrow.tscn")

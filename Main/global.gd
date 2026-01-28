@@ -11,6 +11,7 @@ var knockback_direction: Vector2 = Vector2(0,0)
 var is_invincible: bool = false
 var Enemy: CharacterBody2D
 
+
 func _ready() -> void:
 	Dialogic.timeline_ended.connect(_on_timeline_ended)
 	

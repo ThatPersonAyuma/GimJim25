@@ -6,7 +6,7 @@ enum BossStage{
 	STATE3
 }
 var state = BossStage.STATE1
-@export var attack_interval = 4
+@export var attack_interval = 3
 @export var damage_dealt_na = 100
 @export var health = 1000
 @export var knockback_pwr: float = 0.4
@@ -57,7 +57,7 @@ var ww_cooldown = 12
 #blizzard
 var push_pow: float = 0.4
 var is_bliz_ready = true #
-var bliz_cooldown = 40
+var bliz_cooldown = 30
 var bliz_duration = 8
 var bliz_node = null
 var is_active = false
@@ -70,8 +70,10 @@ var is_moving = false
 var direction = Vector2.ZERO
 var to_center = false
 
-var moving_cooldown = [5]
+var moving_cooldown = [18, 25, 35]
 var is_moving_ready = false
+
+@onready var blizz_effect = $AnimatedSprite2D2
 
 func _ready() -> void:
 	na_range.connect("body_entered", body_entered)
@@ -104,6 +106,9 @@ func _ready() -> void:
 	whirlwinds.push_back(whirlwind1)
 	whirlwinds.push_back(whirlwind2)
 	get_direction()
+	root.add_child.call_deferred(blizz_effect)
+	self.remove_child(blizz_effect)
+	
 	get_tree().create_timer(intro_duration).timeout.connect(func():
 		is_active = true)
 	get_tree().create_timer(slash_cooldown).timeout.connect(func():
@@ -123,7 +128,6 @@ func _ready() -> void:
 	#bliz_node.
 
 func _physics_process(delta):
-	print("state: ", state, " radius: ", get_radius())
 	if is_active:
 		if attack_cooldown >= attack_interval:
 			attack_cooldown = 0
@@ -139,17 +143,16 @@ func _physics_process(delta):
 			moving()
 		if is_moving:
 			if global_position.distance_to(target_pos) > arrive_distance:
-				print("moving")
 				global_position += direction * move_speed * delta
 			else:
 				arrive()
 		
 		if state == BossStage.STATE1:
 			return
-		
-			
 		if is_bliz_ready:
 			summon_blizzard()
+		
+			
 		if is_ww_ready:
 			if boolean.pick_random():
 				wind_wall_def()
@@ -167,14 +170,16 @@ func summon_blizzard():
 	First timer for calculate the duration of the blizzard.
 	Second is for coldown of the blizz
 	"""
-	#bliz_node.visible = true
-	Global.mov_push = (Global.Player.global_position - self.global_position).normalized() * push_pow
+	blizz_effect.visible = true
+	blizz_effect.global_position = Global.Player.global_position
+	var direction = (Global.Player.global_position - self.global_position).normalized()
+	blizz_effect.rotation = direction.angle()
+	Global.mov_push = direction * push_pow
 	is_bliz_ready = false
-	print("Blizz fire")
 	get_tree().create_timer(bliz_duration).timeout.connect(func():
 		if not is_instance_valid(self): return
-		#bliz_node.visible = false
-		Global.mov_push = Vector2.ZERO)
+		Global.mov_push = Vector2.ZERO
+		blizz_effect.visible = false)
 	get_tree().create_timer(bliz_cooldown).timeout.connect(func():
 		if not is_instance_valid(self): return
 		is_bliz_ready = true)
@@ -280,7 +285,6 @@ func look_at_player():
 func take_damage(amount: int):
 	$AnimationPlayer.play("hitted")
 	self.current_health -= amount
-	print("current healt: ", current_health, " Health bar: ", health)
 	match self.state:
 		BossStage.STATE1:
 			if self.current_health <= self.health*0.7:
@@ -288,6 +292,7 @@ func take_damage(amount: int):
 				current_anim = "stage2"
 				slash_cooldown -= 2
 				arrow_intervals.pop_back()
+				moving_cooldown.pop_back()
 				get_tree().create_timer(whirlwind_cooldown).timeout.connect(func():
 					if not is_instance_valid(self):return
 					is_whirlwind_ready = true)
@@ -335,10 +340,8 @@ func free_resource():
 func body_entered(body: CharacterBody2D):
 	if body == Global.Player:
 		self.is_mc_in_range = true
-		print("Character: ", body.name)
 
 func body_exited(_body):
-	print("Status: ", is_mc_in_range)
 	self.is_mc_in_range = false	
 
 
@@ -367,9 +370,9 @@ func get_radius():
 		return 0
 	match area_state:
 		0: # radius 330
-			return 330
+			return 132
 		1: # radius 230
-			return 230
+			return 92
 		_:
 			return 0
 				
@@ -381,5 +384,4 @@ func get_direction():
 		cos(angle) * dist,
 		sin(angle) * dist
 	)
-	print("target pos: ", target_pos)
 	self.direction = (target_pos - global_position).normalized()

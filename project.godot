@@ -23,11 +23,18 @@ Global="*res://Main/global.gd"
 [dialogic]
 
 directories/dch_directory={
-"MC": "res://Main/MC.dch"
+"MC": "res://Main/MC.dch",
+"SuaraMisterius": "res://Cutscenes/Characters/SuaraMisterius.dch",
+"Tetua": "res://Cutscenes/Characters/Tetua.dch"
 }
 directories/dtl_directory={
 "Coba": "res://Main/Coba.dtl",
-"Explorasi/Coba": "res://Explorasi/Coba.dtl"
+"DungeonUtara": "res://Cutscenes/DungeonUtara.dtl",
+"EmpatDungeon": "res://Cutscenes/EmpatDungeon.dtl",
+"Explorasi/Coba": "res://Explorasi/Coba.dtl",
+"KutukanPertama": "res://Cutscenes/KutukanPertama.dtl",
+"prolog1": "res://Cutscenes/Dialog/prolog1.dtl",
+"prolog2": "res://Cutscenes/prolog2.dtl"
 }
 layout/style_directory={
 "": "res://Nyoba.tres",

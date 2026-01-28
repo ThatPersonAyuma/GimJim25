@@ -1,4 +1,4 @@
-[gd_scene load_steps=96 format=3 uid="uid://baffhr3k8yw5j"]
+[gd_scene load_steps=105 format=3 uid="uid://baffhr3k8yw5j"]
 
 [ext_resource type="Script" uid="uid://bhg3anscnjqoq" path="res://StageJantung/boss_jantung.gd" id="1_jpc7i"]
 [ext_resource type="Shader" uid="uid://cx2omw8wkf4sr" path="res://Main/mc.tres" id="2_kjvne"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://ceancp86yeu40" path="res://StageJantung/assets/Hearts (Stage-3).png" id="5_e6mmf"]
 [ext_resource type="Script" uid="uid://b5o7mm73xrhec" path="res://StageJantung/arrows.gd" id="6_csa0m"]
 [ext_resource type="Texture2D" uid="uid://cwsgxnbktvt5m" path="res://StageJantung/assets/Angin Aura.png" id="6_h2w12"]
+[ext_resource type="Texture2D" uid="uid://tax5knnuh4m8" path="res://StageJantung/assets/Wind Blows.png" id="9_h2w12"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_r4fw0"]
 shader = ExtResource("2_kjvne")
@@ -637,6 +638,63 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_h2w12"]
 radius = 103.581
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ga4b4"]
+atlas = ExtResource("9_h2w12")
+region = Rect2(0, 0, 101, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iud4w"]
+atlas = ExtResource("9_h2w12")
+region = Rect2(101, 0, 101, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4osft"]
+atlas = ExtResource("9_h2w12")
+region = Rect2(202, 0, 101, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jdo87"]
+atlas = ExtResource("9_h2w12")
+region = Rect2(303, 0, 101, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qm01w"]
+atlas = ExtResource("9_h2w12")
+region = Rect2(404, 0, 101, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rh785"]
+atlas = ExtResource("9_h2w12")
+region = Rect2(505, 0, 101, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ye1s"]
+atlas = ExtResource("9_h2w12")
+region = Rect2(606, 0, 101, 84)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wdq4u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ga4b4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iud4w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4osft")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jdo87")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qm01w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rh785")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ye1s")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
 [node name="BossJantung" type="CharacterBody2D" groups=["Enemies"]]
 z_index = 1
 collision_layer = 8
@@ -709,5 +767,11 @@ collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("CircleShape2D_h2w12")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+visible = false
+sprite_frames = SubResource("SpriteFrames_wdq4u")
+autoplay = "default"
+frame_progress = 0.270974
 
 [connection signal="body_entered" from="Nearby Attack" to="." method="_on_nearby_attack_body_entered"]
