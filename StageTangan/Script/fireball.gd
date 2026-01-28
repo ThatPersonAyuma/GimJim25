@@ -27,17 +27,12 @@ func _physics_process(delta):
 func _on_body_entered(body):
 	print("Fireball hit: ", body.name)
 	if body == Global.Player:
-		if Global.McHealth > 0:
+		if Global.McHealth > 0 and is_instance_valid(Global.Player):
 			Global.take_damage(damage)
+			# Knockback saat kena fireball
+			var knockback_power = 250.0
+			Global.McKnockBack(knockback_power / Global.Player.knockback_raw_pow, global_position)
 			print("Player kena fireball!")
-			
-			if Global.McHealth <= 0:
-				print("Player Mati oleh Fireball!")
-				_trigger_death_scene()
 		queue_free()
 	elif body != Global.Enemy: 
 		queue_free()
-
-func _trigger_death_scene():
-	await get_tree().create_timer(1.0).timeout
-	get_tree().change_scene_to_file("res://Main/death_scene.tscn")

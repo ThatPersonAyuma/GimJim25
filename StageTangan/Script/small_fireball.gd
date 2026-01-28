@@ -21,8 +21,10 @@ func _physics_process(delta):
 
 func _on_body_entered(body):
     if body == Global.Player:
-        if Global.McHealth > 0:
+        if Global.McHealth > 0 and is_instance_valid(Global.Player):
             Global.take_damage(damage)
+            var knockback_power = 100.0
+            Global.McKnockBack(knockback_power / Global.Player.knockback_raw_pow, global_position)
             print("Small Fireball HIT! Damage: ", damage)
         queue_free()
     elif body != Global.Enemy:

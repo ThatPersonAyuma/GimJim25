@@ -16,6 +16,8 @@ var players_inside: Array = []
 
 func _ready():
 	print("Shockwave spawned BOSSSH!")
+
+	# z_index = -1
 	
 	scale = Vector2(current_scale, current_scale)
 	
@@ -56,8 +58,11 @@ func _on_damage_tick():
 		_deal_damage_to_player()
 
 func _deal_damage_to_player():
-	if Global.McHealth > 0:
+	if Global.McHealth > 0 and is_instance_valid(Global.Player):
 		Global.take_damage(burn_damage)
+		# Knockback kecil saat terkena shockwave (menggunakan mc.gd knockback_raw_pow)
+		var knockback_power = 150.0
+		Global.McKnockBack(knockback_power / Global.Player.knockback_raw_pow, global_position)
 		print("Shockwave BURN! Player HP: ", Global.McHealth)
 
 func _on_expire():

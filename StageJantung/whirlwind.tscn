@@ -187,7 +187,8 @@ height = 48.0
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_jtrvo")
 autoplay = "default"
-frame_progress = 0.183528
+frame = 22
+frame_progress = 0.808014
 
 [node name="Area2D" type="Area2D" parent="."]
 

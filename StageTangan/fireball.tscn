@@ -53,7 +53,7 @@ scale = Vector2(0.169922, 0.169922)
 sprite_frames = SubResource("SpriteFrames_pdbc7")
 animation = &"Fireball"
 autoplay = "Fireball"
-frame_progress = 0.551762
+frame_progress = 0.986732
 
 [node name="FireballHitbox" type="Area2D" parent="."]
 collision_layer = 0

@@ -1450,4 +1450,6 @@ metadata/_edit_group_ = true
 position = Vector2(572, 245)
 
 [node name="Boss" parent="." instance=ExtResource("8_mcyyn")]
+z_index = 5
 position = Vector2(568, 327)
+scale = Vector2(0.755, 0.755)

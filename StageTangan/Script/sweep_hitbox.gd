@@ -43,7 +43,9 @@ func _on_body_entered(body):
         
         if Global.McHealth > 0:
             Global.take_damage(damage)
-            Global.McKnockBack(knockback_power, global_position)
+            # Knockback power relatif terhadap knockback_raw_pow dari mc.gd
+            var kb_multiplier = knockback_power / Global.Player.knockback_raw_pow
+            Global.McKnockBack(kb_multiplier, global_position)
         
         queue_free()
 

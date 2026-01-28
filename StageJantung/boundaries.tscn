@@ -1,7 +1,6 @@
-[gd_scene load_steps=32 format=3 uid="uid://cbv2nwwombylh"]
+[gd_scene load_steps=31 format=3 uid="uid://cbv2nwwombylh"]
 
 [ext_resource type="Texture2D" uid="uid://dotv31c3q7fo2" path="res://StageJantung/assets/Wind.png" id="1_4gqd6"]
-[ext_resource type="Script" path="res://StageJantung/boundaries.gd" id="1_r15iy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r15iy"]
 radius = 800.0
@@ -511,9 +510,9 @@ animations = [{
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_mask = 4
-script = ExtResource("1_r15iy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
 shape = SubResource("CircleShape2D_r15iy")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -570,6 +569,8 @@ position = Vector2(401, -813)
 scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_suxaw")
 autoplay = "default"
+frame = 16
+frame_progress = 0.760487
 
 [node name="AnimatedSprite2D16" type="AnimatedSprite2D" parent="."]
 z_index = 2
