@@ -40,8 +40,9 @@ size = Vector2(109.571, 38.4306)
 size = Vector2(107.843, 39.1932)
 
 [node name="Boss" type="CharacterBody2D"]
+scale = Vector2(0.485, 0.485)
 collision_layer = 8
-collision_mask = 4
+collision_mask = 5
 script = ExtResource("1_0n0qp")
 metadata/_edit_group_ = true
 
@@ -83,5 +84,4 @@ light_mask = 4
 visibility_layer = 0
 position = Vector2(-122, 36)
 rotation = -0.287979
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_8lkl1")
