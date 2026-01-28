@@ -3,6 +3,7 @@ class_name HandBoss extends CharacterBody2D
 const FIREBALL_SCENE = preload("res://StageTangan/fireball.tscn")
 const SHOCKWAVE_SCENE = preload("res://StageTangan/shockwave.tscn")
 const PUNCH_HITBOX_SCENE = preload("res://StageTangan/punch_hitbox.tscn")
+const SWEEP_HITBOX_SCENE = preload("res://StageTangan/sweep_hitbox.tscn")
 
 @export var max_health: int = 500
 @export var speed: float = 100.0
@@ -25,6 +26,12 @@ var is_casting_shockwave: bool = false
 @export var punch_range: float = 80.0
 var punch_timer: float = 0.0
 var is_punching: bool = false
+
+@export var sweep_cooldown: float = 4.0
+@export var sweep_min_range: float = 60.0
+@export var sweep_max_range: float = 120.0
+var sweep_timer: float = 0.0
+var is_sweeping: bool = false
 
 var current_health: int
 var can_attack: bool = true 
@@ -78,8 +85,15 @@ func _update_skill_timers(delta: float) -> void:
 			perform_punch()
 			return
 
+	sweep_timer += delta
+	if sweep_timer >= sweep_cooldown:
+		if dist >= sweep_min_range and dist <= sweep_max_range:
+			sweep_timer = 0.0
+			perform_sweep()
+			return
+
 func move_towards_player() -> void:
-	if is_bouncing or is_casting_fireball or is_casting_shockwave or is_punching:
+	if is_bouncing or is_casting_fireball or is_casting_shockwave or is_punching or is_sweeping:
 		return
 
 	var target_pos = Global.Player.global_position
@@ -156,6 +170,32 @@ func perform_punch() -> void:
 	await get_tree().create_timer(0.5).timeout
 	is_punching = false
 
+func perform_sweep() -> void:
+	is_sweeping = true
+	velocity = Vector2.ZERO
+	
+	modulate = Color(0.5, 1.2, 1.2)
+	
+	print("BOSS: Charging Sweep...")
+	
+	await get_tree().create_timer(0.5).timeout
+	
+	if Global.McHealth > 0 and is_instance_valid(Global.Player):
+		var dir = global_position.direction_to(Global.Player.global_position)
+		
+		var sweep = SWEEP_HITBOX_SCENE.instantiate()
+		get_tree().current_scene.add_child(sweep)
+		
+		sweep.global_position = global_position
+		sweep.rotation = dir.angle()
+		
+		print("BOSS: Sweep released!")
+	
+	modulate = Color.WHITE
+	
+	await get_tree().create_timer(0.6).timeout
+	is_sweeping = false
+	
 func attack_player() -> void:
 	if Global.McHealth <= 0 or not can_attack:
 		return
