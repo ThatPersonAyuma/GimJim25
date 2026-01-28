@@ -33,6 +33,11 @@ var attacks = ["attack1", "attack2", "attack3", "attack4"]
 var attacks_corrupted = ["attack1_corrupted", "attack2_corrupted", "attack3_corrupted", "attack4_corrupted"]
 var is_hurt = false
 
+var heavy_attack_damage = 50 
+var heavy_attack_cooldown = 5
+var is_heavy_attack_ready = true
+var is_heavy_running = false
+
 func _ready() -> void:
 	print("Sprite: ", anim_sprite.sprite_frames.get_animation_names())
 	var camera = $Camera2D
@@ -72,7 +77,7 @@ func _physics_process(delta):
 	move_and_slide()
 
 func DetectAttack():
-	if melee_attack_cooldown.is_stopped() and Input.is_action_just_pressed("attack_sword"):
+	if not is_heavy_running and melee_attack_cooldown.is_stopped() and Input.is_action_just_pressed("attack_sword"):
 		if attack_count == 0:
 			attack_count += 1
 			is_attacking = true
@@ -83,6 +88,17 @@ func DetectAttack():
 	
 	elif arrow_cooldown.is_stopped() and Input.is_action_just_pressed("attack_bow") and attack_count == 0:
 		if is_range_attack_available(): do_range_attack()
+	elif is_heavy_attack_ready and Input.is_action_just_pressed("attack_heavy"):
+		do_heavy_attack()
+		
+func do_heavy_attack():
+	is_heavy_attack_ready = false
+	anim_player.play("heavy_attack" if is_corrupted else "heavy_attack")
+	is_attacking = true
+	self.is_heavy_running = true
+	get_tree().create_timer(heavy_attack_cooldown).timeout.connect(func():
+		if not is_instance_valid(self): return
+		self.is_heavy_attack_ready = true)
 		
 func is_range_attack_available() -> bool:
 	if Global.Enemy == null:
@@ -116,9 +132,15 @@ func _on_animation_player_animation_finished(anim_name):
 					anim_player.play(attacks_name[3])
 		else:
 			restart_attack()
-	if anim_name == "hit":
+	elif anim_name == "hit":
 		$Area2D.set_deferred("monitoring", false)
 		is_hurt = false
+		if self.is_attacking:
+			restart_attack()
+	elif anim_name in ["heavy_attack", "heavy_attack_corrupted"]:
+		self.is_attacking = false
+		self.is_heavy_running = false
+		
 		
 func restart_attack():
 	melee_attack_cooldown.start()

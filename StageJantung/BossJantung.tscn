@@ -1,13 +1,13 @@
-[gd_scene load_steps=87 format=3 uid="uid://baffhr3k8yw5j"]
+[gd_scene load_steps=96 format=3 uid="uid://baffhr3k8yw5j"]
 
 [ext_resource type="Script" uid="uid://bhg3anscnjqoq" path="res://StageJantung/boss_jantung.gd" id="1_jpc7i"]
 [ext_resource type="Shader" uid="uid://cx2omw8wkf4sr" path="res://Main/mc.tres" id="2_kjvne"]
 [ext_resource type="Texture2D" uid="uid://dxcd77u6jr5ry" path="res://StageJantung/assets/open_eye.png" id="3_csa0m"]
 [ext_resource type="Texture2D" uid="uid://5jp20maoe1x3" path="res://StageJantung/assets/1769229481490.png" id="3_kuh7k"]
-[ext_resource type="Texture2D" uid="uid://cvk8rb4ubp3a" path="res://StageJantung/assets/SemburanAngin.png" id="3_r8xfg"]
 [ext_resource type="Texture2D" uid="uid://cmlh53e5k16hd" path="res://StageJantung/assets/close_eye.png" id="4_h2w12"]
 [ext_resource type="Texture2D" uid="uid://ceancp86yeu40" path="res://StageJantung/assets/Hearts (Stage-3).png" id="5_e6mmf"]
 [ext_resource type="Script" uid="uid://b5o7mm73xrhec" path="res://StageJantung/arrows.gd" id="6_csa0m"]
+[ext_resource type="Texture2D" uid="uid://cwsgxnbktvt5m" path="res://StageJantung/assets/Angin Aura.png" id="6_h2w12"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_r4fw0"]
 shader = ExtResource("2_kjvne")
@@ -162,18 +162,81 @@ animations = [{
 radius = 334.54
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g3ys7"]
-atlas = ExtResource("3_r8xfg")
-region = Rect2(0, 0, 64, 64)
+atlas = ExtResource("6_h2w12")
+region = Rect2(0, 0, 98, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1a3hp"]
+atlas = ExtResource("6_h2w12")
+region = Rect2(98, 0, 98, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_osrsf"]
+atlas = ExtResource("6_h2w12")
+region = Rect2(196, 0, 98, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wmstk"]
+atlas = ExtResource("6_h2w12")
+region = Rect2(196, 0, 98, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eoayq"]
+atlas = ExtResource("6_h2w12")
+region = Rect2(294, 0, 98, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mo0vd"]
+atlas = ExtResource("6_h2w12")
+region = Rect2(294, 0, 98, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bkwm5"]
+atlas = ExtResource("6_h2w12")
+region = Rect2(392, 0, 98, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bo1nd"]
+atlas = ExtResource("6_h2w12")
+region = Rect2(392, 0, 98, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mttpj"]
+atlas = ExtResource("6_h2w12")
+region = Rect2(490, 0, 98, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h3hju"]
+atlas = ExtResource("6_h2w12")
+region = Rect2(490, 0, 98, 90)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_k6evo"]
 animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_g3ys7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1a3hp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_osrsf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wmstk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eoayq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mo0vd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bkwm5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bo1nd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mttpj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h3hju")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 15.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e6mmf"]
@@ -575,6 +638,7 @@ _data = {
 radius = 103.581
 
 [node name="BossJantung" type="CharacterBody2D" groups=["Enemies"]]
+z_index = 1
 collision_layer = 8
 collision_mask = 3
 script = ExtResource("1_jpc7i")
@@ -613,12 +677,11 @@ polygon = PackedVector2Array(-17.6398, 6.70483e-07, 17.6398, -6.70483e-07, 50.80
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Nearby Attack"]
 visible = false
-position = Vector2(4.54747e-13, -0.799999)
-rotation = -1.5708
-scale = Vector2(2.14926, 2.02231)
+scale = Vector2(2.03731, 3.09501)
 sprite_frames = SubResource("SpriteFrames_k6evo")
-frame_progress = 0.208361
-offset = Vector2(-30, 0)
+autoplay = "default"
+frame_progress = 0.649577
+offset = Vector2(2, 20)
 
 [node name="Angin" type="AnimatedSprite2D" parent="."]
 visible = false

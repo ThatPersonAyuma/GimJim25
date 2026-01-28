@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://dsuxlgxtt3mk0"]
+[gd_scene load_steps=14 format=3 uid="uid://dsuxlgxtt3mk0"]
 
 [ext_resource type="FontFile" uid="uid://jm44j5tqmgrh" path="res://MainMenu/assets/fonts/SuperPixel-m2L8j.ttf" id="1_3w4mj"]
 [ext_resource type="Texture2D" uid="uid://coriakf0bm8b0" path="res://MainMenu/assets/bg.png" id="1_nhkf3"]
 [ext_resource type="Script" uid="uid://7yklmgygey73" path="res://MainMenu/main_menu.gd" id="2_ajn5b"]
 [ext_resource type="Texture2D" uid="uid://57fat35v24tt" path="res://MainMenu/assets/title-game.webp" id="3_5de1l"]
+[ext_resource type="AudioStream" uid="uid://bs3gvsacedeea" path="res://MainMenu/BGM-01.wav" id="5_po2gx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ajn5b"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -169,6 +170,14 @@ text = "Music : on"
 custom_minimum_size = Vector2(150, 50)
 layout_mode = 2
 text = "Close"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_po2gx")
+autoplay = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(330, 181)
+zoom = Vector2(0.35, 0.35)
 
 [connection signal="pressed" from="Center/MenuButton/ButtonVBox/OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="Center/MenuButton/ButtonVBox/ExitButton" to="." method="_on_exit_button_pressed"]

@@ -17,6 +17,8 @@ var state = BossStage.STATE1
 @export var wind_wall_damage = 10
 @export var intro_duration = 2
 @export var current_health = self.health
+@export var move_speed := 50.0
+@export var arrive_distance := 5.0
 
 @onready var  na_range = $NA_range
 @onready var na = $"Nearby Attack"
@@ -60,6 +62,17 @@ var bliz_duration = 8
 var bliz_node = null
 var is_active = false
 
+# moving
+var area_state = 0
+var target_pos = Vector2.ZERO
+
+var is_moving = false
+var direction = Vector2.ZERO
+var to_center = false
+
+var moving_cooldown = [5]
+var is_moving_ready = false
+
 func _ready() -> void:
 	na_range.connect("body_entered", body_entered)
 	na_range.connect("body_exited", body_exited)
@@ -90,15 +103,27 @@ func _ready() -> void:
 	root.add_child.call_deferred(whirlwind2)
 	whirlwinds.push_back(whirlwind1)
 	whirlwinds.push_back(whirlwind2)
+	get_direction()
 	get_tree().create_timer(intro_duration).timeout.connect(func():
 		is_active = true)
 	get_tree().create_timer(slash_cooldown).timeout.connect(func():
 		is_slash_ready = true)
 	get_tree().create_timer(arrow_intervals[-1]).timeout.connect(func():
 		is_arrow_ready = true)
+	get_tree().create_timer(moving_cooldown[0]).timeout.connect(func():
+		is_moving_ready = true)
+	get_tree().create_timer(70).timeout.connect(func():
+		if not is_instance_valid(self):return
+		area_state = 1
+		get_tree().create_timer(40).timeout.connect(func():
+			if not is_instance_valid(self):return
+			area_state = 2
+			)
+		)
 	#bliz_node.
 
 func _physics_process(delta):
+	print("state: ", state, " radius: ", get_radius())
 	if is_active:
 		if attack_cooldown >= attack_interval:
 			attack_cooldown = 0
@@ -110,8 +135,19 @@ func _physics_process(delta):
 			slash_attack()
 		if is_arrow_ready:
 			arrow_attack()
+		if is_moving_ready:
+			moving()
+		if is_moving:
+			if global_position.distance_to(target_pos) > arrive_distance:
+				print("moving")
+				global_position += direction * move_speed * delta
+			else:
+				arrive()
+		
 		if state == BossStage.STATE1:
 			return
+		
+			
 		if is_bliz_ready:
 			summon_blizzard()
 		if is_ww_ready:
@@ -253,10 +289,13 @@ func take_damage(amount: int):
 				slash_cooldown -= 2
 				arrow_intervals.pop_back()
 				get_tree().create_timer(whirlwind_cooldown).timeout.connect(func():
+					if not is_instance_valid(self):return
 					is_whirlwind_ready = true)
 				get_tree().create_timer(ww_cooldown).timeout.connect(func():
+					if not is_instance_valid(self):return
 					is_ww_ready = true)
 				get_tree().create_timer(is_bliz_ready).timeout.connect(func():
+					if not is_instance_valid(self):return
 					is_bliz_ready = true)
 		BossStage.STATE2:
 			if self.current_health <= self.health*0.4:
@@ -307,3 +346,40 @@ func _on_nearby_attack_body_entered(body: Node2D) -> void:
 	if is_na_ready:
 		Global.McKnockBack(knockback_pwr, self.global_position)
 		Global.take_damage(self.damage_dealt_na)
+
+func moving():
+	is_moving = true
+	is_moving_ready = false
+	get_tree().create_timer(moving_cooldown.pick_random()).timeout.connect(func():
+		if not is_instance_valid(self):return
+		is_moving_ready = true)
+	
+func arrive():
+	is_moving = false
+	if target_pos == Vector2.ZERO:
+		to_center = false
+	else:
+		to_center = true
+	get_direction()
+	
+func get_radius():
+	if to_center:
+		return 0
+	match area_state:
+		0: # radius 330
+			return 330
+		1: # radius 230
+			return 230
+		_:
+			return 0
+				
+func get_direction():
+	var angle = randf_range(0, TAU)
+	var radius = get_radius()
+	var dist = randf_range(radius/2, radius)
+	target_pos = Vector2(
+		cos(angle) * dist,
+		sin(angle) * dist
+	)
+	print("target pos: ", target_pos)
+	self.direction = (target_pos - global_position).normalized()

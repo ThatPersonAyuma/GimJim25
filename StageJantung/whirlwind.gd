@@ -8,6 +8,7 @@ var self_index = 99
 
 func _ready() -> void:
 	$Path2D/PathFollow2D/Area2D.connect("body_entered", body_entered)
+	$Path2D/PathFollow2D/Area2D.set_deferred("monitoring", false)
 
 func _process(delta: float) -> void:
 	if is_running:

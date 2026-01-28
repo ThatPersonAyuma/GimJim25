@@ -9,4 +9,4 @@ func _on_body_exited(body: Node2D) -> void:
 		Global.take_damage(self.damage_dealt, true)
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
-	Global.take_damage(99999999) #instan death
+	Global.take_damage(99999999, true) #instan death
