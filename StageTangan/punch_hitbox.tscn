@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4t11mns3cfb6"]
+
+[ext_resource type="Script" uid="uid://clxy7lvi5s70x" path="res://StageTangan/Script/punch_hitbox.gd" id="1_xyq0s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xrjlm"]
+
+[node name="PunchHitbox" type="Area2D"]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("1_xyq0s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(20, 15)
+shape = SubResource("RectangleShape2D_xrjlm")

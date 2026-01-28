@@ -39,7 +39,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Fireball",
-"speed": 5.0
+"speed": 8.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y55i0"]
@@ -53,8 +53,7 @@ scale = Vector2(0.169922, 0.169922)
 sprite_frames = SubResource("SpriteFrames_pdbc7")
 animation = &"Fireball"
 autoplay = "Fireball"
-frame = 1
-frame_progress = 0.782709
+frame_progress = 0.551762
 
 [node name="FireballHitbox" type="Area2D" parent="."]
 collision_layer = 0

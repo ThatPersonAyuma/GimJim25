@@ -40,7 +40,7 @@ size = Vector2(109.571, 38.4306)
 size = Vector2(107.843, 39.1932)
 
 [node name="Boss" type="CharacterBody2D"]
-scale = Vector2(0.485, 0.485)
+scale = Vector2(0.135, 0.135)
 collision_layer = 8
 collision_mask = 5
 script = ExtResource("1_0n0qp")
