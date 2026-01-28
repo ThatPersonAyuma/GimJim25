@@ -299,17 +299,17 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vcltg"]
 radius = 30.0
-height = 154.0
+height = 106.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0c776"]
-radius = 133.0
-height = 266.0
+radius = 104.0
+height = 218.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nwdgn"]
-radius = 66.0
+radius = 51.0
 height = 156.0
 
-[node name="BossLeg" type="CharacterBody2D"]
+[node name="BossLeg" type="CharacterBody2D" groups=["Enemies"]]
 collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_vcltg")
@@ -322,7 +322,7 @@ frame = 7
 frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 12)
+position = Vector2(1, 35)
 shape = SubResource("CapsuleShape2D_vcltg")
 
 [node name="StompHitbox" type="Area2D" parent="."]

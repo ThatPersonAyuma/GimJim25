@@ -5,7 +5,7 @@ extends CharacterBody2D
 @onready var MudAreaScene = preload("res://StageKaki/mud_area.tscn")
 
 @export var move_speed := 55.0
-@export var jump_trigger_distance := 220.0
+@export var jump_trigger_distance := 150.0
 @export var jump_duration := 0.5
 @export var stomp_cooldown_time := 14
 @export var stomp_y_offset := 42.0
@@ -43,7 +43,6 @@ func _ready():
 	basic_hitbox.monitoring = false
 
 func _physics_process(delta):
-	print("HP PLAYER:", Global.McHealth)
 	if is_paused:
 			velocity = Vector2.ZERO
 			move_and_slide()
