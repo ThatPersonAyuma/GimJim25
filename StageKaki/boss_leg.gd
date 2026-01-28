@@ -4,6 +4,12 @@ extends CharacterBody2D
 @onready var stomp_hitbox = $StompHitbox
 @onready var MudAreaScene = preload("res://StageKaki/mud_area.tscn")
 
+@export var max_health := 100
+@export var knockback_power := 70.0
+
+var HP := 0
+var is_dead := false
+
 @export var move_speed := 55.0
 @export var jump_trigger_distance := 150.0
 @export var jump_duration := 0.5
@@ -27,7 +33,7 @@ var can_stomp := true
 @export var mud_chance := 0.4
 @export var mud_pause_time := 1.0
 
-enum { CHASE, STOMP, BASIC, MUD }
+enum { CHASE, STOMP, BASIC, MUD, KNOCKBACK }
 var state = CHASE
 
 var jump_start_pos: Vector2
@@ -39,10 +45,15 @@ var player_was_outside_stomp_range := true
 
 func _ready():
 	state = CHASE
+	HP = max_health
+	Global.Enemy = self
 	stomp_hitbox.monitoring = false
 	basic_hitbox.monitoring = false
 
 func _physics_process(delta):
+	if is_dead:
+		return
+		
 	if is_paused:
 			velocity = Vector2.ZERO
 			move_and_slide()
@@ -56,6 +67,9 @@ func _physics_process(delta):
 		return
 
 	match state:
+		KNOCKBACK:
+			move_and_slide()
+			return
 		CHASE:
 			chase_player()
 			check_player_distance()
@@ -184,3 +198,41 @@ func land_after_stomp():
 	stomp_cooldown = true
 	await get_tree().create_timer(stomp_cooldown_time).timeout
 	stomp_cooldown = false
+
+func take_damage(amount: int):
+	if is_dead or state == KNOCKBACK:
+		return
+
+	HP -= amount
+	print("Boss Leg HP:", HP)
+
+	state = KNOCKBACK
+	is_paused = false
+
+	var dir = (global_position - Global.Player.global_position).normalized()
+	velocity = dir * knockback_power
+
+	anim.play("hit")
+	modulate = Color(1, 0.5, 0.5)
+	await get_tree().create_timer(0.4).timeout
+	modulate = Color.WHITE
+
+	await get_tree().create_timer(1.0).timeout
+
+	velocity = Vector2.ZERO
+	state = CHASE
+
+	if HP <= 0:
+		die()
+
+
+func die():
+	is_dead = true
+	is_paused = true
+	velocity = Vector2.ZERO
+
+	if Global.Enemy == self:
+		Global.Enemy = null
+
+	print("Boss Leg Destroyed")
+	queue_free()
