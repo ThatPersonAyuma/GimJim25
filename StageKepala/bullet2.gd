@@ -1,7 +1,7 @@
 extends Area2D
 @onready var anim = $AnimatedSprite2D
 @export var speed = 300
-@export var bullet_dmg: int = 10
+@export var bullet_dmg: int = 2
 var direction := Vector2.ZERO
 
 func _ready():

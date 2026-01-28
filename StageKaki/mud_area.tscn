@@ -1,42 +1,34 @@
-[gd_scene load_steps=13 format=3 uid="uid://djkevb3d8m5bf"]
+[gd_scene load_steps=11 format=3 uid="uid://djkevb3d8m5bf"]
 
 [ext_resource type="Script" uid="uid://bxgjjew7nu521" path="res://StageKaki/mud_area.gd" id="1_rj5ha"]
-[ext_resource type="Texture2D" uid="uid://ohp0vfge6oow" path="res://StageKaki/assets/spr_enemy_mud_strip8.png" id="2_p888d"]
+[ext_resource type="Texture2D" uid="uid://ocnmge577ven" path="res://StageKaki/assets/EarthWaves.png" id="2_p888d"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rj5ha"]
 radius = 228.219
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_koajw"]
 atlas = ExtResource("2_p888d")
-region = Rect2(0, 0, 62, 64)
+region = Rect2(0, 0, 197, 204)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nddfd"]
 atlas = ExtResource("2_p888d")
-region = Rect2(62, 0, 62, 64)
+region = Rect2(197, 0, 197, 204)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6pgne"]
 atlas = ExtResource("2_p888d")
-region = Rect2(124, 0, 62, 64)
+region = Rect2(394, 0, 197, 204)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0gqlx"]
 atlas = ExtResource("2_p888d")
-region = Rect2(186, 0, 62, 64)
+region = Rect2(591, 0, 197, 204)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hes6m"]
 atlas = ExtResource("2_p888d")
-region = Rect2(248, 0, 62, 64)
+region = Rect2(788, 0, 197, 204)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ys7td"]
 atlas = ExtResource("2_p888d")
-region = Rect2(310, 0, 62, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_aaxqv"]
-atlas = ExtResource("2_p888d")
-region = Rect2(372, 0, 62, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_55uet"]
-atlas = ExtResource("2_p888d")
-region = Rect2(434, 0, 62, 64)
+region = Rect2(985, 0, 197, 204)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qtbmh"]
 animations = [{
@@ -58,16 +50,10 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ys7td")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_aaxqv")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_55uet")
 }],
 "loop": false,
 "name": &"default",
-"speed": 8.0
+"speed": 12.0
 }]
 
 [node name="MudArea" type="Area2D"]
@@ -80,8 +66,7 @@ position = Vector2(0, -3)
 shape = SubResource("CircleShape2D_rj5ha")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(1, -30)
-scale = Vector2(5.12702, 5.12701)
+scale = Vector2(3.1358, 3.13579)
 sprite_frames = SubResource("SpriteFrames_qtbmh")
-frame = 7
+frame = 5
 frame_progress = 1.0

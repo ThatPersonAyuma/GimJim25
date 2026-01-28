@@ -1,0 +1,107 @@
+[gd_scene load_steps=12 format=3 uid="uid://cftq3humo4obb"]
+
+[ext_resource type="Script" uid="uid://d3ph3p5x40opq" path="res://StageKepala/laser.gd" id="1_6vqwg"]
+[ext_resource type="Texture2D" uid="uid://bs7n1w7lee704" path="res://StageKepala/Assets/LaserShot.png" id="1_fn5yt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6vqwg"]
+atlas = ExtResource("1_fn5yt")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g6b45"]
+atlas = ExtResource("1_fn5yt")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7vci3"]
+atlas = ExtResource("1_fn5yt")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xw5cg"]
+atlas = ExtResource("1_fn5yt")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_roivt"]
+atlas = ExtResource("1_fn5yt")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ny2x"]
+atlas = ExtResource("1_fn5yt")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3gdm7"]
+atlas = ExtResource("1_fn5yt")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yfymw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6vqwg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g6b45")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6vqwg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g6b45")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g6b45")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7vci3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xw5cg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_roivt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ny2x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3gdm7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_roivt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ny2x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3gdm7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7vci3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g6b45")
+}],
+"loop": true,
+"name": &"laser",
+"speed": 9.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wyhtk"]
+radius = 7.99999
+height = 608.0
+
+[node name="Area2D" type="Area2D"]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_6vqwg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(306, 0.49984)
+scale = Vector2(10.5, 3.35937)
+sprite_frames = SubResource("SpriteFrames_yfymw")
+animation = &"laser"
+frame_progress = 0.716382
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(310, 0.49984)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_wyhtk")

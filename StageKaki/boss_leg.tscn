@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://cboww8lhwgyxe"]
+[gd_scene load_steps=49 format=3 uid="uid://cboww8lhwgyxe"]
 
 [ext_resource type="Script" uid="uid://dtusg6ulh3m3u" path="res://StageKaki/boss_leg.gd" id="1_vcltg"]
 [ext_resource type="Texture2D" uid="uid://cj7hwbom7w07u" path="res://StageKaki/assets/leg-boss-standing.png" id="2_0c776"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cxbdr27bs4dc2" path="res://StageKaki/assets/leg-boss-standing-left.png" id="4_eefc6"]
 [ext_resource type="Texture2D" uid="uid://6cn4x46j5gp0" path="res://StageKaki/assets/leg-boss-standing-right.png" id="5_o617o"]
 [ext_resource type="Texture2D" uid="uid://biicux4pxfelq" path="res://StageKaki/assets/leg-boss-standing-backshot.png" id="6_j8vmn"]
+[ext_resource type="Script" uid="uid://x73s8b7i0nf3" path="res://StageKaki/hurtbox.gd" id="7_o617o"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_joe0h"]
 atlas = ExtResource("2_vcltg")
@@ -299,19 +300,23 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vcltg"]
 radius = 30.0
-height = 154.0
+height = 106.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0c776"]
-radius = 133.0
-height = 266.0
+radius = 104.0
+height = 218.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nwdgn"]
-radius = 66.0
+radius = 51.0
 height = 156.0
 
-[node name="BossLeg" type="CharacterBody2D"]
-collision_layer = 2
-collision_mask = 5
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eefc6"]
+radius = 56.0
+height = 178.0
+
+[node name="BossLeg" type="CharacterBody2D" groups=["Enemies"]]
+collision_layer = 8
+collision_mask = 3
 script = ExtResource("1_vcltg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -322,7 +327,7 @@ frame = 7
 frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 12)
+position = Vector2(1, 35)
 shape = SubResource("CapsuleShape2D_vcltg")
 
 [node name="StompHitbox" type="Area2D" parent="."]
@@ -343,3 +348,12 @@ monitoring = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BasicHitbox"]
 position = Vector2(2, 18)
 shape = SubResource("CapsuleShape2D_nwdgn")
+
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 4
+script = ExtResource("7_o617o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(-4, 16)
+shape = SubResource("CapsuleShape2D_eefc6")

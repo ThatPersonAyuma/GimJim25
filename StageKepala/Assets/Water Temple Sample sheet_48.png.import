@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ohp0vfge6oow"
-path="res://.godot/imported/spr_enemy_mud_strip8.png-c9c3054103ce69e7181aaa2d42c5a59a.ctex"
+uid="uid://dsk7f4msut3tj"
+path="res://.godot/imported/Water Temple Sample sheet_48.png-0a2ea73275005bb325c5d2bc69f9f84e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://StageKaki/assets/spr_enemy_mud_strip8.png"
-dest_files=["res://.godot/imported/spr_enemy_mud_strip8.png-c9c3054103ce69e7181aaa2d42c5a59a.ctex"]
+source_file="res://StageKepala/Assets/Water Temple Sample sheet_48.png"
+dest_files=["res://.godot/imported/Water Temple Sample sheet_48.png-0a2ea73275005bb325c5d2bc69f9f84e.ctex"]
 
 [params]
 
