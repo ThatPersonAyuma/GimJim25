@@ -117,10 +117,10 @@ func _ready() -> void:
 		is_arrow_ready = true)
 	get_tree().create_timer(moving_cooldown[0]).timeout.connect(func():
 		is_moving_ready = true)
-	get_tree().create_timer(70).timeout.connect(func():
+	get_tree().create_timer(55).timeout.connect(func():
 		if not is_instance_valid(self):return
 		area_state = 1
-		get_tree().create_timer(40).timeout.connect(func():
+		get_tree().create_timer(55).timeout.connect(func():
 			if not is_instance_valid(self):return
 			area_state = 2
 			)

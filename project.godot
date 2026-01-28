@@ -29,7 +29,10 @@ directories/dch_directory={
 }
 directories/dtl_directory={
 "Coba": "res://Main/Coba.dtl",
+"Dialog/DungeonUtara": "res://Cutscenes/Dialog/DungeonUtara.dtl",
 "DungeonUtara": "res://Cutscenes/DungeonUtara.dtl",
+"DungeonUtara1A": "res://Cutscenes/Dialog/Explorasi/DungeonUtara1A.dtl",
+"DungeonUtara1B": "res://Cutscenes/Dialog/Explorasi/DungeonUtara1B.dtl",
 "EmpatDungeon": "res://Cutscenes/EmpatDungeon.dtl",
 "Explorasi/Coba": "res://Explorasi/Coba.dtl",
 "KutukanPertama": "res://Cutscenes/KutukanPertama.dtl",

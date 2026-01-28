@@ -1,8 +1,8 @@
-[gd_scene load_steps=8 format=4 uid="uid://2rqh31cm0etq"]
+[gd_scene load_steps=8 format=4 uid="uid://c7b3g77k2bxqo"]
 
 [ext_resource type="PackedScene" uid="uid://n23yng8jsymk" path="res://Main/mc.tscn" id="1_0jbw6"]
 [ext_resource type="Texture2D" uid="uid://bfkpcuwwlk44c" path="res://StageKaki/assets/Dungeon_Tileset.png" id="2_4mywy"]
-[ext_resource type="PackedScene" uid="uid://cboww8lhwgyxe" path="res://StageKaki/boss_leg.tscn" id="3_31g71"]
+[ext_resource type="PackedScene" path="res://StageKaki/boss_leg.tscn" id="3_31g71"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4mywy"]
 texture = ExtResource("2_4mywy")

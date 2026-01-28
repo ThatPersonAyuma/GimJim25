@@ -772,6 +772,6 @@ shape = SubResource("CircleShape2D_h2w12")
 visible = false
 sprite_frames = SubResource("SpriteFrames_wdq4u")
 autoplay = "default"
-frame_progress = 0.270974
+frame_progress = 0.812325
 
 [connection signal="body_entered" from="Nearby Attack" to="." method="_on_nearby_attack_body_entered"]
