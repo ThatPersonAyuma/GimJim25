@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@onready var sfx_ngibas = $NgibasSFX
+
 enum BossStage{
 	STATE1,
 	STATE2,
@@ -171,6 +173,8 @@ func summon_blizzard():
 	Second is for coldown of the blizz
 	"""
 	blizz_effect.visible = true
+	if not sfx_ngibas.playing:
+		sfx_ngibas.play()
 	blizz_effect.global_position = Global.Player.global_position
 	var direction = (Global.Player.global_position - self.global_position).normalized()
 	blizz_effect.rotation = direction.angle()
@@ -187,6 +191,7 @@ func summon_blizzard():
 func summon_whirlwind():
 	for i in range(2):
 		if whirlwind_available[i]:
+			sfx_ngibas.play()
 			whirlwinds[i].launch(whirlwind_duration)
 			is_whirlwind_ready = false
 			get_tree().create_timer(whirlwind_cooldown).timeout.connect(func():
@@ -194,6 +199,7 @@ func summon_whirlwind():
 				is_whirlwind_ready = true)
 		
 func wind_wall_def():
+	sfx_ngibas.play()
 	var direction = (Global.Player.global_position - self.global_position).normalized()
 	var is_horizontal = false
 	var distance = Vector2.ZERO
@@ -220,6 +226,7 @@ func ww_start_cooldown():
 		is_ww_ready = true)
 	
 func wind_wall_offense():
+	sfx_ngibas.play()
 	var is_horizontal = true
 	if boolean.pick_random():
 		is_horizontal = false
@@ -230,6 +237,7 @@ func wind_wall_offense():
 	
 func slash_attack():
 	is_slash_ready = false
+	sfx_ngibas.play()
 	wind_slashs[0].launch()
 	get_tree().create_timer(slash_cooldown).timeout.connect(func():
 		if not is_instance_valid(self): return
@@ -237,6 +245,7 @@ func slash_attack():
 		
 func arrow_attack():
 	is_arrow_ready = false
+	sfx_ngibas.play()
 	arrows_node.launch()
 	get_tree().create_timer(arrow_intervals.pick_random()).timeout.connect(func():
 		if not is_instance_valid(self): return

@@ -1,7 +1,8 @@
-[gd_scene load_steps=32 format=3 uid="uid://b2ijkbnuulycv"]
+[gd_scene load_steps=33 format=3 uid="uid://b2ijkbnuulycv"]
 
 [ext_resource type="Texture2D" uid="uid://dotv31c3q7fo2" path="res://StageJantung/assets/Wind.png" id="1_4gqd6"]
 [ext_resource type="Script" uid="uid://30aow1dyt2bt" path="res://StageJantung/boundaries.gd" id="1_r15iy"]
+[ext_resource type="AudioStream" uid="uid://c734sddcyiphq" path="res://StageJantung/assets/sounds/Ambience angin kanan kiri.wav" id="3_s5euf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r15iy"]
 radius = 800.0
@@ -606,5 +607,12 @@ scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_suxaw")
 autoplay = "default"
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_s5euf")
+volume_db = -10.0
+max_distance = 500.0
+attenuation = 1.4489
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
 [connection signal="animation_finished" from="AnimationPlayer" to="Area2D" method="_on_animation_player_animation_finished"]

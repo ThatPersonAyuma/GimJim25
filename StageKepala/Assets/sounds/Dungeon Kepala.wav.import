@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://pcgibrbsyn1d"
+path="res://.godot/imported/Dungeon Kepala.wav-5827ee75b8ad900fe49b4c86f83f7bd8.sample"
+
+[deps]
+
+source_file="res://StageKepala/Assets/sounds/Dungeon Kepala.wav"
+dest_files=["res://.godot/imported/Dungeon Kepala.wav-5827ee75b8ad900fe49b4c86f83f7bd8.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

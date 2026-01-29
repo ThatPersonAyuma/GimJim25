@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://m31nsntol1ik"
+path="res://.godot/imported/Projectile lumpur nyebar.wav-87bfa0fe706e838ff12bb03d663c77d8.sample"
+
+[deps]
+
+source_file="res://StageKaki/assets/sounds/Projectile lumpur nyebar.wav"
+dest_files=["res://.godot/imported/Projectile lumpur nyebar.wav-87bfa0fe706e838ff12bb03d663c77d8.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
