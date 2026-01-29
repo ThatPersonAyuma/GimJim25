@@ -1,6 +1,7 @@
 extends Area2D
 
 @onready var col = $CollisionShape2D
+@onready var sfx_pool = $AudioStreamPlayer2D
 
 @export var grow_time := 0.6
 @export var target_scale := Vector2(3, 1.5)
@@ -17,7 +18,8 @@ func _ready():
 	# mulai kecil
 	scale = Vector2.ZERO
 	col.disabled = true
-
+	
+	sfx_pool.play()
 	_grow_pool()
 
 func _grow_pool():

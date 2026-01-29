@@ -1,4 +1,4 @@
-[gd_scene load_steps=105 format=3 uid="uid://baffhr3k8yw5j"]
+[gd_scene load_steps=106 format=3 uid="uid://baffhr3k8yw5j"]
 
 [ext_resource type="Script" uid="uid://bhg3anscnjqoq" path="res://StageJantung/boss_jantung.gd" id="1_jpc7i"]
 [ext_resource type="Shader" uid="uid://cx2omw8wkf4sr" path="res://Main/mc.tres" id="2_kjvne"]
@@ -6,9 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://5jp20maoe1x3" path="res://StageJantung/assets/1769229481490.png" id="3_kuh7k"]
 [ext_resource type="Texture2D" uid="uid://cmlh53e5k16hd" path="res://StageJantung/assets/close_eye.png" id="4_h2w12"]
 [ext_resource type="Texture2D" uid="uid://ceancp86yeu40" path="res://StageJantung/assets/Hearts (Stage-3).png" id="5_e6mmf"]
-[ext_resource type="Script" uid="uid://b5o7mm73xrhec" path="res://StageJantung/arrows.gd" id="6_csa0m"]
+[ext_resource type="Script" path="res://StageJantung/arrows.gd" id="6_csa0m"]
 [ext_resource type="Texture2D" uid="uid://cwsgxnbktvt5m" path="res://StageJantung/assets/Angin Aura.png" id="6_h2w12"]
 [ext_resource type="Texture2D" uid="uid://tax5knnuh4m8" path="res://StageJantung/assets/Wind Blows.png" id="9_h2w12"]
+[ext_resource type="AudioStream" uid="uid://dkp7yw4lcmi2k" path="res://StageJantung/assets/sounds/Mengibas angis.wav" id="10_e6mmf"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_r4fw0"]
 shader = ExtResource("2_kjvne")
@@ -773,5 +774,11 @@ visible = false
 sprite_frames = SubResource("SpriteFrames_wdq4u")
 autoplay = "default"
 frame_progress = 0.812325
+
+[node name="NgibasSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_e6mmf")
+volume_db = 15.0
+max_distance = 1200.0
+attenuation = 1.2
 
 [connection signal="body_entered" from="Nearby Attack" to="." method="_on_nearby_attack_body_entered"]

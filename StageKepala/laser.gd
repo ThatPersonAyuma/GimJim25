@@ -1,6 +1,7 @@
 extends Area2D
 
 @onready var anim = $AnimatedSprite2D
+@onready var sfx = $AudioStreamPlayer2D
 
 @export var sweep_speed := 40.0
 @export var sweep_angle := 80.0
@@ -14,6 +15,7 @@ var hit_bodies := []
 func _ready():
 	anim.animation = "laser"
 	anim.play()
+	sfx.play()
 	connect("body_entered", _on_body_entered)
 
 func _process(delta):
