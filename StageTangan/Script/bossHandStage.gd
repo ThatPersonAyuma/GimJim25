@@ -224,7 +224,8 @@ func _cast_fireball() -> void:
 		fireball.direction = dir
 		fireball.rotation = dir.angle()
 		fireball.damage = int(20 * _get_phase_stat("damage"))
-		get_tree().current_scene.add_child(fireball)
+		if !fireball.is_inside_tree():
+			get_tree().current_scene.add_child(fireball)
 		fireball.global_position = global_position
 		print("BoSs [Fase ", current_phase + 1, "]: Bola api spawn")
 	

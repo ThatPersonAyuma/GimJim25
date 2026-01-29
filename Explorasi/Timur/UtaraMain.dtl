@@ -2,9 +2,9 @@
 Apa yang ingin kamu interaksi?
 - Patung Berlutut | [if {Timur.is_patung} != true] [else="disable"]
 	jump patung
-- Lorong Bergema | [if {Utara.is_sunyi} != true] [else="disable"]
+- Lorong Bergema | [if {Timur.is_lorong} != true] [else="disable"]
 	jump lorong
-- Tangga Putus | [if {Utara.is_lorong} != true] [else="disable"]
+- Tangga Putus | [if {Timur.is_tangga} != true] [else="disable"]
 	jump tangga
 - Gerbang Boss
 	MC: Inilah tangan yang memutuskan hidup orang lain.
@@ -32,7 +32,7 @@ MC: Mereka tidak kalah....
 MC: Mereka menyerah.
 - Menuju ruang dengan pencahayaan minim | [if {Timur.is_2B} != true] [else="disable"]
 	MC: Tanda tangan mereka masih basah…
-	- Mengambil segel perjanjian | [if {Timur.is_2B} != true]
+	- Mengambil segel perjanjian
 		[background arg="res://Explorasi/assets/Artefak/b-tangga.png" fade="1.5"]
 		Kamu mendapatkan Artefak\: Oathbound Sigil
 		Efek dari Oathbound Sigil\:\
@@ -50,7 +50,7 @@ MC: Mereka menyerah.
 	Kamu memasuki ruangan. Ruangan tersebut dipenuhi dengan rantai.
 	MC: Tangan yang mengikat…
 	MC: selalu mengaku melindungi.
-	- Mematahkan rantai dan mengambil simbol | [if {Timur.is_2B} != true] [else="disable"]
+	- Mematahkan rantai dan mengambil simbol | [else="disable"]
 		[background arg="res://Explorasi/assets/Artefak/a-tangga.png" fade="1.5"]
 		Kamu mendapatkan Artefak\: Willbreaker Knot
 		Efek dari Willbreaker Knot\:\

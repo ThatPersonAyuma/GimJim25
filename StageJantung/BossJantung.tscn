@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://5jp20maoe1x3" path="res://StageJantung/assets/1769229481490.png" id="3_kuh7k"]
 [ext_resource type="Texture2D" uid="uid://cmlh53e5k16hd" path="res://StageJantung/assets/close_eye.png" id="4_h2w12"]
 [ext_resource type="Texture2D" uid="uid://ceancp86yeu40" path="res://StageJantung/assets/Hearts (Stage-3).png" id="5_e6mmf"]
-[ext_resource type="Script" path="res://StageJantung/arrows.gd" id="6_csa0m"]
+[ext_resource type="Script" uid="uid://b5o7mm73xrhec" path="res://StageJantung/arrows.gd" id="6_csa0m"]
 [ext_resource type="Texture2D" uid="uid://cwsgxnbktvt5m" path="res://StageJantung/assets/Angin Aura.png" id="6_h2w12"]
 [ext_resource type="Texture2D" uid="uid://tax5knnuh4m8" path="res://StageJantung/assets/Wind Blows.png" id="9_h2w12"]
 [ext_resource type="AudioStream" uid="uid://dkp7yw4lcmi2k" path="res://StageJantung/assets/sounds/Mengibas angis.wav" id="10_e6mmf"]

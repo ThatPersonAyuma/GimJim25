@@ -153,8 +153,10 @@ _data = {
 script = ExtResource("1_5tioo")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 640.0
-offset_bottom = 360.0
+offset_left = -40.0
+offset_top = -20.0
+offset_right = 660.0
+offset_bottom = 373.0
 color = Color(0, 0, 0, 1)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

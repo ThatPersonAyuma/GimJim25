@@ -19,9 +19,7 @@ cam_zoom = 1.5
 
 [node name="Enemy" parent="." instance=ExtResource("2_4tte7")]
 scale = Vector2(0.3, 0.3)
-damage_dealt_na = 1000
-health = 10
-current_health = 10
+current_health = 500
 
 [node name="Node2D" parent="." instance=ExtResource("4_dpiij")]
 position = Vector2(-260, -229)

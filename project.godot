@@ -13,7 +13,8 @@ config_version=5
 config/name="GimJim25"
 run/main_scene="uid://dsuxlgxtt3mk0"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://b0ifwfous7fg2"
+config/windows_native_icon="res://Main/AntaresIcon.ico"
 
 [autoload]
 
@@ -138,11 +139,13 @@ text/input_action="dialogic_default_action"
 
 [display]
 
-window/size/viewport_width=640
-window/size/viewport_height=360
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 window/size/window_width_override=1920
 window/size/window_height_override=1080
 window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+window/stretch/scale=3.0
 window/stretch/scale_mode="integer"
 
 [editor_plugins]

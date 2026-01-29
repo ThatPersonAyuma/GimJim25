@@ -80,17 +80,16 @@ func apply_buff():
 	match active_buff:
 
 		PlayerBuff.GraveStepTalisman:
-			print("runnied astefak")
 			Player.melee_cooldown *= 0.8
 			Player.heavy_attack_cooldown *= 0.8
-			Player.damage *= 1.1
+			Player.melee_attack_damage *= 1.1
 
 		PlayerBuff.WandererAnklet:
 			Player.Speed *= 1.1
 			Player.dash_power *= 1.25
 
 		PlayerBuff.WillbreakerKnot:
-			Player.damage *= 1.2
+			Player.melee_attack_damage *= 1.2
 			Player.melee_cooldown *= 0.9
 			Player.heavy_attack_cooldown *= 0.9
 			Player.arrow_cooldown *= 0.9
@@ -109,7 +108,7 @@ func apply_buff():
 			Player.dash_cooldown *= 0.7
 
 		PlayerBuff.CrownlessThought:
-			Player.damage *= 1.25
+			Player.melee_attack_damage *= 1.2
 			Player.melee_cooldown *= 0.9
 			Player.heavy_attack_cooldown *= 0.9
 			Player.Speed *= 1.1

@@ -1,6 +1,6 @@
 extends Node2D
 
-var arrow_damage:int = 10 #coba coba
+var arrow_damage:int = 2000 #coba coba
 var direction = Vector2.ZERO
 var travel_velocity = 500
 var is_travel = false
