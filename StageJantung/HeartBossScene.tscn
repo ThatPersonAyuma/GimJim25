@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://djkbd2871v0g7"]
+[gd_scene load_steps=6 format=3 uid="uid://djkbd2871v0g7"]
 
 [ext_resource type="PackedScene" uid="uid://n23yng8jsymk" path="res://Main/mc.tscn" id="1_etyje"]
 [ext_resource type="PackedScene" uid="uid://baffhr3k8yw5j" path="res://StageJantung/BossJantung.tscn" id="2_4tte7"]
 [ext_resource type="PackedScene" uid="uid://bnhl6jp6pawbx" path="res://StageJantung/boundaries.tscn" id="3_v486t"]
 [ext_resource type="PackedScene" uid="uid://bm51sy64kxxc1" path="res://StageJantung/map.tscn" id="4_dpiij"]
+[ext_resource type="AudioStream" uid="uid://bkykfrs1poyl1" path="res://StageJantung/assets/sounds/Boss Jantung.wav" id="5_vg3x3"]
 
 [node name="Node2D2" type="Node2D"]
 
@@ -29,3 +30,7 @@ current_health = 1000
 
 [node name="Node2D" parent="." instance=ExtResource("4_dpiij")]
 position = Vector2(-260, -229)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_vg3x3")
+autoplay = true

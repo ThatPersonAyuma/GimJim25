@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://bjyyack6p0n4k"]
+[gd_scene load_steps=13 format=3 uid="uid://dsaui03f0ayux"]
 
 [ext_resource type="Texture2D" uid="uid://d3ne0t61yq2ha" path="res://StageKepala/Assets/Water Effect and Bullet 16x16.png" id="1_0kisp"]
 [ext_resource type="Script" uid="uid://ceg6tf4fgpcp1" path="res://StageKepala/bullet2.gd" id="1_w4itd"]
+[ext_resource type="AudioStream" uid="uid://ddpc1u84djw65" path="res://StageKepala/Assets/sounds/Mengibas air.wav" id="3_s7pyn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w4itd"]
 atlas = ExtResource("1_0kisp")
@@ -81,3 +82,7 @@ frame_progress = 1.0
 position = Vector2(22, 4)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_s7pyn")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_s7pyn")
+volume_db = 10.0

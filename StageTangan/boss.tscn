@@ -111,6 +111,42 @@ script = ExtResource("1_0n0qp")
 position = Vector2(0, 11)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_3goed")
+animation = &"Fireball Idle Attack"
+autoplay = "Fireball Idle Attack"
+
+[node name="ColsMidFireBall" type="CollisionShape2D" parent="."]
+light_mask = 4
+visibility_layer = 0
+position = Vector2(0, 26)
+shape = SubResource("CircleShape2D_8lkl1")
+
+[node name="ColsRightHand" type="CollisionShape2D" parent="."]
+light_mask = 4
+visibility_layer = 0
+position = Vector2(46, -19)
+rotation = -0.602139
+shape = SubResource("CapsuleShape2D_ufmwt")
+
+[node name="ColsLeftHand" type="CollisionShape2D" parent="."]
+light_mask = 4
+visibility_layer = 0
+position = Vector2(-47, -20)
+rotation = -2.51676
+shape = SubResource("CapsuleShape2D_ufmwt")
+
+[node name="ColsRightArm" type="CollisionShape2D" parent="."]
+light_mask = 4
+visibility_layer = 0
+position = Vector2(117, 32)
+rotation = 0.331613
+shape = SubResource("RectangleShape2D_rkyto")
+
+[node name="ColsLeftArm" type="CollisionShape2D" parent="."]
+light_mask = 4
+visibility_layer = 0
+position = Vector2(-122, 36)
+rotation = -0.287979
+shape = SubResource("RectangleShape2D_8lkl1")
 animation = &"Close Hand"
 autoplay = "Close Hand"
 frame_progress = 0.370984
