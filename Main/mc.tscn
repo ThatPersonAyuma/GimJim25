@@ -1,4 +1,4 @@
-[gd_scene load_steps=195 format=3 uid="uid://n23yng8jsymk"]
+[gd_scene load_steps=194 format=3 uid="uid://n23yng8jsymk"]
 
 [ext_resource type="Script" uid="uid://betxx8afkqre0" path="res://Main/mc.gd" id="1_s3sm3"]
 [ext_resource type="Shader" uid="uid://cx2omw8wkf4sr" path="res://Main/mc.tres" id="2_24loc"]

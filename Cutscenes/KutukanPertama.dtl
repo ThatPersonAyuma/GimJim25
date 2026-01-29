@@ -1,7 +1,9 @@
+[background arg="#9b9b9bff" fade="0.5"]
+[background arg="res://Cutscenes/Komiks/Scene1Formated.png" fade="1.0"]
 Kamu terbangun sendirian di altar yang sama.
 Tubuhmu dingin dan denyut nadimu tidak wajar.
-Kamu menyadari ada simbol aneh di dadamu.
-Simbol berbentuk mata bintang.
+Kamu merasa ada yang aneh dengan tubuhmu.
+Tapi kamu tidak terlalu memikirkannya.
 [wait time="1.0"]
 SuaraMisterius: Antares telah terpecah.
 SuaraMisterius: Empat bagian ragaku tersebar di empat penjuru dunia.

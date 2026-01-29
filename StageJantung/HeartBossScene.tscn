@@ -2,16 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://n23yng8jsymk" path="res://Main/mc.tscn" id="1_etyje"]
 [ext_resource type="PackedScene" uid="uid://baffhr3k8yw5j" path="res://StageJantung/BossJantung.tscn" id="2_4tte7"]
-[ext_resource type="PackedScene" uid="uid://bnhl6jp6pawbx" path="res://StageJantung/boundaries.tscn" id="3_v486t"]
+[ext_resource type="PackedScene" uid="uid://b2ijkbnuulycv" path="res://StageJantung/boundaries.tscn" id="3_v486t"]
 [ext_resource type="PackedScene" uid="uid://bm51sy64kxxc1" path="res://StageJantung/map.tscn" id="4_dpiij"]
 [ext_resource type="AudioStream" uid="uid://bkykfrs1poyl1" path="res://StageJantung/assets/sounds/Boss Jantung.wav" id="5_vg3x3"]
 
 [node name="Node2D2" type="Node2D"]
-
-[node name="Boundaries" parent="." instance=ExtResource("3_v486t")]
-z_index = 20
-position = Vector2(0, 25)
-scale = Vector2(0.4, 0.4)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_etyje")]
 position = Vector2(7, 154)
@@ -25,8 +20,8 @@ cam_zoom = 1.5
 [node name="Enemy" parent="." instance=ExtResource("2_4tte7")]
 scale = Vector2(0.3, 0.3)
 damage_dealt_na = 1000
-health = 100
-current_health = 1000
+health = 10
+current_health = 10
 
 [node name="Node2D" parent="." instance=ExtResource("4_dpiij")]
 position = Vector2(-260, -229)
@@ -34,3 +29,8 @@ position = Vector2(-260, -229)
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_vg3x3")
 autoplay = true
+
+[node name="Boundaries" parent="." instance=ExtResource("3_v486t")]
+z_index = 20
+position = Vector2(0, 25)
+scale = Vector2(0.4, 0.4)

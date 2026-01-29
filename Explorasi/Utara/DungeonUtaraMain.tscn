@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://dbgbx8h04cvo2"]
+[gd_scene load_steps=3 format=3 uid="uid://dbgbx8h04cvo2"]
 
 [ext_resource type="Script" uid="uid://462ws0pflnt3" path="res://Cutscenes/Dialog/Explorasi/DungeonUtara/DungeonUtara.gd" id="1_ate0q"]
+[ext_resource type="AudioStream" uid="uid://c8xf2fog3ggfy" path="res://Explorasi/Dungeon 1.wav" id="2_yuxnx"]
 
 [node name="Node2D2" type="Node2D"]
 script = ExtResource("1_ate0q")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_yuxnx")
+autoplay = true

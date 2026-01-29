@@ -2,4 +2,5 @@ Kamu berdiri di tengah reruntuhan kota yang hancur oleh perang.
 [wait time="1.0"]
 Tetua: Lihatlah rantai-rantai itu... Mereka menjaga lengan masif yang dulu memaksa seluruh manusia untuk tunduk.
 Tetua: Dungeon ini adalah monumen kekuasaan dan pembantaian Antares.
-jump TanganTimurAntaresEnd/
+[wait time="1.0"]
+[end_timeline]

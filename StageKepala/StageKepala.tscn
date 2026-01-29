@@ -1968,7 +1968,3 @@ scale = Vector2(0.5, 0.5)
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_ioqc0")
 autoplay = true
-max_cam_left = -20
-max_cam_top = 0
-max_cam_right = 550
-max_cam_bottom = 575

@@ -1,3 +1,4 @@
+[background arg="res://Cutscenes/Komiks/Scene1Formated.png" fade="0.0"]
 Setelah keempat bagian dikalahkan, kamu kembali ke altar.
 Setibanya di sana, kamu merasakan guncangan hebat.
 [wait time="1.5"]

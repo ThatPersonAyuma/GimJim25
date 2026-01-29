@@ -190,6 +190,7 @@ func summon_blizzard():
 		is_bliz_ready = true)
 		
 func summon_whirlwind():
+	if whirlwinds.size() == 0: return
 	for i in range(2):
 		if whirlwind_available[i]:
 			sfx_ngibas.play()
@@ -231,6 +232,7 @@ func wind_wall_offense():
 	var is_horizontal = true
 	if boolean.pick_random():
 		is_horizontal = false
+	if whirlwinds.size() == 0: return
 	for i in range(2):
 		if wind_walls_available[i]:
 			wind_walls_available[i] = false
@@ -239,7 +241,7 @@ func wind_wall_offense():
 func slash_attack():
 	is_slash_ready = false
 	sfx_ngibas.play()
-	wind_slashs[0].launch()
+	if wind_slashs.size()!= 0: wind_slashs[0].launch()
 	get_tree().create_timer(slash_cooldown).timeout.connect(func():
 		if not is_instance_valid(self): return
 		is_slash_ready = true)
@@ -324,12 +326,15 @@ func take_damage(amount: int):
 				bliz_cooldown -= 6
 				bliz_duration += 2
 	$AnimatedSprite2D.play(current_anim)
+	print("current healt: ", current_health)
 	if self.current_health <= 0:
-		is_active = false
-		free_resource()
+		if is_active:
+			is_active = false
+			await get_tree().create_timer(1).timeout
+			free_resource()
+		
 		
 func free_resource():
-	arrows_node.free_Arrows()
 	for item in wind_slashs:
 		if is_instance_valid(item):
 			item.queue_free()
@@ -342,13 +347,14 @@ func free_resource():
 		if is_instance_valid(item):
 			item.queue_free()
 	
-
+	if blizz_effect != null: blizz_effect.queue_free()
 	wind_slashs.clear()
 	whirlwinds.clear()
 	wind_walls.clear()
 
 	await get_tree().create_timer(1).timeout
 	queue_free()
+	Global.change_scene("res://Explorasi/BossFight/boss_fight.tscn")
 
 
 func body_entered(body: CharacterBody2D):

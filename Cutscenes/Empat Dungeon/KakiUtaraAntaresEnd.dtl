@@ -1,6 +1,8 @@
+[background arg="res://Cutscenes/Ilustrasis/Untitled700_20260128004903.png" fade="0.5"]
 Kolos itu runtuh, namun beban berat mulai terasa di tubuhmu.
 [wait time="1.0"]
 MC: Agh... kakiku... aku tidak bisa merasakan apa-apa...
 Dia kehilangan rasa di kakinya. Jalannya mulai menjadi pincang.
 Perlahan, pandanganmu mulai memudar. Dunia di sekitarmu menjadi gelap.
 Dia pingsan.
+jump SelatanTL/

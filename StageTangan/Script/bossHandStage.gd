@@ -76,7 +76,7 @@ func _ready() -> void:
 	
 	_play_hand_anim(HandAnim.CLOSE)
 	_apply_phase_effects()
-	Global.boss_debuff = Global.BossDebuff.
+	Global.boss_debuff = Global.BossDebuff.Tangan
 	Global.reset()
 
 func _physics_process(delta: float) -> void:
@@ -415,11 +415,12 @@ func take_damage(amount: int) -> void:
 	
 	if current_health <= 0:
 		_die()
+		
 
 func _die() -> void:
 	if Global.Enemy == self:
 		Global.Enemy = null
-	print("bos mati")
 	modulate = Color.DARK_RED
 	await get_tree().create_timer(1.0).timeout
 	queue_free()
+	Global.change_scene("res://Explorasi/Barat/BaratNode.tscn")

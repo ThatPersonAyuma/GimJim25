@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjcjtq2xr2fl7"]
+
+[ext_resource type="Script" uid="uid://bpvwkr6ygvt5i" path="res://Cutscenes/Ending/ending.gd" id="1_m5re3"]
+[ext_resource type="AudioStream" uid="uid://hv1ungrenash" path="res://StageFinal/sounds/Final Boss.wav" id="2_m2dr6"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_m5re3")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_m2dr6")
+autoplay = true

@@ -45,10 +45,11 @@ z_index = 30
 script = ExtResource("1_y8hs3")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -356.0
-offset_top = -207.0
-offset_right = 364.0
-offset_bottom = 213.0
+offset_left = -452.0
+offset_top = -264.0
+offset_right = 268.0
+offset_bottom = 156.0
+scale = Vector2(1.3, 1.3)
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 

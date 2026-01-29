@@ -1,6 +1,8 @@
+[background arg="res://Cutscenes/Ilustrasis/Untitled700_20260128012604.png" fade="0.5"]
 Tiba-tiba, dadamu terasa sesak. Detak jantungmu mulai melambat, lalu berpacu liar... tidak sinkron dengan detak ruangan ini.
 [wait time="1.0"]
 Kekasih: Kenapa kau terus melanjutkan ini, Ash?
 Kekasih: Lihat dirimu... kakimu pincang, jarimu membusuk. Apa kau benar-benar melakukannya untukku, atau hanya untuk memuaskan egomu?
 MC: T-tidak... kau bukan dia! Ini hanya ilusi!
 Kekasih: Kau hanya membawa penderitaan lebih banyak ke dunia ini. Berhentilah sebelum jantungmu benar-benar berhenti.
+jump Kebenaran/

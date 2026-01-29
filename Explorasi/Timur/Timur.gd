@@ -22,7 +22,7 @@ func handle(signal_name: String):
 		"is_tangga":
 			Dialogic.VAR.Timur.is_tangga = true
 		"2A":
-			print("2A goted")
+			Global.active_buff = Global.PlayerBuff.WillbreakerKnot
 		"2B":
-			print("2B goted")
+			Global.active_buff = Global.PlayerBuff.OathboundSigil
 			

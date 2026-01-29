@@ -11,7 +11,7 @@ Apa yang ingin kamu interaksi?
 	MC: Tanpa meninggalkannya.
 	- Masuk dan hadapi penjaga
 		[signal arg="fight"]
-		[end_timeline]
+		jump KepalaAntares/
 	- Kembali menjelajahi dungeon
 		jump 
 label teks_diudara
@@ -35,7 +35,7 @@ Kamu memasuki ruangan serba putih.
 MC: Tidak ada arah…
 MC: Tidak ada kebohongan.
 MC: Semuanya sama.
-- Cek cermin di ujung ruangan | [if {Utara.is_1B} != true] [else="disable"]
+- Cek cermin di ujung ruangan | [if {Barat.is_4A} != true] [else="disable"]
 	MC: Hidup yang dipinjam…
 	Nadi ini melilit seluruh ruangan.
 	- Menerima refleksi
@@ -54,7 +54,7 @@ MC: Semuanya sama.
 	- Abaikan dan kembali
 		[signal arg="is_4A"]
 	jump ruang_putih
-- Meditasi sejenak | [if {Utara.is_1A} != true] [else="disable"]
+- Meditasi sejenak | [if {Barat.is_4B} != true] [else="disable"]
 	Kamu berdiam dan memfokuskan diri.
 	MC: Banyak penyesalan yang telah aku lakukan.
 	MC: Untuk kali ini saja aku tidak ingin menyesal....

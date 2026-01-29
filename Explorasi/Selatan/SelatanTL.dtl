@@ -11,7 +11,7 @@ Apa yang ingin kamu interaksi?
 	MC: aku juga akan berubah.
 	- Masuk dan hadapi penjaga
 		[signal arg="fight"]
-		[end_timeline]
+		jump JantungAntares/
 	- Kembali menjelajahi dungeon
 		jump 
 label ruang_nadi
@@ -37,7 +37,7 @@ Suaranya lebih mirip detakan.
 Di tengah ruangan terdapat mural setengah jadi.
 MC: Ia tidak ingin mati…
 MC: Ia ingin diingat.
-- Cek benda merah mirip tali | [if {Utara.is_1B} != true] [else="disable"]
+- Cek benda merah mirip tali | [if {Selatan.is_3A} != true] [else="disable"]
 	MC: Hidup yang dipinjam…
 	Nadi ini melilit seluruh ruangan.
 	- Ambil inti denyut
@@ -55,7 +55,7 @@ MC: Ia ingin diingat.
 	- Abaikan dan kembali
 		[signal arg="is_3A"]
 	jump koridor
-- Menuju ruang dengan suara lirih | [if {Utara.is_1A} != true] [else="disable"]
+- Menuju ruang dengan suara lirih | [if {Selatan.is_3B} != true] [else="disable"]
 	Kamu masuk dan mencoba mendengarkan lebih seksama.
 	Kekasih: Gunakan suaraku…
 	Kekasih: dan kau akan kuat.

@@ -3,7 +3,7 @@ extends Node2D
 func _ready() -> void:
 	Dialogic.signal_event.connect(handle)
 	Dialogic.timeline_ended.connect(boss_fight)
-	Dialogic.start("Main")
+	Dialogic.start("KepalaAntaresEnd")
 	
 func boss_fight():
 	Global.boss_scene_path = "res://StageKaki/stage_kaki.tscn"
@@ -26,7 +26,7 @@ func handle(signal_name: String):
 		"is_sunyi":
 			Dialogic.VAR.Utara.is_sunyi = true
 		"1A":
-			print("1A goted")
+			Global.active_buff = Global.PlayerBuff.GraveStepTalisman
 		"1B":
-			print("1B goted")
+			Global.active_buff = Global.PlayerBuff.WandererAnklet
 			

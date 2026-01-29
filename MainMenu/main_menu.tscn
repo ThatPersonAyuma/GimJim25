@@ -131,7 +131,6 @@ text = "Exit"
 
 [node name="OptionsPopUp" type="PopupPanel" parent="."]
 size = Vector2i(464, 223)
-visible = true
 theme = SubResource("Theme_ajn5b")
 
 [node name="CenterContainer" type="CenterContainer" parent="OptionsPopUp"]

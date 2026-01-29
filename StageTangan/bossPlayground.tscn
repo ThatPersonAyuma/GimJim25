@@ -1453,6 +1453,7 @@ position = Vector2(572, 245)
 [node name="Boss" parent="." instance=ExtResource("8_mcyyn")]
 z_index = 5
 position = Vector2(568, 327)
+max_health = 10
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_blf66")

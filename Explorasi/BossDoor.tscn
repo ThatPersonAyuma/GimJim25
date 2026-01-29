@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://cobum3vl4tgfx"]
+[gd_scene load_steps=12 format=3 uid="uid://cobum3vl4tgfx"]
 
 [ext_resource type="Script" uid="uid://b2xdxy3f52ubj" path="res://Explorasi/boss_door.gd" id="1_5tioo"]
 [ext_resource type="Texture2D" uid="uid://0vlnqe8qoxs1" path="res://Explorasi/assets/!Demon Door.png" id="1_iitkd"]
+[ext_resource type="AudioStream" uid="uid://dtoyn4jhwl8wd" path="res://Explorasi/Buka Pintu.wav" id="3_v1cfh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5tioo"]
 atlas = ExtResource("1_iitkd")
@@ -77,6 +78,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_v1cfh"]
 resource_name = "play"
@@ -117,6 +130,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0.313726), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.333333),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1kmbl"]
 _data = {
@@ -143,5 +168,9 @@ position = Vector2(320, 180)
 libraries = {
 &"": SubResource("AnimationLibrary_1kmbl")
 }
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_v1cfh")
+volume_db = 15.0
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

@@ -53,14 +53,6 @@ var footstep_timer := 0.0
 @export var footstep_interval := 0.65
 
 
-var heavy_attack_cooldown = 5
-var melee_cooldown = 2
-var arrow_cooldown = 5
-var dash_cooldown = 8
-
-var footstep_timer := 0.0
-@export var footstep_interval := 0.65
-
 func _enter_tree():
 	Global.Player = self
 
@@ -85,16 +77,6 @@ func _ready() -> void:
 		arrows.push_back(temp_arrow)
 		
 
-
-func _process(delta):
-	if anim_sprite.animation in ["walk", "walk_corrupted"] and not is_attacking and not is_dashing:
-		footstep_timer -= delta
-
-		if footstep_timer <= 0.0:
-			play_footstep_sfx()
-			footstep_timer = footstep_interval
-	else:
-		footstep_timer = 0.0
 
 func _process(delta):
 	if anim_sprite.animation in ["walk", "walk_corrupted"] and not is_attacking and not is_dashing:

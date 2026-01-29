@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://dc37nljqctq2"]
+[gd_scene load_steps=12 format=3 uid="uid://dc37nljqctq2"]
 
 [ext_resource type="Script" uid="uid://q5kx78c8xuus" path="res://Cutscenes/Prolog/1.gd" id="1_wc6q5"]
 [ext_resource type="Texture2D" uid="uid://bcm322euhiqdb" path="res://Cutscenes/Komiks/Scene2Formated.png" id="2_oc5b1"]
 [ext_resource type="Texture2D" uid="uid://bm3wf01gyauvi" path="res://Cutscenes/Komiks/Scene1Formated.png" id="3_72opw"]
+[ext_resource type="AudioStream" uid="uid://c3axsk2lefxpj" path="res://MainMenu/The Star That Fell Silent_Loop(Ending).wav" id="4_gvijc"]
 
 [sub_resource type="Animation" id="Animation_72opw"]
 resource_name = "1"
@@ -62,6 +63,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(191, 151), Vector2(184, 253)]
+}
+
+[sub_resource type="Animation" id="Animation_cj01r"]
+resource_name = "First"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("4:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.607843, 0.607843, 0.607843, 1), Color(0.607843, 0.607843, 0.607843, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_12p43"]
@@ -149,21 +165,6 @@ tracks/6/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(324, 171)]
-}
-
-[sub_resource type="Animation" id="Animation_cj01r"]
-resource_name = "First"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("4:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0.607843, 0.607843, 0.607843, 1), Color(0.607843, 0.607843, 0.607843, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_bx23a"]
@@ -293,3 +294,7 @@ offset_top = -14.0
 offset_right = 666.0
 offset_bottom = 389.0
 color = Color(0.607843, 0.607843, 0.607843, 1)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_gvijc")
+autoplay = true

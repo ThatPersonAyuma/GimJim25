@@ -7,8 +7,7 @@ func _ready() -> void:
 	Dialogic.start("prolog1")
 	
 func ended(): # ke kebangkitan kutukan pertama
-	pass
-	#Global.change_scene()
+	Global.change_scene("res://Explorasi/Timur/TimurNode.tscn")
 	
 func handle(signal_name):
 	match signal_name:

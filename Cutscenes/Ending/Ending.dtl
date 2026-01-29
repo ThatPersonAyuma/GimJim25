@@ -59,6 +59,7 @@ Antares perlahan hancur.
 ....begitu pula Ash. Tubuhnya hancur menjadi debu.
 Dalam waktu singkat itu, Ash melihat sosok familiar.
 [background arg="res://Cutscenes/Ilustrasis/Untitled701_20260128185401.png" fade="0.5"]
+[signal arg="play_ed"]
 Shaina...bangkit.
 MC: (Mata itu...dan perasaan ini.)
 MC: (Ini cukup bagiku.)

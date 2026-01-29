@@ -10,7 +10,7 @@ Apa yang ingin kamu interaksi?
 	MC: Inilah tangan yang memutuskan hidup orang lain.
 	- Masuk dan hadapi penjaga
 		[signal arg="fight"]
-		[end_timeline]
+		jump TanganTimurAntares/
 	- Kembali menjelajahi dungeon
 		jump 
 label lorong
@@ -30,9 +30,9 @@ label patung
 Kamu menemukan patung dengan pose berlutut.
 MC: Mereka tidak kalah....
 MC: Mereka menyerah.
-- Menuju ruang dengan pencahayaan minim | [if {Utara.is_1B} != true] [else="disable"]
+- Menuju ruang dengan pencahayaan minim | [if {Timur.is_2B} != true] [else="disable"]
 	MC: Tanda tangan mereka masih basah…
-	- Mengambil segel perjanjian
+	- Mengambil segel perjanjian | [if {Timur.is_2B} != true]
 		[background arg="res://Explorasi/assets/Artefak/b-tangga.png" fade="1.5"]
 		Kamu mendapatkan Artefak\: Oathbound Sigil
 		Efek dari Oathbound Sigil\:\
@@ -46,11 +46,11 @@ MC: Mereka menyerah.
 	- Abaikan dan kembali
 		[signal arg="is_2B"]
 	jump patung
-- Menuju ruang gelap | [if {Utara.is_1A} != true] [else="disable"]
+- Menuju ruang gelap | [if {Timur.is_2A} != true] [else="disable"]
 	Kamu memasuki ruangan. Ruangan tersebut dipenuhi dengan rantai.
 	MC: Tangan yang mengikat…
 	MC: selalu mengaku melindungi.
-	- Mematahkan rantai dan mengambil simbol | [else="disable"]
+	- Mematahkan rantai dan mengambil simbol | [if {Timur.is_2B} != true] [else="disable"]
 		[background arg="res://Explorasi/assets/Artefak/a-tangga.png" fade="1.5"]
 		Kamu mendapatkan Artefak\: Willbreaker Knot
 		Efek dari Willbreaker Knot\:\

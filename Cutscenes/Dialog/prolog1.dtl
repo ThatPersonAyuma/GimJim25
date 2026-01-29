@@ -5,16 +5,16 @@ Di sanalah para manusia mempersembahkan doa… dan korban.
 [signal arg="1"]
 Kamu tiba dengan tubuh gemetar, menggendong kekasihnya yang telah kehilangan napas.\
 Para tetua berkata hanya satu cara untuk menyelamatkannya.
-[wait time="0.8"]
+[wait time="1.5"]
 [signal arg="2"]
 Tetua: Persembahkan ia pada Dewa Antares, Penguasa Langit dan Takdir.
 MC: (Tidak masuk akal)
-[wait time="0.8"]
+[wait time="1.5"]
 [signal arg="3"]
 Tanpa pilihan lain, kamu meletakkan tubuh sang kekasih di altar.\
 Langit terbelah. Cahaya merah turun seperti bintang jatuh.
 [signal arg="last"]
-[wait time="0.8"]
+[wait time="1.5"]
 Sebuah suara bergema—bukan dari langit, melainkan dari dalam tanah.
 SuaraMisterius: Tubuhnya akan hidup kembali…
 SuaraMisterius: …jika kau mau menjadi jalanku.
@@ -29,3 +29,4 @@ Kekasih Shaina hidup kembali—namun raganya membatu, jiwanya terkunci.\
 Dan saat itu pula, kamu pingsan.
 [wait time="2.0"]
 [background arg="#000000ff" fade="0.0"]
+jump KutukanPertama/

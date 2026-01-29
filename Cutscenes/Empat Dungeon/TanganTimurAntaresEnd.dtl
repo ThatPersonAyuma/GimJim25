@@ -1,3 +1,4 @@
+[background arg="res://Cutscenes/Ilustrasis/Untitled700_20260128004911.png" fade="0.5"]
 Lengan raksasa itu akhirnya berhenti bergerak, namun kegelapan mulai merayap ke tubuhmu.
 [wait time="1.0"]
 MC: Agh! Apa ini... Jari-jariku... menghitam?
@@ -7,3 +8,4 @@ MC: Kenapa... pedang ini terasa sangat berat? Serasa menyayat nadiku sendiri set
 Pandanganmu kembali kabur. Dunia memudar sekali lagi.
 [wait time="1.0"]
 Kamu kembali terbangun di altar.
+jump BaratTL/

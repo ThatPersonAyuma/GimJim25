@@ -19,5 +19,5 @@ func _on_new_game_button_pressed() -> void:
 	"""
 	PLay the game from the start
 	"""
-	print("first")
-	pass
+	Global.change_scene("res://Cutscenes/Prolog/1.tscn")
+	

@@ -3,7 +3,7 @@ extends Node2D
 func _ready() -> void:
 	Dialogic.signal_event.connect(handle)
 	Dialogic.timeline_ended.connect(boss_fight)
-	Dialogic.start("SelatanTL")
+	Dialogic.start("KakiUtaraAntaresEnd")
 	
 func boss_fight():
 	Global.boss_scene_path = "res://StageJantung/HeartBossScene.tscn"
@@ -26,7 +26,7 @@ func handle(signal_name: String):
 		"is_ruang_nadi":
 			Dialogic.VAR.Selatan.is_ruang_nadi = true
 		"3A":
-			print("3A goted")
+			Global.active_buff = Global.PlayerBuff.PulseBorrowedLife
 		"3B":
-			print("3B goted")
+			Global.active_buff = Global.PlayerBuff.SilentVeinCharm
 			

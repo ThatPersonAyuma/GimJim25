@@ -11,7 +11,7 @@ Apa yang ingin kamu interaksi?
 	tidak bisa ditarik kembali.
 	- Masuk dan hadapi penjaga
 		[signal arg="fight"]
-		[end_timeline]
+		jump KakiUtaraAntares/
 	- Kembali menjelajahi dungeon
 		jump 
 label lorong

@@ -69,6 +69,8 @@ func _ready() -> void:
 	OnIdle()
 	smokes.animation = "smokes"
 	smokes.play()
+	Global.boss_debuff = Global.BossDebuff.Whole
+	Global.reset()
 
 func _physics_process(_delta):
 	if Global.McHealth <= 0:
@@ -380,13 +382,12 @@ func enter_phase_2():
 func die():
 	if Global.Enemy == self:
 		Global.Enemy = null
-	print("boss die")
 	queue_free()
+	Global.change_scene("res://Cutscenes/Ending/ending.tscn")
 
 func body_entered(body: Node2D):
 	if body == Global.Player:
 		self.is_mc_in_range = true
-		print("Knockback from: ", body.name)
 
 		if body.is_attacking:
 			OnKnockbackAtk(body)

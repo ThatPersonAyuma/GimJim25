@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cxbdr27bs4dc2" path="res://StageKaki/assets/leg-boss-standing-left.png" id="4_eefc6"]
 [ext_resource type="Texture2D" uid="uid://6cn4x46j5gp0" path="res://StageKaki/assets/leg-boss-standing-right.png" id="5_o617o"]
 [ext_resource type="Texture2D" uid="uid://biicux4pxfelq" path="res://StageKaki/assets/leg-boss-standing-backshot.png" id="6_j8vmn"]
-[ext_resource type="Script" uid="uid://x73s8b7i0nf3" path="res://StageKaki/hurtbox.gd" id="7_o617o"]
+[ext_resource type="Script" path="res://StageKaki/hurtbox.gd" id="7_o617o"]
 [ext_resource type="AudioStream" uid="uid://cuumt0vdgwog6" path="res://StageKaki/assets/sounds/stomp-255897.mp3" id="8_j8vmn"]
 [ext_resource type="AudioStream" uid="uid://m31nsntol1ik" path="res://StageKaki/assets/sounds/Projectile lumpur nyebar.wav" id="9_s81l6"]
 

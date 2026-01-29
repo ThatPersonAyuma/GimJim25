@@ -52,7 +52,7 @@ func _ready():
 	Global.Enemy = self
 	stomp_hitbox.monitoring = false
 	basic_hitbox.monitoring = false
-	Global.boss_debuff = Global.BossDebuff.Kaki
+	Global.boss_debuff = Global.BossDebuff.Badan
 	Global.reset()
 
 func _physics_process(delta):
@@ -249,3 +249,4 @@ func die():
 
 	print("Boss Leg Destroyed")
 	queue_free()
+	Global.change_scene("res://Explorasi/Selatan/SelatanNode.tscn")

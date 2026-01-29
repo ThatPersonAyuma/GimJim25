@@ -43,9 +43,9 @@ directories/dtl_directory={
 "JantungAntaresEnd": "res://Cutscenes/Empat Dungeon/JantungAntaresEnd.dtl",
 "KakiUtaraAntares": "res://Cutscenes/Empat Dungeon/KakiUtaraAntares.dtl",
 "KakiUtaraAntaresEnd": "res://Cutscenes/Empat Dungeon/KakiUtaraAntaresEnd.dtl",
+"Kebenaran": "res://Cutscenes/Kebenaran.dtl",
 "KepalaAntares": "res://Cutscenes/Empat Dungeon/KepalaAntares.dtl",
 "KepalaAntaresEnd": "res://Cutscenes/Empat Dungeon/KepalaAntaresEnd.dtl",
-"Kebenaran": "res://Cutscenes/Kebenaran.dtl",
 "KutukanPertama": "res://Cutscenes/KutukanPertama.dtl",
 "Main": "res://Cutscenes/Dialog/Explorasi/DungeonUtara/Main.dtl",
 "Main/Coba": "res://Main/Coba.dtl",
@@ -53,14 +53,18 @@ directories/dtl_directory={
 "TanganTimurAntares": "res://Cutscenes/Empat Dungeon/TanganTimurAntares.dtl",
 "TanganTimurAntaresEnd": "res://Cutscenes/Empat Dungeon/TanganTimurAntaresEnd.dtl",
 "UtaraMain": "res://Explorasi/Timur/UtaraMain.dtl",
+"bg_beforeTL": "res://Explorasi/BossFight/bg_beforeTL.dtl",
 "epilog": "res://Cutscenes/Ending/epilog.dtl",
 "prolog1": "res://Cutscenes/Dialog/prolog1.dtl",
 "prolog2": "res://Cutscenes/prolog2.dtl"
 }
-layout/style_directory={}
+layout/style_directory={
+"": "res://Main/NewStyle.tres",
+"NewStyle": "res://Main/NewStyle.tres"
+}
 glossary/default_case_sensitive=true
-layout/style_list=[]
-layout/default_style=""
+layout/style_list=["res://Main/NewStyle.tres"]
+layout/default_style="res://Main/NewStyle.tres"
 variables={
 "Barat": {
 "is_4A": false,

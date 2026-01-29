@@ -15,13 +15,31 @@ signal mc_death
 var death_scene = null
 var boss_scene_path: String = ""
 enum BossDebuff {
-	Kaki = 0,
+	Tangan = 0,
 	Kepala = 1,
 	Badan = 2,
 	Jantung = 3,
 	Whole = 4
 }
-var boss_debuff = BossDebuff.Kaki
+var boss_debuff = BossDebuff.Tangan
+
+enum PlayerBuff {
+	None,
+
+	GraveStepTalisman,    # 1A
+	WandererAnklet,       # 1B
+
+	WillbreakerKnot,      # 2A
+	OathboundSigil,       # 2B
+
+	PulseBorrowedLife,    # 3A
+	SilentVeinCharm,      # 3B
+
+	BlindseerRelic,       # 4A
+	CrownlessThought     # 4B
+}
+var active_buff : PlayerBuff = PlayerBuff.None
+
 
 func reset():
 	McHealth = 100
@@ -33,30 +51,74 @@ func reset():
 	is_invincible = false
 	is_death = false
 	apply_debuff()
+	apply_buff()
 	
 func apply_debuff():
 	if is_instance_valid(self.Player):
 		if boss_debuff >= BossDebuff.Kepala:
 			Player.Speed *= 0.85 
 			Player.dash_power *= 0.85
-			print("Efek Kaki")
 
 		if boss_debuff >= BossDebuff.Jantung:
 			Player.heavy_attack_cooldown *=1.4 
 			Player.melee_cooldown *=1.25 
 			Player.arrow_cooldown *=1.2 
-			print("Efek Badan")
 			
 		if boss_debuff >= BossDebuff.Badan:
 			Player.arrow_cooldown *=1.2
 			Player.cam_zoom *= 1.2
 			Player.range_attack_radius *= 0.85
-			print("Efek Kepala")
 
 		if boss_debuff >= BossDebuff.Whole:
 			McHealth *= 0.85
 			Player.dash_cooldown *= 1.2
-			print("Efek Jantung")
+
+func apply_buff():
+	if !is_instance_valid(Player):
+		return
+
+	match active_buff:
+
+		PlayerBuff.GraveStepTalisman:
+			print("runnied astefak")
+			Player.melee_cooldown *= 0.8
+			Player.heavy_attack_cooldown *= 0.8
+			Player.damage *= 1.1
+
+		PlayerBuff.WandererAnklet:
+			Player.Speed *= 1.1
+			Player.dash_power *= 1.25
+
+		PlayerBuff.WillbreakerKnot:
+			Player.damage *= 1.2
+			Player.melee_cooldown *= 0.9
+			Player.heavy_attack_cooldown *= 0.9
+			Player.arrow_cooldown *= 0.9
+
+		PlayerBuff.OathboundSigil:
+			McHealth *= 1.3
+			Player.dash_cooldown *= 0.85
+
+		PlayerBuff.PulseBorrowedLife:
+			McHealth *= 1.6
+
+		PlayerBuff.SilentVeinCharm:
+			Player.arrow_cooldown *= 0.5
+
+		PlayerBuff.BlindseerRelic:
+			Player.dash_cooldown *= 0.7
+
+		PlayerBuff.CrownlessThought:
+			Player.damage *= 1.25
+			Player.melee_cooldown *= 0.9
+			Player.heavy_attack_cooldown *= 0.9
+			Player.Speed *= 1.1
+
+		PlayerBuff.None:
+			pass
+			
+	self.active_buff = PlayerBuff.None
+
 
 # debuff
 #func apply_kaki():

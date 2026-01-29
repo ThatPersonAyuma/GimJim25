@@ -230,8 +230,8 @@ func enter_phase_2():
 func die():
 	if Global.Enemy == self:
 		Global.Enemy = null
-	print("boss die")
 	queue_free()
+	Global.change_scene("res://Explorasi/Utara/DungeonUtaraMain.tscn")
 
 func body_entered(body: Node2D):
 	if body == Global.Player:
