@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b00wruibn4bbl"]
+[gd_scene load_steps=5 format=3 uid="uid://b00wruibn4bbl"]
 
 [ext_resource type="Script" uid="uid://tcsqsqnm185f" path="res://StageTangan/Script/firewall_shield.gd" id="1_3t3bo"]
 [ext_resource type="PackedScene" uid="uid://b6sfgrpq7d5br" path="res://StageTangan/fire_unit.tscn" id="1_tv2fy"]
+[ext_resource type="AudioStream" uid="uid://dpty1v5p1faw4" path="res://StageTangan/Sound/Mengibas api.wav" id="3_41c8a"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3t3bo"]
 radius = 50.0
@@ -78,3 +79,7 @@ position = Vector2(-33, -42)
 position = Vector2(-38.6667, -32)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="SFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_41c8a")
+volume_db = 5.0
