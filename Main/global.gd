@@ -1,6 +1,6 @@
 extends Node
 
-var McMaxHealth: int = 2000
+var McMaxHealth: int = 200
 var McHealth: int = McMaxHealth
 var CanCharMove: bool = true
 var Player: CharacterBody2D

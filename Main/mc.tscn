@@ -1486,7 +1486,7 @@ wait_time = 5.0
 one_shot = true
 
 [node name="DashCooldownTimer" type="Timer" parent="."]
-wait_time = 8.0
+wait_time = 5.0
 one_shot = true
 
 [node name="StunnedEffect" type="AnimatedSprite2D" parent="."]
