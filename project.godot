@@ -38,6 +38,8 @@ directories/dtl_directory={
 "KakiUtaraAntares": "res://Cutscenes/Empat Dungeon/KakiUtaraAntares.dtl",
 "KakiUtaraAntaresEnd": "res://Cutscenes/Empat Dungeon/KakiUtaraAntaresEnd.dtl",
 "KutukanPertama": "res://Cutscenes/KutukanPertama.dtl",
+"TanganTimurAntares": "res://Cutscenes/Empat Dungeon/TanganTimurAntares.dtl",
+"TanganTimurAntaresEnd": "res://Cutscenes/Empat Dungeon/TanganTimurAntaresEnd.dtl",
 "prolog1": "res://Cutscenes/Dialog/prolog1.dtl",
 "prolog2": "res://Cutscenes/prolog2.dtl"
 }
