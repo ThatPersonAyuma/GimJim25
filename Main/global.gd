@@ -15,12 +15,13 @@ signal mc_death
 var death_scene = null
 var boss_scene_path: String = ""
 enum BossDebuff {
-	Kaki,
-	Badan,
-	Kepala,
-	Jantung
+	None = 0,
+	Kaki = 1,
+	Badan = 2,
+	Kepala = 3,
+	Jantung = 4
 }
-var boss_debuff = null
+var boss_debuff = BossDebuff.None
 
 func reset():
 	McHealth = 100
@@ -31,6 +32,33 @@ func reset():
 	knockback_direction = Vector2(0,0)
 	is_invincible = false
 	is_death = false
+	
+func apply_debuff():
+	if boss_debuff >= BossDebuff.Kaki:
+		apply_kaki()
+
+	if boss_debuff >= BossDebuff.Badan:
+		apply_badan()
+
+	if boss_debuff >= BossDebuff.Kepala:
+		apply_kepala()
+
+	if boss_debuff >= BossDebuff.Jantung:
+		apply_jantung()
+
+# debuff
+func apply_kaki():
+	pass
+	
+func apply_badan():
+	pass
+	
+func apply_kepala():
+	pass
+	
+func apply_jantung():
+	pass
+
 
 func _ready() -> void:
 	death_scene = preload("res://Main/death_scene.tscn").instantiate()

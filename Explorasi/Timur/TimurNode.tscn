@@ -2,5 +2,5 @@
 
 [ext_resource type="Script" uid="uid://dy2frb2bwevrw" path="res://Explorasi/Timur/Timur.gd" id="1_ldbys"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 script = ExtResource("1_ldbys")

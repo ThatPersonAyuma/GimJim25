@@ -189,7 +189,7 @@ animations = [{
 radius = 9.0
 height = 48.0
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 script = ExtResource("1_x4vv6")
 
 [node name="Path2D" type="Path2D" parent="."]
@@ -205,12 +205,7 @@ rotates = false
 position = Vector2(0, -7.62939e-06)
 sprite_frames = SubResource("SpriteFrames_jtrvo")
 autoplay = "default"
-<<<<<<< HEAD
-frame = 22
-frame_progress = 0.808014
-=======
 frame_progress = 0.684342
->>>>>>> 42a52d74197794581e049e3cbea457b95d40f411
 
 [node name="Area2D" type="Area2D" parent="Path2D/PathFollow2D"]
 position = Vector2(40.8003, 0.576679)
