@@ -16,13 +16,14 @@ func _process(delta: float) -> void:
 		if $Path2D/PathFollow2D.progress_ratio >= 1.0:
 			$Path2D/PathFollow2D.progress_ratio = 0.0
 
-func launch(duration):
+func launch(duration, no_warning = false):
 	$Path2D/PathFollow2D/Area2D.set_deferred("monitoring", true)
-	$ColorRect.set_deferred('visible', true)
+	if not no_warning: $ColorRect.set_deferred('visible', true)
+	$Path2D.visible = false
 	self.global_position = Global.Player.global_position
 	await get_tree().create_timer(1).timeout
 	if not is_instance_valid(self):return
-	$ColorRect.set_deferred('visible', false)
+	if not no_warning:  $ColorRect.set_deferred('visible', false)
 	Global.Enemy.whirlwind_available[self_index] = false
 	self.is_running = true
 	$Path2D.visible = true

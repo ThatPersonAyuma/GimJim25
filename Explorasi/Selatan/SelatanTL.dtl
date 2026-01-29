@@ -1,0 +1,77 @@
+[background arg="#9b9b9bff" fade="0.0"]
+Apa yang ingin kamu interaksi?
+- Koridor Berdetak | [if {Selatan.is_koridor} != true] [else="disable"]
+	jump koridor
+- Masuki ruangan dengan banyak tali | [if {Selatan.is_ruang_nadi} != true] [else="disable"]
+	jump ruang_nadi
+- Dekati benda bercahaya | [if {Selatan.is_inti_palsu} != true] [else="disable"]
+	jump inti_palsu
+- Gerbang Boss
+	MC: Jika jantung ini berhenti…
+	MC: aku juga akan berubah.
+	- Masuk dan hadapi penjaga
+		[signal arg="fight"]
+		[end_timeline]
+	- Kembali menjelajahi dungeon
+		jump 
+label ruang_nadi
+Terlihat banyak tali merah di ruangan ini.
+MC: Sepertinya itu bukan tali.
+MC: Sebaiknya aku segera pergi.
+Kamu menginjak sebuah catatan.
+MC: "Jantung adalah inti. Inti dapat berubah. Terkadang ada kegelapan pula didalamnya.....
+MC: kau tidak tau apa yang ada dibaliknya."
+[signal arg="is_ruang_nadi"]
+jump 
+label inti_palsu
+Kamu mendekati benda bercahaya.
+Tertulis, "Pergi"
+MC: Terkadang kita tidak perlu menahan rasa ingin tahu kita
+Kamu kembali ke tempat awal. Menjauhi benda tersebut.
+[signal arg="is_inti_palsu"]
+jump 
+label koridor
+Kamu merasakan perasaan aneh di koridor ini.
+Semua benda hingga dinding seperti bergerak.
+Suaranya lebih mirip detakan.
+Di tengah ruangan terdapat mural setengah jadi.
+MC: Ia tidak ingin mati…
+MC: Ia ingin diingat.
+- Cek benda merah mirip tali | [if {Utara.is_1B} != true] [else="disable"]
+	MC: Hidup yang dipinjam…
+	Nadi ini melilit seluruh ruangan.
+	- Ambil inti denyut
+		[background arg="res://Explorasi/assets/Artefak/a-jantung.png" fade="1.5"]
+		Kamu mendapatkan Artefak\: Pulse of Borrowed Life
+		Efek dari Pulse of Borrowed Life\:\
+		- Meningkatkan poin nyawa
+		[signal arg="3A"]
+		[signal arg="is_koridor"]
+		[background arg="#9b9b9bff" fade="1.5"]
+		Semuanya terasa senyap.
+		Detakannya hilang.
+		Kamu kembali dengan artefak tersebut.
+		jump 
+	- Abaikan dan kembali
+		[signal arg="is_3A"]
+	jump koridor
+- Menuju ruang dengan suara lirih | [if {Utara.is_1A} != true] [else="disable"]
+	Kamu masuk dan mencoba mendengarkan lebih seksama.
+	Kekasih: Gunakan suaraku…
+	Kekasih: dan kau akan kuat.
+	- Menolak dan mengambil jimat sunyi | [else="disable"]
+		[background arg="res://Explorasi/assets/Artefak/b-jantung.png" fade="1.5"]
+		Kamu mendapatkan Artefak\: Silent Vein Charm
+		Efek dari Silent Vein Charm\:\
+		- Mengurangi masa tunggu serangan panah
+		[signal arg="3B"]
+		[signal arg="is_koridor"]
+		[background arg="#9b9b9bff" fade="1.5"]
+		Kamu kembali dengan artefak tersebut.
+		jump 
+	- Abaikan dan kembali
+		[signal arg="is_3B"]
+	jump koridor
+- Abaikan dan kembali
+	[signal arg="is_koridor"]
+	jump

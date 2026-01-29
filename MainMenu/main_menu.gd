@@ -22,3 +22,11 @@ func _on_music_button_pressed() -> void:
 		music_button.text = "MUSIC : ON"
 	else:
 		music_button.text = "MUSIC : OFF"
+
+
+func _on_new_game_button_pressed() -> void:
+	"""
+	PLay the game from the start
+	"""
+	print("first")
+	pass

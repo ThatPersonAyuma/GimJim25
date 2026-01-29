@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dueywfxtdfqjm"]
+
+[ext_resource type="Script" uid="uid://6jjb7lrr32vl" path="res://Explorasi/Selatan/selatan_node.gd" id="1_etxr4"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_etxr4")

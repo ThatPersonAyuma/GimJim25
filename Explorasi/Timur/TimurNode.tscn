@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bt3fbmm1cm4a1"]
+
+[ext_resource type="Script" uid="uid://dy2frb2bwevrw" path="res://Explorasi/Timur/Timur.gd" id="1_ldbys"]
+
+[node name="Node2D2" type="Node2D"]
+script = ExtResource("1_ldbys")

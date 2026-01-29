@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://2kdgebcfeu7b"]
+[gd_scene load_steps=18 format=3 uid="uid://cwsmtwqnkj1bh"]
 
 [ext_resource type="Script" uid="uid://blqn48xbby3mu" path="res://StageJantung/wind_slash.gd" id="1_aavb2"]
 [ext_resource type="Texture2D" uid="uid://dywl5c7gnbd2u" path="res://StageJantung/assets/wind_slash.png" id="1_f64tt"]

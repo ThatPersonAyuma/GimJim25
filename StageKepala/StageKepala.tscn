@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://5jimy6ptfu4d"]
+[gd_scene load_steps=21 format=4 uid="uid://5jimy6ptfu4d"]
 
 [ext_resource type="Texture2D" uid="uid://c3vmpm0apa5q1" path="res://StageKepala/Assets/Tiled_files/decorative_cracks_coasts_animation.png" id="1_grd1k"]
 [ext_resource type="Texture2D" uid="uid://bkq0g075shao5" path="res://StageKepala/Assets/Tiled_files/decorative_cracks_floor.png" id="2_5p773"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://n23yng8jsymk" path="res://Main/mc.tscn" id="5_ep4v2"]
 [ext_resource type="Texture2D" uid="uid://djscrrdkuskti" path="res://StageKepala/Assets/Water+.png" id="5_yhgcw"]
 [ext_resource type="PackedScene" uid="uid://b4nxaprfcegg3" path="res://StageKepala/BossKepala.tscn" id="6_5p773"]
+[ext_resource type="AudioStream" uid="uid://pcgibrbsyn1d" path="res://StageKepala/Assets/sounds/Dungeon Kepala.wav" id="8_ioqc0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ep6wr"]
 texture = ExtResource("1_grd1k")
@@ -1963,3 +1964,11 @@ scale = Vector2(1.9, 1.9)
 [node name="Player" parent="." instance=ExtResource("5_ep4v2")]
 position = Vector2(254, 362)
 scale = Vector2(0.5, 0.5)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_ioqc0")
+autoplay = true
+max_cam_left = -20
+max_cam_top = 0
+max_cam_right = 550
+max_cam_bottom = 575

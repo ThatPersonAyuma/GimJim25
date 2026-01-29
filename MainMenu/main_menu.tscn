@@ -110,9 +110,11 @@ alignment = 1
 [node name="NewGameButton" type="Button" parent="Center/MenuButton/ButtonVBox"]
 custom_minimum_size = Vector2(280, 50)
 layout_mode = 2
+action_mode = 0
 text = "New Game"
 
 [node name="ContinueButton" type="Button" parent="Center/MenuButton/ButtonVBox"]
+visible = false
 custom_minimum_size = Vector2(280, 50)
 layout_mode = 2
 text = "Continue"
@@ -129,7 +131,6 @@ text = "Exit"
 
 [node name="OptionsPopUp" type="PopupPanel" parent="."]
 size = Vector2i(300, 223)
-visible = true
 theme = SubResource("Theme_ajn5b")
 
 [node name="CenterContainer" type="CenterContainer" parent="OptionsPopUp"]
@@ -138,8 +139,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 3.0
 offset_top = 3.0
-offset_right = 297.0
-offset_bottom = 220.0
+offset_right = -3.0
+offset_bottom = -3.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -179,6 +180,7 @@ autoplay = true
 position = Vector2(330, 181)
 zoom = Vector2(0.35, 0.35)
 
+[connection signal="pressed" from="Center/MenuButton/ButtonVBox/NewGameButton" to="." method="_on_new_game_button_pressed"]
 [connection signal="pressed" from="Center/MenuButton/ButtonVBox/OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="Center/MenuButton/ButtonVBox/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="OptionsPopUp/CenterContainer/VBoxContainer/VBoxContainer/MusicButton" to="." method="_on_music_button_pressed"]

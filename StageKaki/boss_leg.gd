@@ -4,6 +4,9 @@ extends CharacterBody2D
 @onready var stomp_hitbox = $StompHitbox
 @onready var MudAreaScene = preload("res://StageKaki/mud_area.tscn")
 
+@onready var stomp_sfx = $StompSFX
+@onready var mud_sfx = $MudSFX
+
 @export var max_health := 100
 @export var knockback_power := 70.0
 
@@ -125,6 +128,10 @@ func enter_mud_attack():
 	state = MUD
 	is_paused = true
 	velocity = Vector2.ZERO
+	
+	if mud_sfx:
+		mud_sfx.pitch_scale = randf_range(0.9, 1.1) # opsional
+		mud_sfx.play()
 
 	spawn_mud()
 
@@ -147,6 +154,9 @@ func enter_basic_attack():
 func basic_attack_sequence():
 	for i in range(basic_attack_count):
 		anim.play("basic_attack")
+		
+		if stomp_sfx:
+			stomp_sfx.play()
 
 		basic_hitbox.monitoring = true
 		await get_tree().physics_frame
@@ -180,6 +190,8 @@ func process_stomp(delta):
 		land_after_stomp()
 
 func land_after_stomp():
+	if stomp_sfx:
+		stomp_sfx.play()
 	stomp_hitbox.monitoring = true
 
 	await get_tree().physics_frame
@@ -212,7 +224,6 @@ func take_damage(amount: int):
 	var dir = (global_position - Global.Player.global_position).normalized()
 	velocity = dir * knockback_power
 
-	anim.play("hit")
 	modulate = Color(1, 0.5, 0.5)
 	await get_tree().create_timer(0.4).timeout
 	modulate = Color.WHITE

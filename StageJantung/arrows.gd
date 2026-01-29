@@ -16,6 +16,10 @@ func _ready() -> void:
 		root.add_child.call_deferred(temp_arrow)
 		arrows.push_back(temp_arrow)
 	
+func free_arrows():
+	for arrow in arrows:
+		arrow.queue_free()
+	
 func launch():
 	for arrow in arrows:
 		arrow.launch() 

@@ -19,6 +19,11 @@ extends CharacterBody2D
 @onready var arrow_cooldown = $RangeCooldownTimer
 @onready var dash_cooldown = $DashCooldownTimer
 
+@onready var sword_sfx = $SwoshSFX
+@onready var sword_hit_sfx = $SwordHitSFX
+@onready var bow_sfx = $BowSFX
+@onready var footstep_sfx = $FootstepSFX
+@onready var hurt_sfx = $HurtSFX
 
 var is_attacking = false
 var attacks_max = 4
@@ -41,12 +46,13 @@ var heavy_attack_cooldown = 5
 var is_heavy_attack_ready = true
 var is_heavy_running = false
 
+var footstep_timer := 0.0
+@export var footstep_interval := 0.65
 
 func _enter_tree():
 	Global.Player = self
 
 func _ready() -> void:
-	print("Sprite: ", anim_sprite.sprite_frames.get_animation_names())
 	camera.limit_left = max_cam_left
 	camera.limit_top = max_cam_top
 	camera.limit_right = max_cam_right
@@ -59,29 +65,38 @@ func _ready() -> void:
 	var parent = get_node("..")
 	for i in range(3):
 		var temp_arrow = arrow.instantiate()
-		#print("is self index exist: ", "self_index" in temp_arrow)
 		parent.add_child.call_deferred(temp_arrow)
 		temp_arrow.self_index = i
 		temp_arrow.max_distance = self.range_attack_radius
 		arrows.push_back(temp_arrow)
-	if "travel_arrow_count" not in self: print("Varibale travel_arrow_count tidak ada")
+
+func _process(delta):
+	if anim_sprite.animation in ["walk", "walk_corrupted"] and not is_attacking and not is_dashing:
+		footstep_timer -= delta
+
+		if footstep_timer <= 0.0:
+			play_footstep_sfx()
+			footstep_timer = footstep_interval
+	else:
+		footstep_timer = 0.0
 
 func _physics_process(delta):
-	if not is_hurt and Global.CanCharMove:
-		DetectAttack()
-		if not is_attacking:
-			if not is_dashing:
-				if Global.CanCharMove:
-					Movement()
-		else:
-			attack_melee_interval+=delta
-			velocity = Vector2.ZERO
-			
-	if Global.knocback_pow > 0:
-		Knockback()
-	if is_dashing:
-		velocity = dash
-	move_and_slide()
+	if not Global.is_death:
+		if not is_hurt and Global.CanCharMove:
+			DetectAttack()
+			if not is_attacking:
+				if not is_dashing:
+					if Global.CanCharMove:
+						Movement()
+			else:
+				attack_melee_interval+=delta
+				velocity = Vector2.ZERO
+				
+		if Global.knocback_pow > 0:
+			Knockback()
+		if is_dashing:
+			velocity = dash
+		move_and_slide()
 
 func DetectAttack():
 	if not is_heavy_running and melee_attack_cooldown.is_stopped() and Input.is_action_just_pressed("attack_sword"):
@@ -115,6 +130,7 @@ func is_range_attack_available() -> bool:
 func do_range_attack():
 	arrow_cooldown.start()
 	self.travel_arrow_count += 1
+	bow_sfx.play()
 	for i in range(max_arrow):
 		if available_arrows[i]:
 			arrows[i].launch()
@@ -124,6 +140,7 @@ func do_range_attack():
 func do_melee_attack():
 	attack_melee_interval = 0
 	anim_player.play(attacks_corrupted[0] if is_corrupted else attacks[0])
+	sword_sfx.play()
 
 func _on_animation_player_animation_finished(anim_name):
 	var attacks_name = attacks_corrupted if is_corrupted else attacks
@@ -201,11 +218,15 @@ func give_damage(body: CharacterBody2D):
 	if body == Global.Enemy:
 		if body.has_method("take_damage"):
 			body.take_damage(melee_attack_damage)
+			if sword_hit_sfx:
+				sword_hit_sfx.play()
 		else:
 			print("Alert! Give Enemey Take Damage Method")
 
 func play_hitted():
 	if attack_count>0: restart_attack()
+	if hurt_sfx:
+		hurt_sfx.play()
 	anim_player.play("hit")
 	is_hurt = true
 	#Global.is_invincible = true
@@ -214,3 +235,8 @@ func play_hitted():
 		#if not is_instance_valid(self):
 			#return
 		#Global.is_invincible = false)
+
+func play_footstep_sfx():
+	if footstep_sfx:
+		footstep_sfx.pitch_scale = randf_range(1.0, 1.1)
+		footstep_sfx.play()
