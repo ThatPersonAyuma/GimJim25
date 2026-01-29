@@ -1,0 +1,69 @@
+[background arg="#9b9b9bff" fade="0.0"]
+Apa yang ingin kamu interaksi?
+- Patung Berlutut | [if {Timur.is_patung} != true] [else="disable"]
+	jump patung
+- Lorong Bergema | [if {Utara.is_sunyi} != true] [else="disable"]
+	jump lorong
+- Tangga Putus | [if {Utara.is_lorong} != true] [else="disable"]
+	jump tangga
+- Gerbang Boss
+	MC: Inilah tangan yang memutuskan hidup orang lain.
+	- Masuk dan hadapi penjaga
+		[signal arg="fight"]
+		[end_timeline]
+	- Kembali menjelajahi dungeon
+		jump 
+label lorong
+Tiba-tiba kamu mendenar suara keras, menggema pada ruangan.
+Kamu menemukan sebuah catatan.
+MC: "Tangan menjadi perantara tindakan. Dia kuat tapi dua saja tidak cukup. Mungkin harusnya aku bawa Air untuk meredamkan itu"
+(Apa maksudnya?)
+[signal arg="is_lorong"]
+jump 
+label tangga
+MC: Tempat ini dibuat…
+MC: agar pejalan berhenti.
+MC: Mungkin dewa tidak ingin menusia menyainginya.
+[signal arg="is_tangga"]
+jump 
+label patung
+Kamu menemukan patung dengan pose berlutut.
+MC: Mereka tidak kalah....
+MC: Mereka menyerah.
+- Menuju ruang dengan pencahayaan minim | [if {Utara.is_1B} != true] [else="disable"]
+	MC: Tanda tangan mereka masih basah…
+	- Mengambil segel perjanjian
+		[background arg="res://Explorasi/assets/Artefak/b-tangga.png" fade="1.5"]
+		Kamu mendapatkan Artefak\: Oathbound Sigil
+		Efek dari Oathbound Sigil\:\
+		- Meningkatkan poin nyawa\
+		-  Mengurangi masa tunggu dash
+		[signal arg="2B"]
+		[signal arg="is_patung"]
+		[background arg="#9b9b9bff" fade="1.5"]
+		Kamu kembali dengan artefak tersebut.
+		jump 
+	- Abaikan dan kembali
+		[signal arg="is_2B"]
+	jump patung
+- Menuju ruang gelap | [if {Utara.is_1A} != true] [else="disable"]
+	Kamu memasuki ruangan. Ruangan tersebut dipenuhi dengan rantai.
+	MC: Tangan yang mengikat…
+	MC: selalu mengaku melindungi.
+	- Mematahkan rantai dan mengambil simbol | [else="disable"]
+		[background arg="res://Explorasi/assets/Artefak/a-tangga.png" fade="1.5"]
+		Kamu mendapatkan Artefak\: Willbreaker Knot
+		Efek dari Willbreaker Knot\:\
+		- Mengurangi masa tunggu serangan\
+		- Meningkatkan kerusakan serangan
+		[signal arg="2A"]
+		[signal arg="is_patung"]
+		[background arg="#9b9b9bff" fade="1.5"]
+		Kamu kembali dengan artefak tersebut.
+		jump 
+	- Abaikan dan kembali
+		[signal arg="is_2A"]
+	jump patung
+- Abaikan dan kembali
+	[signal arg="is_patung"]
+	jump

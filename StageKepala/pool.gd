@@ -1,6 +1,5 @@
 extends Area2D
 
-@onready var anim = $AnimatedSprite2D
 @onready var col = $CollisionShape2D
 @onready var sfx_pool = $AudioStreamPlayer2D
 

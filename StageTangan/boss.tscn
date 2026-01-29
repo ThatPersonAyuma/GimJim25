@@ -1,51 +1,114 @@
-[gd_scene load_steps=11 format=3 uid="uid://cnfbwpbl5gavq"]
+[gd_scene load_steps=17 format=3 uid="uid://cnfbwpbl5gavq"]
 
 [ext_resource type="Script" uid="uid://cuptowabfp0hb" path="res://StageTangan/Script/bossHandStage.gd" id="1_0n0qp"]
-[ext_resource type="Texture2D" uid="uid://svfs01smxqnp" path="res://StageTangan/Sprite/Boss/tangan-b.png" id="1_hmeuw"]
-[ext_resource type="Texture2D" uid="uid://5b5smxi56ymb" path="res://StageTangan/Sprite/Boss/tangan-c.png" id="2_0n0qp"]
-[ext_resource type="Texture2D" uid="uid://ckwrev0pgy77f" path="res://StageTangan/Sprite/Boss/tangan-d.png" id="3_wnfyt"]
-[ext_resource type="Texture2D" uid="uid://3qtnuv1cdrp" path="res://StageTangan/Sprite/Boss/tangan-a.png" id="4_jfsu3"]
+[ext_resource type="Texture2D" uid="uid://cv1ncfbbbxt0t" path="res://StageTangan/Sprite/Final Hand Boss/handboss(Close).png" id="2_wn44p"]
+[ext_resource type="Texture2D" uid="uid://1hdd584wiemc" path="res://StageTangan/Sprite/Final Hand Boss/handboss(Open-Fire).png" id="3_hsrht"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hsrht"]
+atlas = ExtResource("2_wn44p")
+region = Rect2(0, 0, 866, 575)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hmeuw"]
+atlas = ExtResource("2_wn44p")
+region = Rect2(866, 0, 866, 575)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0n0qp"]
+atlas = ExtResource("2_wn44p")
+region = Rect2(1732, 0, 866, 575)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wnfyt"]
+atlas = ExtResource("2_wn44p")
+region = Rect2(2598, 0, 866, 575)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jfsu3"]
+atlas = ExtResource("2_wn44p")
+region = Rect2(3464, 0, 866, 575)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yhr4x"]
+atlas = ExtResource("2_wn44p")
+region = Rect2(4330, 0, 866, 575)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_08k6l"]
+atlas = ExtResource("3_hsrht")
+region = Rect2(0, 0, 786, 597)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0oai"]
+atlas = ExtResource("3_hsrht")
+region = Rect2(786, 0, 786, 597)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kpmmb"]
+atlas = ExtResource("3_hsrht")
+region = Rect2(1572, 0, 786, 597)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ljeig"]
+atlas = ExtResource("3_hsrht")
+region = Rect2(2358, 0, 786, 597)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ouc6p"]
+atlas = ExtResource("3_hsrht")
+region = Rect2(3144, 0, 786, 597)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h4t3c"]
+atlas = ExtResource("3_hsrht")
+region = Rect2(3930, 0, 786, 597)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3goed"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_hmeuw")
+"texture": SubResource("AtlasTexture_hsrht")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_0n0qp")
+"texture": SubResource("AtlasTexture_hmeuw")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_wnfyt")
+"texture": SubResource("AtlasTexture_0n0qp")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_jfsu3")
+"texture": SubResource("AtlasTexture_wnfyt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jfsu3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yhr4x")
 }],
 "loop": true,
-"name": &"Fireball Idle Attack",
+"name": &"Close Hand",
 "speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_08k6l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m0oai")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kpmmb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ljeig")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ouc6p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h4t3c")
+}],
+"loop": true,
+"name": &"Open Hand",
+"speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_8lkl1"]
-radius = 41.0122
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ufmwt"]
-radius = 30.1811
-height = 127.948
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rkyto"]
-size = Vector2(109.571, 38.4306)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8lkl1"]
-size = Vector2(107.843, 39.1932)
-
 [node name="Boss" type="CharacterBody2D"]
+scale = Vector2(0.3, 0.3)
 collision_layer = 8
-collision_mask = 4
+collision_mask = 5
 script = ExtResource("1_0n0qp")
-metadata/_edit_group_ = true
 
 [node name="BossSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 11)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_3goed")
 animation = &"Fireball Idle Attack"
@@ -84,3 +147,10 @@ visibility_layer = 0
 position = Vector2(-122, 36)
 rotation = -0.287979
 shape = SubResource("RectangleShape2D_8lkl1")
+animation = &"Close Hand"
+autoplay = "Close Hand"
+frame_progress = 0.370984
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(0, 11)
+polygon = PackedVector2Array(-40, 26, -32, 36, -20, 37, -11, 36, -1, 34, 15, 39, 29, 25, 92, 51, 167, 77, 168, -4, 123, 5, 68, 8, 67, -13, 64, -34, 25, -47, 11, -39, -5, -41, -48, -52, -91, -42, -88, -27, -78, -18, -65, -12, -75, 1, -79, 6, -114, 8, -168, 12, -169, 67, -102, 50)

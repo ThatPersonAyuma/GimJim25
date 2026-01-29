@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=4 uid="uid://c7b3g77k2bxqo"]
 
 [ext_resource type="PackedScene" uid="uid://n23yng8jsymk" path="res://Main/mc.tscn" id="1_0jbw6"]
-[ext_resource type="PackedScene" uid="uid://cboww8lhwgyxe" path="res://StageKaki/boss_leg.tscn" id="3_31g71"]
+[ext_resource type="PackedScene" uid="uid://cnhsgjmqse37w" path="res://StageKaki/boss_leg.tscn" id="3_31g71"]
 [ext_resource type="Texture2D" uid="uid://dfqt5yfd4upt1" path="res://StageKaki/assets/tilemap.png" id="3_xyr7q"]
 [ext_resource type="AudioStream" uid="uid://tsl34gmbrvk" path="res://StageKaki/assets/sounds/Boss-01 V2.wav" id="4_xyr7q"]
 
@@ -1102,10 +1102,11 @@ scale = Vector2(0.867944, 0.771771)
 [node name="Player" parent="." instance=ExtResource("1_0jbw6")]
 position = Vector2(0, 200)
 collision_mask = 11
-max_cam_left = -390
-max_cam_top = -300
-max_cam_right = 390
-max_cam_bottom = 300
+is_corrupted = false
+max_cam_left = -350
+max_cam_top = -260
+max_cam_right = 350
+max_cam_bottom = 260
 
 [node name="BossLeg" parent="." instance=ExtResource("3_31g71")]
 z_index = 15

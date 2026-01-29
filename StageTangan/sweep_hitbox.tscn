@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dsliw4hgwikuv"]
+
+[ext_resource type="Script" uid="uid://bqper213jjwko" path="res://StageTangan/Script/sweep_hitbox.gd" id="1_mh42q"]
+
+[node name="SweepHitbox" type="Area2D"]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("1_mh42q")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]

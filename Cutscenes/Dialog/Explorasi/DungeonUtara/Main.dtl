@@ -1,0 +1,70 @@
+[background arg="#9b9b9bff" fade="0.0"]
+Apa yang ingin kamu interaksi?
+- Jejak Kaki Batu | [if {Utara.is_jejak} != true] [else="disable"]
+	jump jejak
+- Ruang Sunyi | [if {Utara.is_sunyi} != true] [else="disable"]
+	jump ruang_sunyi
+- Lorong Menurun | [if {Utara.is_lorong} != true] [else="disable"]
+	jump lorong
+- Gerbang Boss
+	MC: Langkah ini…\
+	tidak bisa ditarik kembali.
+	- Masuk dan hadapi penjaga
+		[signal arg="fight"]
+		[end_timeline]
+	- Kembali menjelajahi dungeon
+		jump 
+label lorong
+Kamu melihat mural di dinding.
+Terdapat kaki yang menghantam tanah.\
+Orang-orang sangat ketakutan.
+MC: (Mungkin itu gambaran dari gempa)
+MC: (Tapi mengapa hanya ada kaki saja?)
+[signal arg="is_lorong"]
+jump 
+label ruang_sunyi
+MC: Tempat ini dibuat…\
+agar pejalan berhenti.
+[signal arg="is_sunyi"]
+jump 
+label jejak
+Kamu menemukan jejak kaki batu.
+MC: Jejak ini bukan bekas pelarian…\
+tapi penaklukan.
+- Menyusuri retakan tanah | [if {Utara.is_1B} != true] [else="disable"]
+	MC: Tidak ada pegangan…\
+	Hanya keyakinan.
+	- Menyeberang tanpa berhenti
+		[background arg="res://Explorasi/assets/Artefak/b-kaki.png" fade="1.5"]
+		Kamu mendapatkan Artefak\: Wanderer’s Anklet
+		Efek dari Wanderer’s Anklet\:\
+		- Gerakan lebih cepat\
+		- Dash lebih jauh
+		[signal arg="1B"]
+		[signal arg="is_jejak"]
+		[background arg="#9b9b9bff" fade="1.5"]
+		Kamu kembali dengan artefak tersebut.
+		jump 
+	- Abaikan dan kembali
+		[signal arg="is_1B"]
+	jump jejak
+- Ikuti jejak ke atas tebing | [if {Utara.is_1A} != true] [else="disable"]
+	MC: Setiap langkah mereka…
+	MC: adalah doa yang dipaksakan.
+	- Mengikatkan simbol altar ke kaki | [else="disable"]
+		[background arg="res://Explorasi/assets/Artefak/a-kaki.png" fade="1.5"]
+		Kamu mendapatkan Artefak\: Grave-Step Talisman
+		Efek dari Grave-Step Talisman\:\
+		- Mengurangi interval serangan\
+		- Meningkatkan serangan
+		[signal arg="1A"]
+		[signal arg="is_jejak"]
+		[background arg="#9b9b9bff" fade="1.5"]
+		Kamu kembali dengan artefak tersebut.
+		jump 
+	- Abaikan dan kembali
+		[signal arg="is_1A"]
+	jump jejak
+- Abaikan dan kembali
+	[signal arg="is_jejak"]
+	jump

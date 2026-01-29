@@ -1,0 +1,80 @@
+[gd_scene load_steps=4 format=3 uid="uid://b00wruibn4bbl"]
+
+[ext_resource type="Script" uid="uid://tcsqsqnm185f" path="res://StageTangan/Script/firewall_shield.gd" id="1_3t3bo"]
+[ext_resource type="PackedScene" uid="uid://b6sfgrpq7d5br" path="res://StageTangan/fire_unit.tscn" id="1_tv2fy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3t3bo"]
+radius = 50.0
+
+[node name="FirewallShield" type="Node2D"]
+scale = Vector2(3.5, 3.5)
+script = ExtResource("1_3t3bo")
+
+[node name="FirewallArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FirewallArea"]
+shape = SubResource("CircleShape2D_3t3bo")
+
+[node name="FireUnit" parent="." instance=ExtResource("1_tv2fy")]
+position = Vector2(-42.6667, -13.3333)
+
+[node name="FireUnit2" parent="." instance=ExtResource("1_tv2fy")]
+position = Vector2(-45, -1)
+
+[node name="FireUnit3" parent="." instance=ExtResource("1_tv2fy")]
+position = Vector2(-35, 14)
+
+[node name="FireUnit4" parent="." instance=ExtResource("1_tv2fy")]
+position = Vector2(-23, 25)
+
+[node name="FireUnit5" parent="." instance=ExtResource("1_tv2fy")]
+position = Vector2(-11, 30)
+
+[node name="FireUnit6" parent="." instance=ExtResource("1_tv2fy")]
+position = Vector2(2, 32)
+
+[node name="FireUnit7" parent="." instance=ExtResource("1_tv2fy")]
+position = Vector2(14, 30)
+
+[node name="FireUnit8" parent="." instance=ExtResource("1_tv2fy")]
+position = Vector2(26, 24)
+
+[node name="FireUnit9" parent="." instance=ExtResource("1_tv2fy")]
+position = Vector2(37, 13)
+
+[node name="FireUnit10" parent="." instance=ExtResource("1_tv2fy")]
+position = Vector2(43, 1)
+
+[node name="FireUnit11" parent="." instance=ExtResource("1_tv2fy")]
+position = Vector2(45, -14)
+
+[node name="FireUnit12" parent="." instance=ExtResource("1_tv2fy")]
+position = Vector2(39, -29)
+
+[node name="FireUnit13" parent="." instance=ExtResource("1_tv2fy")]
+position = Vector2(29, -38)
+
+[node name="FireUnit14" parent="." instance=ExtResource("1_tv2fy")]
+position = Vector2(20, -45)
+
+[node name="FireUnit15" parent="." instance=ExtResource("1_tv2fy")]
+position = Vector2(10, -50)
+
+[node name="FireUnit16" parent="." instance=ExtResource("1_tv2fy")]
+position = Vector2(-1, -51)
+
+[node name="FireUnit17" parent="." instance=ExtResource("1_tv2fy")]
+position = Vector2(-12, -51)
+
+[node name="FireUnit18" parent="." instance=ExtResource("1_tv2fy")]
+position = Vector2(-23, -47)
+
+[node name="FireUnit19" parent="." instance=ExtResource("1_tv2fy")]
+position = Vector2(-33, -42)
+
+[node name="FireUnit20" parent="." instance=ExtResource("1_tv2fy")]
+position = Vector2(-38.6667, -32)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

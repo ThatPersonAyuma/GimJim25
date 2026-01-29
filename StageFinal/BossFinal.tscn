@@ -1,10 +1,9 @@
-[gd_scene load_steps=38 format=3 uid="uid://c4sg4nnroabx1"]
+[gd_scene load_steps=28 format=3 uid="uid://c4sg4nnroabx1"]
 
 [ext_resource type="Texture2D" uid="uid://dwfrrexs5pyxt" path="res://StageFinal/boss sprite/Whole (Depan).png" id="1_2xjx1"]
 [ext_resource type="Script" uid="uid://da7ki3nbhorqr" path="res://StageFinal/bossFinal.gd" id="1_ea0sb"]
 [ext_resource type="Texture2D" uid="uid://gnxm4s41jtrt" path="res://StageFinal/boss sprite/Whole (Pose-1).png" id="2_kqiul"]
 [ext_resource type="Texture2D" uid="uid://5y4s6sxvm6jk" path="res://StageFinal/boss sprite/Whole (Pose-2).png" id="3_ea0sb"]
-[ext_resource type="Texture2D" uid="uid://d02lryu40qm05" path="res://StageFinal/boss sprite/Whole (Pose-3).png" id="4_3hp37"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wupnj"]
 atlas = ExtResource("2_kqiul")
@@ -62,38 +61,6 @@ region = Rect2(7680, 0, 1536, 2248)
 atlas = ExtResource("1_2xjx1")
 region = Rect2(9216, 0, 1536, 2248)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1gmrh"]
-atlas = ExtResource("4_3hp37")
-region = Rect2(0, 0, 1716, 2248)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4a8e4"]
-atlas = ExtResource("4_3hp37")
-region = Rect2(1716, 0, 1716, 2248)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fp2mk"]
-atlas = ExtResource("4_3hp37")
-region = Rect2(3432, 0, 1716, 2248)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_uk7uc"]
-atlas = ExtResource("4_3hp37")
-region = Rect2(5148, 0, 1716, 2248)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kghtq"]
-atlas = ExtResource("4_3hp37")
-region = Rect2(6864, 0, 1716, 2248)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_t030h"]
-atlas = ExtResource("4_3hp37")
-region = Rect2(8580, 0, 1716, 2248)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0w1f2"]
-atlas = ExtResource("4_3hp37")
-region = Rect2(10296, 0, 1716, 2248)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ion1f"]
-atlas = ExtResource("4_3hp37")
-region = Rect2(12012, 0, 1716, 2248)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_es8hm"]
 atlas = ExtResource("3_ea0sb")
 region = Rect2(0, 0, 1492, 2248)
@@ -147,7 +114,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_7j6vm")
 }],
 "loop": true,
-"name": &"fire_laser",
+"name": &"cast",
 "speed": 6.0
 }, {
 "frames": [{
@@ -178,35 +145,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1gmrh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4a8e4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fp2mk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_uk7uc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kghtq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_t030h")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0w1f2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ion1f")
-}],
-"loop": true,
-"name": &"phase_3",
-"speed": 6.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_es8hm")
 }, {
 "duration": 1.0,
@@ -233,33 +171,37 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2xjx1"]
-size = Vector2(536, 931)
-
-[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_ea0sb"]
-points = PackedVector2Array(3106.06, 5151.51, -3190.91, 5072.73, -2330.3, -1224.24, -3209.09, -2127.27, -4257.58, -5557.58, 3863.64, -5581.82, 3087.88, -2230.3, 2209.09, -1309.09)
+size = Vector2(295, 1599)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+collision_layer = 9
+collision_mask = 6
 script = ExtResource("1_ea0sb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(24, 9)
 sprite_frames = SubResource("SpriteFrames_wupnj")
-animation = &"walk"
-frame_progress = 0.256314
+animation = &"cast"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(-7, 398)
+position = Vector2(14.5, 217.5)
 shape = SubResource("RectangleShape2D_2xjx1")
 
-[node name="NA_range" type="Area2D" parent="."]
+[node name="Hitbox" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NA_range"]
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Hitbox"]
 position = Vector2(19.5, 217)
 scale = Vector2(0.165, 0.165)
-shape = SubResource("ConvexPolygonShape2D_ea0sb")
+polygon = PackedVector2Array(2918.18, 2478.79, 3603.03, 5733.33, -3318.18, 5672.73, -3166.67, 1187.88, -3469.7, -1351.52, -3627.27, -2169.7, -3839.39, -3309.09, -4439.39, -4357.58, -5130.3, -7321.21, -3281.82, -8187.88, -1760.61, -5503.03, -1027.27, -6769.7, 960.606, -6969.7, 1821.21, -6096.97, 3106.06, -8012.12, 5075.76, -7769.7, 4275.76, -5872.73, 3396.97, -3278.79, 3160.61, -1054.55, 2990.91, -266.667)
+
+[node name="BodyArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BodyArea"]
+polygon = PackedVector2Array(415, 909, 422, 1117, 87, 1109, -95, 1128, -414, 1125, -260, 74, -515, 53, -376, -195, -433, -256, -513, -329, -659, -780, -810, -1009, -618, -1035, -512, -1001, -314, -659, -193, -682, -185, -834, 31, -895, 202, -849, 240, -678, 290, -671, 476, -948, 552, -1066, 802, -1032, 711, -834, 635, -838, 586, -553, 621, -414, 396, -264, 544, -35, 435, 76, 315, 71, 362, 636)
 
 [node name="ShootPoint" type="Marker2D" parent="."]
-visible = false
 position = Vector2(2, -667)

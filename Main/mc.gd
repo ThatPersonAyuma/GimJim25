@@ -53,7 +53,6 @@ func _enter_tree():
 	Global.Player = self
 
 func _ready() -> void:
-	print("Sprite: ", anim_sprite.sprite_frames.get_animation_names())
 	camera.limit_left = max_cam_left
 	camera.limit_top = max_cam_top
 	camera.limit_right = max_cam_right
@@ -66,12 +65,10 @@ func _ready() -> void:
 	var parent = get_node("..")
 	for i in range(3):
 		var temp_arrow = arrow.instantiate()
-		#print("is self index exist: ", "self_index" in temp_arrow)
 		parent.add_child.call_deferred(temp_arrow)
 		temp_arrow.self_index = i
 		temp_arrow.max_distance = self.range_attack_radius
 		arrows.push_back(temp_arrow)
-	if "travel_arrow_count" not in self: print("Varibale travel_arrow_count tidak ada")
 
 func _process(delta):
 	if anim_sprite.animation in ["walk", "walk_corrupted"] and not is_attacking and not is_dashing:
@@ -84,21 +81,22 @@ func _process(delta):
 		footstep_timer = 0.0
 
 func _physics_process(delta):
-	if not is_hurt and Global.CanCharMove:
-		DetectAttack()
-		if not is_attacking:
-			if not is_dashing:
-				if Global.CanCharMove:
-					Movement()
-		else:
-			attack_melee_interval+=delta
-			velocity = Vector2.ZERO
-			
-	if Global.knocback_pow > 0:
-		Knockback()
-	if is_dashing:
-		velocity = dash
-	move_and_slide()
+	if not Global.is_death:
+		if not is_hurt and Global.CanCharMove:
+			DetectAttack()
+			if not is_attacking:
+				if not is_dashing:
+					if Global.CanCharMove:
+						Movement()
+			else:
+				attack_melee_interval+=delta
+				velocity = Vector2.ZERO
+				
+		if Global.knocback_pow > 0:
+			Knockback()
+		if is_dashing:
+			velocity = dash
+		move_and_slide()
 
 func DetectAttack():
 	if not is_heavy_running and melee_attack_cooldown.is_stopped() and Input.is_action_just_pressed("attack_sword"):

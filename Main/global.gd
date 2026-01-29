@@ -1,18 +1,68 @@
 extends Node
 
-var McHealth: int = 100
-var CanCharMove :bool = true
+var McMaxHealth: int = 2000
+var McHealth: int = McMaxHealth
+var CanCharMove: bool = true
 var Player: CharacterBody2D
-var TotalEnemy: int = 0
 var slow_mov: float = 1
 var mov_push: Vector2 = Vector2(0,0)
 var knocback_pow: float = 0   
 var knockback_direction: Vector2 = Vector2(0,0)
 var is_invincible: bool = false
 var Enemy: CharacterBody2D
+var is_death = false
+signal mc_death
+var death_scene = null
+var boss_scene_path: String = ""
+enum BossDebuff {
+	None = 0,
+	Kaki = 1,
+	Badan = 2,
+	Kepala = 3,
+	Jantung = 4
+}
+var boss_debuff = BossDebuff.None
+
+func reset():
+	McHealth = 100
+	CanCharMove  = true
+	slow_mov = 1
+	mov_push = Vector2(0,0)
+	knocback_pow = 0   
+	knockback_direction = Vector2(0,0)
+	is_invincible = false
+	is_death = false
+	
+func apply_debuff():
+	if boss_debuff >= BossDebuff.Kaki:
+		apply_kaki()
+
+	if boss_debuff >= BossDebuff.Badan:
+		apply_badan()
+
+	if boss_debuff >= BossDebuff.Kepala:
+		apply_kepala()
+
+	if boss_debuff >= BossDebuff.Jantung:
+		apply_jantung()
+
+# debuff
+func apply_kaki():
+	pass
+	
+func apply_badan():
+	pass
+	
+func apply_kepala():
+	pass
+	
+func apply_jantung():
+	pass
 
 
 func _ready() -> void:
+	death_scene = preload("res://Main/death_scene.tscn").instantiate()
+	get_tree().root.add_child.call_deferred(death_scene)
 	Dialogic.timeline_ended.connect(_on_timeline_ended)
 	
 func _on_timeline_ended():
@@ -27,8 +77,16 @@ func change_scene(path: String):
 	get_tree().change_scene_to_file.call_deferred(path)
 
 func McDeath():
-	var node = preload("res://Main/death_scene.tscn").instantiate()
-	self.Player.add_child(node)
+	if not is_death:
+		is_death = true
+		CanCharMove = false
+		mc_death.emit()
+		var cam = get_viewport().get_camera_2d()
+		if cam!=null:
+			print("is there any cam")
+			death_scene.global_position = cam.get_screen_center_position()
+			death_scene.scale = Vector2.ONE / Player.cam_zoom
+			death_scene.visible = true
 	
 func char_stun(duration: float):
 	self.CanCharMove = false
@@ -53,5 +111,4 @@ func McKnockBack(power: float, obj_glob_pstn:Vector2):
 
 func McDrag(power: float, obj_glob_pstn: Vector2):
 	knockback_direction = (obj_glob_pstn - Player.global_position).normalized()
-	print("direction: ", knockback_direction)
 	knocback_pow = power

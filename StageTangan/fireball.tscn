@@ -1,0 +1,69 @@
+[gd_scene load_steps=12 format=3 uid="uid://nslhum7yqi3c"]
+
+[ext_resource type="Script" uid="uid://cix026y6usisy" path="res://StageTangan/Script/fireball.gd" id="1_o50cp"]
+[ext_resource type="Texture2D" uid="uid://cqbjgw2lele72" path="res://StageTangan/Sprite/Playground/Fireball/FB500-5.png" id="1_y55i0"]
+[ext_resource type="Texture2D" uid="uid://bexihjvullf8" path="res://StageTangan/Sprite/Playground/Fireball/FB500-3.png" id="2_o50cp"]
+[ext_resource type="Texture2D" uid="uid://dkanb4xvojevl" path="res://StageTangan/Sprite/Playground/Fireball/FB500-2.png" id="3_6hcvw"]
+[ext_resource type="Texture2D" uid="uid://h61w5ne46xaa" path="res://StageTangan/Sprite/Playground/Fireball/FB500-1.png" id="4_0h3kj"]
+[ext_resource type="Texture2D" uid="uid://bq1xrk1dhthmw" path="res://StageTangan/Sprite/Playground/Fireball/FB500-4.png" id="5_0y5vx"]
+[ext_resource type="Texture2D" uid="uid://1aq454yxt3li" path="res://StageTangan/Sprite/Playground/Fireball/B500-4.PNG" id="6_u3g8g"]
+[ext_resource type="Texture2D" uid="uid://c2pkio018twtu" path="res://StageTangan/Sprite/Playground/Fireball/B500-3.PNG" id="7_mhl4x"]
+[ext_resource type="Texture2D" uid="uid://ds34xmxt0iat2" path="res://StageTangan/Sprite/Playground/Fireball/B500-2.PNG" id="8_4dcc8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pdbc7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_y55i0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_o50cp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6hcvw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_0h3kj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0y5vx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_u3g8g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_mhl4x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_4dcc8")
+}],
+"loop": true,
+"name": &"Fireball",
+"speed": 8.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y55i0"]
+radius = 28.3019
+
+[node name="Fireball" type="Node2D"]
+script = ExtResource("1_o50cp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.169922, 0.169922)
+sprite_frames = SubResource("SpriteFrames_pdbc7")
+animation = &"Fireball"
+autoplay = "Fireball"
+frame_progress = 0.986732
+
+[node name="FireballHitbox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 5
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FireballHitbox"]
+position = Vector2(-2, 0)
+shape = SubResource("CircleShape2D_y55i0")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenEnabler2D" parent="."]
+position = Vector2(-1, 0.499999)
+scale = Vector2(2.6, 2.35)

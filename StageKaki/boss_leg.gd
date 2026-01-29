@@ -224,7 +224,6 @@ func take_damage(amount: int):
 	var dir = (global_position - Global.Player.global_position).normalized()
 	velocity = dir * knockback_power
 
-	anim.play("hit")
 	modulate = Color(1, 0.5, 0.5)
 	await get_tree().create_timer(0.4).timeout
 	modulate = Color.WHITE

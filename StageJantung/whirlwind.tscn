@@ -189,7 +189,7 @@ animations = [{
 radius = 9.0
 height = 48.0
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 script = ExtResource("1_x4vv6")
 
 [node name="Path2D" type="Path2D" parent="."]
