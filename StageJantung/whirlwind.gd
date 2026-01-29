@@ -18,21 +18,40 @@ func _process(delta: float) -> void:
 
 func launch(duration, no_warning = false):
 	$Path2D/PathFollow2D/Area2D.set_deferred("monitoring", true)
-	if not no_warning: $ColorRect.set_deferred('visible', true)
+
+	if not no_warning:
+		$ColorRect.set_deferred("visible", true)
+
 	$Path2D.visible = false
 	self.global_position = Global.Player.global_position
+
 	await get_tree().create_timer(1).timeout
-	if not is_instance_valid(self):return
-	if not no_warning:  $ColorRect.set_deferred('visible', false)
+	if not is_instance_valid(self):
+		return
+
+	if not no_warning:
+		$ColorRect.set_deferred("visible", false)
+
+	if not is_instance_valid(Global.Enemy):
+		return
 	Global.Enemy.whirlwind_available[self_index] = false
+
 	self.is_running = true
 	$Path2D.visible = true
+
 	get_tree().create_timer(duration).timeout.connect(func():
-		if not is_instance_valid(self):return
+		if not is_instance_valid(self):
+			return
+
+		if not is_instance_valid(Global.Enemy):
+			return
+
 		self.is_running = false
 		$Path2D.visible = false
 		Global.Enemy.whirlwind_available[self_index] = true
-		$Path2D/PathFollow2D/Area2D.set_deferred("monitoring", false))
+		$Path2D/PathFollow2D/Area2D.set_deferred("monitoring", false)
+	)
+
 
 func body_entered(body):
 	if body == Global.Player:

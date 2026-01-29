@@ -1,6 +1,6 @@
 class_name BossSweepHitbox extends Area2D
 
-@export var damage: int = 20
+@export var damage: int = 15
 @export var knockback_power: float = 350.0
 @export var lifetime: float = 0.5
 @export var arc_radius: float = 80.0

@@ -7,19 +7,19 @@ extends CharacterBody2D
 @onready var smokes = $smokes
 
 
-@export var knockback_dmg: int = 1
+@export var knockback_dmg: int = 5
 @export var speed = 30.0
-@export var max_health = 100
+@export var max_health = 800
 @export var mud_pause_time := 2.0
-@export var mud_cooldown := 6.0
+@export var mud_cooldown := 15.0
 @export var pseudo_dash_multiplier := 6.0
 @export var pseudo_dash_duration := 0.08
 @export var pseudo_dash_cooldown := 0.25
 @export var whirlwind_duration := 6.0
 @export var whirlwind_cooldown := 10.0
 @export var fireball_config: Vector3 = Vector3(4.0, 70.0, 9999.0)
-@export var fireball_cooldown := 4.0
-@export var phase2_threshold := 50
+@export var fireball_cooldown := 3.0
+@export var phase2_threshold := 400
 
 
 var bullet_path = preload("res://StageKepala/bullet2.tscn")
@@ -300,6 +300,8 @@ func try_spawn_mud():
 	spawn_mud()
 
 func fire_fireball():
+	if not is_inside_tree():
+		return
 	if not can_cast_fireball:
 		return
 

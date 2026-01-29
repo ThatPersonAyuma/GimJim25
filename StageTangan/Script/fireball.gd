@@ -2,8 +2,8 @@ class_name HandBossFireball extends Node2D
 
 @onready var sfx = $SFX
 
-@export var speed: float = 400.0
-@export var damage: int = 20
+@export var speed: float = 350.0
+@export var damage: int = 10
 @export var life_time: float = 5.0 
 
 var direction: Vector2 = Vector2.RIGHT
