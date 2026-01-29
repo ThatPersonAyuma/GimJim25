@@ -1,3 +1,4 @@
+[background arg="#9b9b9bff" fade="0.0"]
 Apa yang ingin kamu interaksi?
 - Pergi ke ruangan serba putih | [if {Barat.is_ruang_putih} != true] [else="disable"]
 	jump ruang_putih
@@ -38,12 +39,13 @@ MC: Semuanya sama.
 	MC: Hidup yang dipinjam…
 	Nadi ini melilit seluruh ruangan.
 	- Menerima refleksi
-		[background fade="0.0"]
+		[background arg="res://Explorasi/assets/Artefak/a-kepala.png" fade="1.5"]
 		Kamu mendapatkan Artefak\: Blindseer Relic
 		Efek dari Blindseer Relic\:\
-		-
+		- Mengurangi masa tunggu dash
 		[signal arg="4A"]
 		[signal arg="is_ruang_putih"]
+		[background arg="#9b9b9bff" fade="1.5"]
 		MC: Meski inginku berpaling.
 		MC: Itu tetaplah aku.
 		MC: Bukan berarti aku tidak bisa berubah.
@@ -58,12 +60,15 @@ MC: Semuanya sama.
 	MC: Untuk kali ini saja aku tidak ingin menyesal....
 	MC: Tidak untuknya.
 	- Mengambil simbol pikiran | [else="disable"]
-		[background fade="0.0"]
+		[background arg="res://Explorasi/assets/Artefak/b-kepala.png" fade="1.5"]
 		Kamu mendapatkan Crownless Thought
 		Efek dari Crownless Thought\:\
-		-
+		- Mengurangi masa tunggu serangan\
+		- Meningkatkan daya rusak serangan\
+		- Meningkatkan pergerakan
 		[signal arg="4B"]
 		[signal arg="is_ruang_putih"]
+		[background arg="#9b9b9bff" fade="1.5"]
 		Pikiran merupakan hal yang sangat kuat dan berharga.
 		Dalam hidup, hanya itu yang dapat kamu kendalikan
 		Kamu kembali dengan artefak tersebut.

@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://djkevb3d8m5bf"]
 
-[ext_resource type="Script" uid="uid://bxgjjew7nu521" path="res://StageKaki/mud_area.gd" id="1_rj5ha"]
+[ext_resource type="Script" path="res://StageKaki/mud_area.gd" id="1_rj5ha"]
 [ext_resource type="Texture2D" uid="uid://ocnmge577ven" path="res://StageKaki/assets/EarthWaves.png" id="2_p888d"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rj5ha"]

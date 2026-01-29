@@ -146,6 +146,8 @@ func _physics_process(delta):
 				global_position += direction * move_speed * delta
 			else:
 				arrive()
+		if is_whirlwind_ready:
+			summon_whirlwind()
 		
 		if state == BossStage.STATE1:
 			return
@@ -158,8 +160,6 @@ func _physics_process(delta):
 				wind_wall_def()
 			else:
 				wind_wall_offense()
-		if is_whirlwind_ready:
-			summon_whirlwind()
 		#if state == BossStage.STATE2:
 			#return
 		#if state == BossStage.STATE3:

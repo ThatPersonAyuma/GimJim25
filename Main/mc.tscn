@@ -1,6 +1,5 @@
-[gd_scene load_steps=190 format=3 uid="uid://n23yng8jsymk"]
+[gd_scene load_steps=189 format=3 uid="uid://n23yng8jsymk"]
 
-[ext_resource type="PackedScene" uid="uid://das0mhog2b3q6" path="res://Main/Camera.tscn" id="1_lt44s"]
 [ext_resource type="Script" uid="uid://betxx8afkqre0" path="res://Main/mc.gd" id="1_s3sm3"]
 [ext_resource type="Shader" uid="uid://cx2omw8wkf4sr" path="res://Main/mc.tres" id="2_24loc"]
 [ext_resource type="Texture2D" uid="uid://b7370sbkf54k2" path="res://Main/assets/idle-4e96.png" id="3_24loc"]
@@ -1457,9 +1456,6 @@ scale = Vector2(2, 2)
 shape = SubResource("CapsuleShape2D_lt44s")
 debug_color = Color(0, 0.539414, 0.960476, 0.42)
 
-[node name="Camera2D" parent="." instance=ExtResource("1_lt44s")]
-limit_smoothed = true
-
 [node name="Animation" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_4ja62")
@@ -1495,3 +1491,5 @@ scale = Vector2(0.135081, 0.135081)
 sprite_frames = SubResource("SpriteFrames_cjtrw")
 autoplay = "default"
 frame_progress = 0.928561
+
+[node name="Camera2D" type="Camera2D" parent="."]

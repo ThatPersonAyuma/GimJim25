@@ -40,14 +40,15 @@ _data = {
 }
 
 [node name="DeathScene" type="Node2D"]
+visible = false
 z_index = 30
 script = ExtResource("1_y8hs3")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -360.0
-offset_top = -230.0
-offset_right = 360.0
-offset_bottom = 190.0
+offset_left = -356.0
+offset_top = -207.0
+offset_right = 364.0
+offset_bottom = 213.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
@@ -57,10 +58,10 @@ libraries = {
 }
 
 [node name="Label" type="Label" parent="."]
-offset_left = -128.0
-offset_top = -132.0
-offset_right = 131.0
-offset_bottom = -77.0
+offset_left = -124.0
+offset_top = -109.0
+offset_right = 135.0
+offset_bottom = -54.0
 theme_override_colors/font_color = Color(1, 0.260006, 0.200835, 1)
 theme_override_fonts/font = ExtResource("2_qqnah")
 theme_override_font_sizes/font_size = 60
@@ -68,10 +69,10 @@ text = "YOU DIED"
 metadata/_edit_use_anchors_ = true
 
 [node name="Button2" type="Button" parent="."]
-offset_left = -90.0
-offset_top = 2.0
-offset_right = 89.0
-offset_bottom = 49.0
+offset_left = -86.0
+offset_top = 25.0
+offset_right = 93.0
+offset_bottom = 72.0
 theme_override_fonts/font = ExtResource("2_qqnah")
 theme_override_font_sizes/font_size = 35
 action_mode = 0

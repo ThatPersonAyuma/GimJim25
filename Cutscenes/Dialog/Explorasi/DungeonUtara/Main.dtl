@@ -1,3 +1,4 @@
+[background arg="#9b9b9bff" fade="0.0"]
 Apa yang ingin kamu interaksi?
 - Jejak Kaki Batu | [if {Utara.is_jejak} != true] [else="disable"]
 	jump jejak
@@ -34,29 +35,31 @@ tapi penaklukan.
 	MC: Tidak ada pegangan…\
 	Hanya keyakinan.
 	- Menyeberang tanpa berhenti
-		[background fade="0.0"]
+		[background arg="res://Explorasi/assets/Artefak/b-kaki.png" fade="1.5"]
 		Kamu mendapatkan Artefak\: Wanderer’s Anklet
 		Efek dari Wanderer’s Anklet\:\
 		- Gerakan lebih cepat\
-		- Dodge lebih jauh
+		- Dash lebih jauh
 		[signal arg="1B"]
 		[signal arg="is_jejak"]
+		[background arg="#9b9b9bff" fade="1.5"]
 		Kamu kembali dengan artefak tersebut.
 		jump 
 	- Abaikan dan kembali
 		[signal arg="is_1B"]
 	jump jejak
 - Ikuti jejak ke atas tebing | [if {Utara.is_1A} != true] [else="disable"]
-	MC: Setiap langkah mereka…\
-	adalah doa yang dipaksakan.
+	MC: Setiap langkah mereka…
+	MC: adalah doa yang dipaksakan.
 	- Mengikatkan simbol altar ke kaki | [else="disable"]
-		[background fade="0.0"]
+		[background arg="res://Explorasi/assets/Artefak/a-kaki.png" fade="1.5"]
 		Kamu mendapatkan Artefak\: Grave-Step Talisman
 		Efek dari Grave-Step Talisman\:\
-		- Stabil saat berdiri\
-		- Sulit dijatuhkan boss
+		- Mengurangi interval serangan\
+		- Meningkatkan serangan
 		[signal arg="1A"]
 		[signal arg="is_jejak"]
+		[background arg="#9b9b9bff" fade="1.5"]
 		Kamu kembali dengan artefak tersebut.
 		jump 
 	- Abaikan dan kembali

@@ -6,7 +6,8 @@ func _ready() -> void:
 	Dialogic.start("Main")
 	
 func boss_fight():
-	Global.change_scene("res://StageKaki/stage_kaki.tscn")
+	Global.boss_scene_path = "res://StageKaki/stage_kaki.tscn"
+	Global.change_scene("res://Explorasi/BossDoor.tscn")
 	
 func handle(signal_name: String):
 	match signal_name:
