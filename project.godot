@@ -30,27 +30,34 @@ directories/dch_directory={
 }
 directories/dtl_directory={
 "BaratTL": "res://Explorasi/Barat/BaratTL.dtl",
+<<<<<<< HEAD
+"Coba": "res://Main/Coba.dtl",
+=======
 "Coba": "res://Explorasi/Coba.dtl",
+>>>>>>> ec49c0646627fac28867c4f6a6532b81c5acb87f
 "Cutscenes/DungeonUtara": "res://Cutscenes/DungeonUtara.dtl",
 "DungeonUtara": "res://Cutscenes/Dialog/DungeonUtara.dtl",
 "DungeonUtara1A": "res://Cutscenes/Dialog/Explorasi/DungeonUtara1A.dtl",
 "DungeonUtara1B": "res://Cutscenes/Dialog/Explorasi/DungeonUtara1B.dtl",
 "EmpatDungeon": "res://Cutscenes/EmpatDungeon.dtl",
+<<<<<<< HEAD
+"Explorasi/Coba": "res://Explorasi/Coba.dtl",
+"IntroEmpatDungeon": "res://Cutscenes/IntroEmpatDungeon.dtl",
+=======
+>>>>>>> ec49c0646627fac28867c4f6a6532b81c5acb87f
 "KutukanPertama": "res://Cutscenes/KutukanPertama.dtl",
 "Main": "res://Cutscenes/Dialog/Explorasi/DungeonUtara/Main.dtl",
 "Main/Coba": "res://Main/Coba.dtl",
 "SelatanTL": "res://Explorasi/Selatan/SelatanTL.dtl",
 "UtaraMain": "res://Explorasi/Timur/UtaraMain.dtl",
+"dungeon-utara-kaki-antares": "res://Cutscenes/Empat Dungeon/dungeon-utara-kaki-antares.dtl",
 "prolog1": "res://Cutscenes/Dialog/prolog1.dtl",
 "prolog2": "res://Cutscenes/prolog2.dtl"
 }
-layout/style_directory={
-"": "res://Nyoba.tres",
-"Nyoba": "res://Nyoba.tres"
-}
+layout/style_directory={}
 glossary/default_case_sensitive=true
-layout/style_list=["res://Nyoba.tres"]
-layout/default_style="res://Nyoba.tres"
+layout/style_list=[]
+layout/default_style=""
 variables={
 "Barat": {
 "is_4A": false,
@@ -431,6 +438,10 @@ dialogic_default_action={
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":32,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 ]
+}
+attack={
+"deadzone": 0.2,
+"events": []
 }
 dash={
 "deadzone": 0.2,

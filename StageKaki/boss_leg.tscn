@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://cnhsgjmqse37w"]
+[gd_scene load_steps=51 format=3 uid="uid://cboww8lhwgyxe"]
 
 [ext_resource type="Script" uid="uid://dtusg6ulh3m3u" path="res://StageKaki/boss_leg.gd" id="1_vcltg"]
 [ext_resource type="Texture2D" uid="uid://cj7hwbom7w07u" path="res://StageKaki/assets/leg-boss-standing.png" id="2_0c776"]
@@ -6,7 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://cxbdr27bs4dc2" path="res://StageKaki/assets/leg-boss-standing-left.png" id="4_eefc6"]
 [ext_resource type="Texture2D" uid="uid://6cn4x46j5gp0" path="res://StageKaki/assets/leg-boss-standing-right.png" id="5_o617o"]
 [ext_resource type="Texture2D" uid="uid://biicux4pxfelq" path="res://StageKaki/assets/leg-boss-standing-backshot.png" id="6_j8vmn"]
-[ext_resource type="Script" path="res://StageKaki/hurtbox.gd" id="7_o617o"]
+[ext_resource type="Script" uid="uid://x73s8b7i0nf3" path="res://StageKaki/hurtbox.gd" id="7_o617o"]
+[ext_resource type="AudioStream" uid="uid://cuumt0vdgwog6" path="res://StageKaki/assets/sounds/stomp-255897.mp3" id="8_j8vmn"]
+[ext_resource type="AudioStream" uid="uid://m31nsntol1ik" path="res://StageKaki/assets/sounds/Projectile lumpur nyebar.wav" id="9_s81l6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_joe0h"]
 atlas = ExtResource("2_vcltg")
@@ -357,3 +359,11 @@ script = ExtResource("7_o617o")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
 position = Vector2(-4, 16)
 shape = SubResource("CapsuleShape2D_eefc6")
+
+[node name="StompSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_j8vmn")
+volume_db = -6.0
+
+[node name="MudSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_s81l6")
+volume_db = -6.0

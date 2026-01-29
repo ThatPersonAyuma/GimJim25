@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=4 uid="uid://y0gcum7gst2"]
+[gd_scene load_steps=7 format=4 uid="uid://y0gcum7gst2"]
 
 [ext_resource type="Texture2D" uid="uid://dsk7f4msut3tj" path="res://StageKepala/Assets/Water Temple Sample sheet_48.png" id="1_1obi8"]
 [ext_resource type="Script" uid="uid://cwcktfgiq8mjs" path="res://StageKepala/pool.gd" id="1_cxs11"]
+[ext_resource type="AudioStream" uid="uid://dgtqwd27ixcnt" path="res://StageKepala/Assets/sounds/Projectile air nyebar.wav" id="3_kuggp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cxs11"]
 texture = ExtResource("1_1obi8")
@@ -439,3 +440,7 @@ tile_set = SubResource("TileSet_kuggp")
 position = Vector2(1, 49)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_h8gq1")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_kuggp")
+volume_db = -10.0
