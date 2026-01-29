@@ -2,19 +2,18 @@ extends CharacterBody2D
 
 @onready var anim = $AnimatedSprite2D
 @onready var Hitbox = $Hitbox
-@onready var BodyArea = $BodyArea
 @onready var shoot_point = $ShootPoint
 @onready var smokes = $smokes
 
 
-@export var knockback_dmg: int = 5
-@export var speed = 30.0
+@export var knockback_dmg: int = 2.5
+@export var speed = 20.0
 @export var max_health = 800
 @export var mud_pause_time := 2.0
 @export var mud_cooldown := 15.0
-@export var pseudo_dash_multiplier := 6.0
+@export var pseudo_dash_multiplier := 50.0
 @export var pseudo_dash_duration := 0.08
-@export var pseudo_dash_cooldown := 0.25
+@export var pseudo_dash_cooldown := 2
 @export var whirlwind_duration := 6.0
 @export var whirlwind_cooldown := 10.0
 @export var fireball_config: Vector3 = Vector3(4.0, 70.0, 9999.0)
@@ -34,7 +33,7 @@ var can_knockback := true
 var can_shoot_bullets= true
 var can_shoot_laser = true
 var can_shoot_waves = true
-var shoot_cooldown_bullets = 0.8
+var shoot_cooldown_bullets = 1.2
 var shoot_cooldown_lasers = 15
 var shoot_cooldown_waves = 5
 var can_spawn_mud := true
@@ -347,9 +346,9 @@ func OnKnockback(player):
 	Global.take_damage(knockback_dmg)
 
 	var knockback_dir = (global_position - player.global_position).normalized()
-	velocity = knockback_dir * 125.0
+	velocity = knockback_dir * 200.0
 
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(0.1).timeout
 	OnMove()
 
 func OnKnockbackAtk(player):
@@ -357,9 +356,9 @@ func OnKnockbackAtk(player):
 	take_damage(knockback_dmg)
 
 	var knockback_dir = (global_position - player.global_position).normalized()
-	velocity = knockback_dir * 300.0
+	velocity = knockback_dir * 200.0
 
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(0.3).timeout
 	OnMove()
 
 func take_damage(amount):

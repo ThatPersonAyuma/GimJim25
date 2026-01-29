@@ -1,4 +1,4 @@
-[gd_scene load_steps=195 format=3 uid="uid://n23yng8jsymk"]
+[gd_scene load_steps=194 format=3 uid="uid://n23yng8jsymk"]
 
 [ext_resource type="Script" uid="uid://betxx8afkqre0" path="res://Main/mc.gd" id="1_s3sm3"]
 [ext_resource type="Shader" uid="uid://cx2omw8wkf4sr" path="res://Main/mc.tres" id="2_24loc"]
@@ -1486,7 +1486,7 @@ wait_time = 5.0
 one_shot = true
 
 [node name="DashCooldownTimer" type="Timer" parent="."]
-wait_time = 8.0
+wait_time = 5.0
 one_shot = true
 
 [node name="StunnedEffect" type="AnimatedSprite2D" parent="."]

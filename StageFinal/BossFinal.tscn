@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://c4sg4nnroabx1"]
+[gd_scene load_steps=35 format=3 uid="uid://c4sg4nnroabx1"]
 
 [ext_resource type="Texture2D" uid="uid://dwfrrexs5pyxt" path="res://StageFinal/boss sprite/Whole (Depan).png" id="1_2xjx1"]
 [ext_resource type="Script" uid="uid://da7ki3nbhorqr" path="res://StageFinal/bossFinal.gd" id="1_ea0sb"]
@@ -215,15 +215,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2xjx1"]
-size = Vector2(518, 1112)
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kqiul"]
-radius = 604.0
-height = 2598.0
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ea0sb"]
-radius = 522.0
-height = 2232.0
+size = Vector2(454, 1377)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 collision_layer = 9
@@ -245,24 +237,16 @@ animation = &"cast"
 frame_progress = 0.912421
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(36, 560)
+position = Vector2(4, 427.5)
 shape = SubResource("RectangleShape2D_2xjx1")
 
 [node name="Hitbox" type="Area2D" parent="."]
-visible = false
 collision_layer = 0
 collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-shape = SubResource("CapsuleShape2D_kqiul")
-
-[node name="BodyArea" type="Area2D" parent="."]
-visible = false
-collision_layer = 0
-collision_mask = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BodyArea"]
-shape = SubResource("CapsuleShape2D_ea0sb")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hitbox"]
+polygon = PackedVector2Array(400, 757, 487, 1129, -439, 1129, -318, 559, -261, 214, -466, 24, -310, -295, -576, -656, -295, -739, -170, -644, -173, -804, 5, -891, 176, -857, 248, -698, 241, -648, 336, -633, 449, -808, 624, -751, 571, -458, 362, -272, 510, -3, 465, 54, 248, 13, 347, 259, 400, 578)
 
 [node name="ShootPoint" type="Marker2D" parent="."]
+visible = false
 position = Vector2(2, -667)

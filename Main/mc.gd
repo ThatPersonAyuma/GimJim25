@@ -2,8 +2,8 @@ extends CharacterBody2D
 
 @export var Speed: int = 200
 @export var knockback_raw_pow: int = 500
-@export var dash_power:int = 260
-@export var max_arrow:int = 3
+@export var dash_power:int = 400
+@export var max_arrow:int = 2
 @export var range_attack_radius = 500
 @export var is_corrupted = false
 @export var max_cam_left = -10000000
