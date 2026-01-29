@@ -37,8 +37,12 @@ directories/dtl_directory={
 "DungeonUtara1B": "res://Cutscenes/Dialog/Explorasi/DungeonUtara1B.dtl",
 "EmpatDungeon": "res://Cutscenes/EmpatDungeon.dtl",
 "IntroEmpatDungeon": "res://Cutscenes/IntroEmpatDungeon.dtl",
+"JantungAntares": "res://Cutscenes/Empat Dungeon/JantungAntares.dtl",
+"JantungAntaresEnd": "res://Cutscenes/Empat Dungeon/JantungAntaresEnd.dtl",
 "KakiUtaraAntares": "res://Cutscenes/Empat Dungeon/KakiUtaraAntares.dtl",
 "KakiUtaraAntaresEnd": "res://Cutscenes/Empat Dungeon/KakiUtaraAntaresEnd.dtl",
+"KepalaAntares": "res://Cutscenes/Empat Dungeon/KepalaAntares.dtl",
+"KepalaAntaresEnd": "res://Cutscenes/Empat Dungeon/KepalaAntaresEnd.dtl",
 "KutukanPertama": "res://Cutscenes/KutukanPertama.dtl",
 "Main": "res://Cutscenes/Dialog/Explorasi/DungeonUtara/Main.dtl",
 "Main/Coba": "res://Main/Coba.dtl",
@@ -46,7 +50,6 @@ directories/dtl_directory={
 "TanganTimurAntares": "res://Cutscenes/Empat Dungeon/TanganTimurAntares.dtl",
 "TanganTimurAntaresEnd": "res://Cutscenes/Empat Dungeon/TanganTimurAntaresEnd.dtl",
 "UtaraMain": "res://Explorasi/Timur/UtaraMain.dtl",
-"dungeon-utara-kaki-antares": "res://Cutscenes/Empat Dungeon/dungeon-utara-kaki-antares.dtl",
 "prolog1": "res://Cutscenes/Dialog/prolog1.dtl",
 "prolog2": "res://Cutscenes/prolog2.dtl"
 }
