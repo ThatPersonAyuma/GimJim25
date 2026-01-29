@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bfkpcuwwlk44c"
-path="res://.godot/imported/Dungeon_Tileset.png-d877ca474a8c9dbe477bcc980cc27eb4.ctex"
+uid="uid://dwfrrexs5pyxt"
+path="res://.godot/imported/Whole (Depan).png-15a14764c1a2092a7649f1345e4c25a9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://StageKaki/assets/Dungeon_Tileset.png"
-dest_files=["res://.godot/imported/Dungeon_Tileset.png-d877ca474a8c9dbe477bcc980cc27eb4.ctex"]
+source_file="res://StageFinal/boss sprite/Whole (Depan).png"
+dest_files=["res://.godot/imported/Whole (Depan).png-15a14764c1a2092a7649f1345e4c25a9.ctex"]
 
 [params]
 
