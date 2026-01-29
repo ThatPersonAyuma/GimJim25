@@ -1,7 +1,8 @@
 extends Node
 
-var McHealth: int = 100
-var CanCharMove :bool = true
+var McMaxHealth: int = 2000
+var McHealth: int = McMaxHealth
+var CanCharMove: bool = true
 var Player: CharacterBody2D
 var slow_mov: float = 1
 var mov_push: Vector2 = Vector2(0,0)

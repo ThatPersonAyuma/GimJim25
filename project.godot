@@ -31,8 +31,8 @@ directories/dch_directory={
 directories/dtl_directory={
 "BaratTL": "res://Explorasi/Barat/BaratTL.dtl",
 "Coba": "res://Main/Coba.dtl",
-"Dialog/DungeonUtara": "res://Cutscenes/Dialog/DungeonUtara.dtl",
-"DungeonUtara": "res://Cutscenes/DungeonUtara.dtl",
+"Cutscenes/DungeonUtara": "res://Cutscenes/DungeonUtara.dtl",
+"DungeonUtara": "res://Cutscenes/Dialog/DungeonUtara.dtl",
 "DungeonUtara1A": "res://Cutscenes/Dialog/Explorasi/DungeonUtara1A.dtl",
 "DungeonUtara1B": "res://Cutscenes/Dialog/Explorasi/DungeonUtara1B.dtl",
 "EmpatDungeon": "res://Cutscenes/EmpatDungeon.dtl",
@@ -44,10 +44,7 @@ directories/dtl_directory={
 "prolog1": "res://Cutscenes/Dialog/prolog1.dtl",
 "prolog2": "res://Cutscenes/prolog2.dtl"
 }
-layout/style_directory={
-"": "res://Nyoba.tres",
-"Nyoba": "res://Nyoba.tres"
-}
+layout/style_directory={}
 glossary/default_case_sensitive=true
 layout/style_list=["res://Nyoba.tres"]
 layout/default_style="res://Nyoba.tres"

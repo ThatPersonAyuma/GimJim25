@@ -1456,6 +1456,10 @@ scale = Vector2(2, 2)
 shape = SubResource("CapsuleShape2D_lt44s")
 debug_color = Color(0, 0.539414, 0.960476, 0.42)
 
+[node name="Camera2D" parent="." instance=ExtResource("1_lt44s")]
+zoom = Vector2(0.7, 0.7)
+limit_smoothed = true
+
 [node name="Animation" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_4ja62")
