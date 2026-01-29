@@ -9,13 +9,13 @@ enum BossStage{
 }
 var state = BossStage.STATE1
 @export var attack_interval = 3
-@export var damage_dealt_na = 100
-@export var health = 1000
+@export var damage_dealt_na = 15
+@export var health = 500
 @export var knockback_pwr: float = 0.4
 @export var hurricane_duration = 10
 @export var hurricane_push_pwr: float = 0.2
-@export var arrow_speed = 400
-@export var arrow_damage = 10 
+@export var arrow_speed = 350
+@export var arrow_damage = 3 
 @export var wind_wall_damage = 10
 @export var intro_duration = 2
 @export var current_health = self.health
@@ -298,7 +298,7 @@ func take_damage(amount: int):
 	self.current_health -= amount
 	match self.state:
 		BossStage.STATE1:
-			if self.current_health <= self.health*0.7:
+			if self.current_health <= self.health*0.6:
 				self.state = BossStage.STATE2
 				current_anim = "stage2"
 				slash_cooldown -= 2
@@ -314,7 +314,7 @@ func take_damage(amount: int):
 					if not is_instance_valid(self):return
 					is_bliz_ready = true)
 		BossStage.STATE2:
-			if self.current_health <= self.health*0.4:
+			if self.current_health <= self.health*0.3:
 				self.state= BossStage.STATE3
 				current_anim = "stage3"
 				attack_interval -= 1

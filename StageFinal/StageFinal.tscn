@@ -2859,7 +2859,7 @@ scale = Vector2(0.5, 0.5)
 
 [node name="BossFinal" parent="." instance=ExtResource("7_8qsm7")]
 position = Vector2(277, 145)
-scale = Vector2(0.16, 0.16)
+scale = Vector2(0.15, 0.15)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_j1xq3")

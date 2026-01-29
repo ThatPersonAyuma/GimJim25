@@ -8,8 +8,8 @@ const SMALL_FIREBALL_SCENE = preload("res://StageTangan/small_fireball.tscn")
 const FIREWALL_SHIELD_SCENE = preload("res://StageTangan/firewall_shield.tscn")
 
 @export var max_health: int = 500
-@export var base_speed: float = 80.0
-@export var base_damage_contact: int = 10
+@export var base_speed: float = 50.0
+@export var base_damage_contact: int = 5
 @export var knockback_power: float = 300.0
 @export var attack_cooldown_time: float = 1.0
 

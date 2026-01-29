@@ -7,7 +7,7 @@ extends CharacterBody2D
 @onready var stomp_sfx = $StompSFX
 @onready var mud_sfx = $MudSFX
 
-@export var max_health := 100
+@export var max_health := 500
 @export var knockback_power := 70.0
 
 var HP := 0

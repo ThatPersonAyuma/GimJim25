@@ -5,9 +5,9 @@ extends CharacterBody2D
 @onready var  NearbyAttackRange = $NA_range
 @onready var shoot_point = $ShootPoint
 
-@export var knockback_dmg: int = 10
+@export var knockback_dmg: int = 5
 @export var speed = 50.0
-@export var max_health = 50
+@export var max_health = 500
 
 var waves_path = preload("res://StageKepala/bullet.tscn")
 var bullet_path = preload("res://StageKepala/bullet2.tscn")
@@ -19,9 +19,9 @@ var can_shoot_waves = true
 var can_shoot_laser = true
 var can_spawn_pool := true
 var shoot_cooldown_bullets = 0.8
-var shoot_cooldown_waves = 3
+var shoot_cooldown_waves = 5
 var shoot_cooldown_lasers = 15
-var pool_cooldown := 5.0
+var pool_cooldown := 7.5
 
 var HP : int
 var is_mc_in_range = false
@@ -213,7 +213,7 @@ func take_damage(amount):
 	
 	if HP <= 0:
 		die()
-	elif HP <= 30 and not phase_2:
+	elif HP <= 300 and not phase_2:
 		enter_phase_2()
 
 func enter_phase_2():

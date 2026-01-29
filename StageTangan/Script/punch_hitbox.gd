@@ -2,7 +2,7 @@ class_name BossPunchHitbox extends Area2D
 
 @onready var sfx = $SFX
 
-@export var damage: int = 25
+@export var damage: int = 15
 @export var knockback_power: float = 400.0
 @export var punch_duration: float = 0.25
 @export var punch_distance: float = 120.0
