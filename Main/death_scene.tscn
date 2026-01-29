@@ -1,6 +1,84 @@
-[gd_scene load_steps=2 format=3 uid="uid://clbtlbmq4uumb"]
+[gd_scene load_steps=5 format=3 uid="uid://clbtlbmq4uumb"]
 
 [ext_resource type="Script" uid="uid://j4oouw5rblc3" path="res://Main/death_scene.gd" id="1_y8hs3"]
 
+[sub_resource type="Animation" id="Animation_imgeh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_sv8jq"]
+resource_name = "death"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3kqnn"]
+_data = {
+&"RESET": SubResource("Animation_imgeh"),
+&"death": SubResource("Animation_sv8jq")
+}
+
 [node name="DeathScene" type="Node2D"]
+z_index = 20
 script = ExtResource("1_y8hs3")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -320.0
+offset_top = -180.0
+offset_right = 320.0
+offset_bottom = 180.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_3kqnn")
+}
+
+[node name="Label" type="Label" parent="."]
+offset_left = -96.0
+offset_top = -144.0
+offset_right = 94.0
+offset_bottom = -89.0
+theme_override_colors/font_color = Color(1, 0.260006, 0.200835, 1)
+theme_override_font_sizes/font_size = 40
+text = "YOU DIED"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="."]
+offset_left = -53.0
+offset_top = -44.0
+offset_right = 49.0
+offset_bottom = -13.0
+theme_override_colors/icon_normal_color = Color(0.941176, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "TRY AGAIN"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button2" type="Button" parent="."]
+offset_left = -53.0
+offset_top = 45.0
+offset_right = 51.0
+offset_bottom = 88.0
+text = "MAIN MENU"
+metadata/_edit_use_anchors_ = true

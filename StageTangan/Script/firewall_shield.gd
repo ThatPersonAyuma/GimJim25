@@ -4,13 +4,17 @@ class_name BossFirewallShield extends Node2D
 @export var burn_interval: float = 0.5
 @export var duration: float = 6.0
 @export var spawn_delay: float = 0.1
+@export var base_scale: float = 1.8  
 
 var boss_ref: Node2D = null
 var damage_timer: float = 0.0
 var players_inside: int = 0
+var boss_scale: float = 1.0 
 
 func _ready():
 	print("Firewall Shield spawned di sekitar Boss!")
+	
+	scale = Vector2.ONE * base_scale * boss_scale
 	
 	_hide_all_units()
 	

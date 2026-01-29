@@ -1452,4 +1452,4 @@ position = Vector2(572, 245)
 [node name="Boss" parent="." instance=ExtResource("8_mcyyn")]
 z_index = 5
 position = Vector2(568, 327)
-scale = Vector2(0.755, 0.755)
+scale = Vector2(0.6, 0.6)

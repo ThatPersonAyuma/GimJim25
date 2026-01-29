@@ -1,8 +1,8 @@
-extends AnimatedSprite2D
+extends Node2D
 
-var arrow_damage:int = 0
+var arrow_damage:int = 10 #coba coba
 var direction = Vector2.ZERO
-var travel_velocity =600
+var travel_velocity = 500
 var is_travel = false
 var max_distance: int = 500
 var traveled_distance = 0
@@ -28,8 +28,9 @@ func _process(delta):
 		if traveled_distance >= max_distance:
 			reset_pos()
 	
-func handle_body(enemy: CharacterBody2D):
-	if enemy.is_in_group("Enemies"):
+func handle_body(enemy):
+	print("Enemy name: ", enemy.name)
+	if enemy == Global.Enemy:
 		if enemy.has_method("take_damage"):
 			enemy.take_damage(arrow_damage)
 		else:

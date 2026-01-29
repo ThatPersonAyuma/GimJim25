@@ -1,14 +1,31 @@
-[gd_scene load_steps=3 format=3 uid="uid://c4t11mns3cfb6"]
+[gd_scene load_steps=4 format=3 uid="uid://c4t11mns3cfb6"]
 
 [ext_resource type="Script" uid="uid://clxy7lvi5s70x" path="res://StageTangan/Script/punch_hitbox.gd" id="1_xyq0s"]
+[ext_resource type="Texture2D" uid="uid://bbqdjtux0lsc5" path="res://StageTangan/Sprite/Final Hand Boss/RightHand.png" id="2_xrjlm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrjlm"]
+size = Vector2(20, 10)
 
 [node name="PunchHitbox" type="Area2D"]
+scale = Vector2(0.1, 0.1)
 collision_layer = 0
 collision_mask = 4
 script = ExtResource("1_xyq0s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2.38419e-05, 45)
 scale = Vector2(20, 15)
 shape = SubResource("RectangleShape2D_xrjlm")
+
+[node name="Kanan" type="Sprite2D" parent="."]
+position = Vector2(-100, 50)
+rotation = -1.15192
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_xrjlm")
+
+[node name="Kiri" type="Sprite2D" parent="."]
+position = Vector2(100, 50)
+rotation = 1.15196
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_xrjlm")
+flip_h = true

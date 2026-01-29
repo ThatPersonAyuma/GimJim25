@@ -28,13 +28,16 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cuig3"]
 size = Vector2(415, 92.5)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+[node name="AnimatedSprite2D" type="Node2D"]
 visible = false
-position = Vector2(2, 2)
+z_index = 12
 scale = Vector2(0.05, 0.05)
-sprite_frames = SubResource("SpriteFrames_7qun8")
-frame_progress = 0.0907811
 script = ExtResource("2_0vso8")
+
+[node name="Node2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_7qun8")
+autoplay = "default"
+frame_progress = 0.108198
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 0

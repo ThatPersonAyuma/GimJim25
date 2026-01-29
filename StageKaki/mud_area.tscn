@@ -1,0 +1,72 @@
+[gd_scene load_steps=11 format=3 uid="uid://djkevb3d8m5bf"]
+
+[ext_resource type="Script" uid="uid://bxgjjew7nu521" path="res://StageKaki/mud_area.gd" id="1_rj5ha"]
+[ext_resource type="Texture2D" uid="uid://ocnmge577ven" path="res://StageKaki/assets/EarthWaves.png" id="2_p888d"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rj5ha"]
+radius = 228.219
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_koajw"]
+atlas = ExtResource("2_p888d")
+region = Rect2(0, 0, 197, 204)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nddfd"]
+atlas = ExtResource("2_p888d")
+region = Rect2(197, 0, 197, 204)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6pgne"]
+atlas = ExtResource("2_p888d")
+region = Rect2(394, 0, 197, 204)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0gqlx"]
+atlas = ExtResource("2_p888d")
+region = Rect2(591, 0, 197, 204)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hes6m"]
+atlas = ExtResource("2_p888d")
+region = Rect2(788, 0, 197, 204)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ys7td"]
+atlas = ExtResource("2_p888d")
+region = Rect2(985, 0, 197, 204)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qtbmh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_koajw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nddfd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6pgne")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0gqlx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hes6m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ys7td")
+}],
+"loop": false,
+"name": &"default",
+"speed": 12.0
+}]
+
+[node name="MudArea" type="Area2D"]
+collision_layer = 8
+collision_mask = 4
+script = ExtResource("1_rj5ha")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3)
+shape = SubResource("CircleShape2D_rj5ha")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(3.1358, 3.13579)
+sprite_frames = SubResource("SpriteFrames_qtbmh")
+frame = 5
+frame_progress = 1.0
