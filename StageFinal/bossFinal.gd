@@ -1,9 +1,10 @@
 extends CharacterBody2D
 
 @onready var anim = $AnimatedSprite2D
-@onready var  Hitbox = $Hitbox
+@onready var Hitbox = $Hitbox
 @onready var BodyArea = $BodyArea
 @onready var shoot_point = $ShootPoint
+@onready var smokes = $smokes
 
 
 @export var knockback_dmg: int = 1
@@ -60,13 +61,14 @@ func _ready() -> void:
 		whirlwind_available[i] = true
 	
 	Hitbox.connect("body_entered", body_entered)
-	BodyArea.connect("body_entered", body_area_entered)
 	Hitbox.connect("body_exited", body_exited)
 	
 	anim.animation_finished.connect(_on_animation_finished)
 
 	Global.Enemy = self
 	OnIdle()
+	smokes.animation = "smokes"
+	smokes.play()
 
 func _physics_process(_delta):
 	if Global.McHealth <= 0:
@@ -83,8 +85,10 @@ func _physics_process(_delta):
 			return
 
 		"move":
-			DetectPlayer()
+			if state != "knockback":
+				DetectPlayer()
 			move_and_slide()
+
 			
 			if not phase_2:
 				try_spawn_mud()
@@ -341,12 +345,10 @@ func OnKnockback(player):
 	Global.take_damage(knockback_dmg)
 
 	var knockback_dir = (global_position - player.global_position).normalized()
-	velocity = knockback_dir * 200.0
+	velocity = knockback_dir * 125.0
 
-	await get_tree().create_timer(0.3).timeout
-	can_knockback = true
+	await get_tree().create_timer(0.5).timeout
 	OnMove()
-
 
 func OnKnockbackAtk(player):
 	state = "knockback"
@@ -356,9 +358,8 @@ func OnKnockbackAtk(player):
 	velocity = knockback_dir * 300.0
 
 	await get_tree().create_timer(0.5).timeout
-	can_knockback = true
 	OnMove()
-	
+
 func take_damage(amount):
 	HP -= amount 
 	print("current HP: ", HP) 
@@ -389,15 +390,8 @@ func body_entered(body: Node2D):
 
 		if body.is_attacking:
 			OnKnockbackAtk(body)
-
-func body_area_entered(body):
-	if body != Global.Player:
-		return
-	if not can_knockback:
-		return
-
-	can_knockback = false
-	OnKnockback(body)
+		else:
+			OnKnockback(body) 
 
 func body_exited(body):
 	if body == Global.Player:
