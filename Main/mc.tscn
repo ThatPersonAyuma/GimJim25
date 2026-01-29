@@ -1,4 +1,4 @@
-[gd_scene load_steps=189 format=3 uid="uid://n23yng8jsymk"]
+[gd_scene load_steps=195 format=3 uid="uid://n23yng8jsymk"]
 
 [ext_resource type="Script" uid="uid://betxx8afkqre0" path="res://Main/mc.gd" id="1_s3sm3"]
 [ext_resource type="Shader" uid="uid://cx2omw8wkf4sr" path="res://Main/mc.tres" id="2_24loc"]
@@ -16,6 +16,11 @@
 [ext_resource type="Texture2D" uid="uid://bcj7f8467q3wc" path="res://Main/assets/mc/heavyattack-fixed.png" id="11_u81qg"]
 [ext_resource type="Texture2D" uid="uid://e2ocoubntoh3" path="res://Main/assets/mc/idle-ce91-corrupted.png" id="13_q1m41"]
 [ext_resource type="Texture2D" uid="uid://bbgtatan5236d" path="res://Main/assets/mc/walk-4e9b-cec9-corrupted.png" id="15_yd11o"]
+[ext_resource type="AudioStream" uid="uid://bqrevyoswtpic" path="res://Main/assets/sounds/swosh.wav" id="18_3jfdf"]
+[ext_resource type="AudioStream" uid="uid://b2cjyckenuctt" path="res://Main/assets/sounds/Panah nembak.wav" id="19_8gg4q"]
+[ext_resource type="AudioStream" uid="uid://cqalnvojyiift" path="res://Main/assets/sounds/Slicing Flesh.wav" id="20_8gg4q"]
+[ext_resource type="AudioStream" uid="uid://ce3qy0crxc020" path="res://Main/assets/sounds/Footstep.wav" id="21_uuur1"]
+[ext_resource type="AudioStream" uid="uid://b627h4bbay1gy" path="res://Main/assets/sounds/Mc ke hit.wav" id="22_2t88m"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_k8jie"]
 shader = ExtResource("2_24loc")
@@ -1491,5 +1496,28 @@ scale = Vector2(0.135081, 0.135081)
 sprite_frames = SubResource("SpriteFrames_cjtrw")
 autoplay = "default"
 frame_progress = 0.928561
+
+[node name="SwoshSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_3jfdf")
+volume_db = -5.0
+max_polyphony = 4
+
+[node name="BowSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("19_8gg4q")
+volume_db = -2.0
+max_polyphony = 4
+
+[node name="SwordHitSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_8gg4q")
+volume_db = -5.0
+max_polyphony = 4
+
+[node name="FootstepSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("21_uuur1")
+volume_db = -23.0
+
+[node name="HurtSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("22_2t88m")
+volume_db = -3.0
 
 [node name="Camera2D" type="Camera2D" parent="."]

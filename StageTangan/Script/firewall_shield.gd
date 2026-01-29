@@ -1,5 +1,7 @@
 class_name BossFirewallShield extends Node2D
 
+@onready var sfx = $SFX
+
 @export var burn_damage_percent: float = 0.10  
 @export var burn_interval: float = 0.5
 @export var duration: float = 6.0
@@ -13,6 +15,7 @@ var boss_scale: float = 1.0
 
 func _ready():
 	print("Firewall spawn")
+	sfx.play()
 	
 	scale = Vector2.ONE * base_scale * boss_scale
 	

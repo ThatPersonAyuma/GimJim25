@@ -1,7 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://dqiqypxiwcufu"]
+[gd_scene load_steps=20 format=3 uid="uid://dqiqypxiwcufu"]
 
 [ext_resource type="Script" uid="uid://bvqr057el2mpy" path="res://StageTangan/Script/shockwave.gd" id="1_s1iem"]
 [ext_resource type="Texture2D" uid="uid://cacv78k3u7lpy" path="res://StageTangan/Sprite/Playground/Shockwave/1655.png" id="2_s1iem"]
+[ext_resource type="AudioStream" uid="uid://dpty1v5p1faw4" path="res://StageTangan/Sound/Mengibas api.wav" id="3_0u365"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0u365"]
 atlas = ExtResource("2_s1iem")
@@ -131,3 +132,7 @@ one_way_collision_margin = 0.0
 
 [node name="DamageTimer" type="Timer" parent="."]
 wait_time = 0.5
+
+[node name="SFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_0u365")
+volume_db = 10.0

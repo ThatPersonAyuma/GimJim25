@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://c4t11mns3cfb6"]
+[gd_scene load_steps=5 format=3 uid="uid://c4t11mns3cfb6"]
 
 [ext_resource type="Script" uid="uid://clxy7lvi5s70x" path="res://StageTangan/Script/punch_hitbox.gd" id="1_xyq0s"]
 [ext_resource type="Texture2D" uid="uid://bbqdjtux0lsc5" path="res://StageTangan/Sprite/Final Hand Boss/RightHand.png" id="2_xrjlm"]
+[ext_resource type="AudioStream" uid="uid://dnqn5f8gatd7b" path="res://StageTangan/Sound/Kibasan tangan boss.wav" id="3_6f0mo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrjlm"]
 size = Vector2(20, 10)
@@ -29,3 +30,7 @@ rotation = 1.15196
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_xrjlm")
 flip_h = true
+
+[node name="SFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_6f0mo")
+volume_db = 24.0

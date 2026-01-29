@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://b1nr6h13nak2h"]
+[gd_scene load_steps=18 format=4 uid="uid://b1nr6h13nak2h"]
 
 [ext_resource type="Texture2D" uid="uid://bdcfhk6a428p4" path="res://StageTangan/Sprite/Playground/decorative_cracks_floor.png" id="1_hgxmq"]
 [ext_resource type="Texture2D" uid="uid://wsalmpc5jhrf" path="res://StageTangan/Sprite/Playground/Dungeon tileset.png" id="2_aesks"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dn6sre3rcux5s" path="res://StageTangan/Sprite/Playground/C300-3.png" id="7_mpa8t"]
 [ext_resource type="PackedScene" uid="uid://cnfbwpbl5gavq" path="res://StageTangan/boss.tscn" id="8_mcyyn"]
 [ext_resource type="PackedScene" uid="uid://n23yng8jsymk" path="res://Main/mc.tscn" id="9_aesks"]
+[ext_resource type="AudioStream" uid="uid://ueoac41hrqbs" path="res://StageTangan/Sound/Boss-02.wav" id="10_blf66"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mbkqa"]
 texture = ExtResource("1_hgxmq")
@@ -1452,17 +1453,7 @@ position = Vector2(572, 245)
 [node name="Boss" parent="." instance=ExtResource("8_mcyyn")]
 z_index = 5
 position = Vector2(568, 327)
-scale = Vector2(0.6, 0.6)
-max_health = null
-base_speed = null
-base_damage_contact = null
-knockback_power = null
-attack_cooldown_time = null
-fireball_config = null
-shockwave_config = null
-punch_config = null
-sweep_config = null
-projectile_config = null
-firewall_config = null
-projectile_count = null
-projectile_spread = null
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_blf66")
+autoplay = true

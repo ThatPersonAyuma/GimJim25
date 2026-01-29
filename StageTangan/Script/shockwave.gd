@@ -1,5 +1,7 @@
 class_name BossShockwave extends Node2D
 
+@onready var sfx = $SFX
+
 @export var expand_speed: float = 2.0     
 @export var max_scale: float = 5.0        
 @export var burn_damage: int = 5        
@@ -16,7 +18,7 @@ var players_inside: Array = []
 
 func _ready():
 	print("Shockwave spawned BOSSSH!")
-
+	sfx.play()
 	# z_index = -1
 	
 	scale = Vector2(current_scale, current_scale)

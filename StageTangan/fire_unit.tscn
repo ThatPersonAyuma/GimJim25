@@ -1,6 +1,7 @@
-[gd_scene load_steps=64 format=3 uid="uid://b6sfgrpq7d5br"]
+[gd_scene load_steps=65 format=3 uid="uid://b6sfgrpq7d5br"]
 
 [ext_resource type="Texture2D" uid="uid://duiycnhj64yi6" path="res://StageTangan/Sprite/Playground/Fires/Fires/Jumping_Small_Fireball_14x45.png" id="1_c5uyx"]
+[ext_resource type="AudioStream" uid="uid://dpty1v5p1faw4" path="res://StageTangan/Sound/Mengibas api.wav" id="2_uqw5l"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3t3bo"]
 atlas = ExtResource("1_c5uyx")
@@ -447,3 +448,7 @@ collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FireUnitHitbox"]
 shape = SubResource("CapsuleShape2D_tv2fy")
+
+[node name="SFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_uqw5l")
+volume_db = 5.0

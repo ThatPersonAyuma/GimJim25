@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dkp7yw4lcmi2k"
+path="res://.godot/imported/Mengibas angis.wav-61f79343ab70181f9d6a70ade14b91cb.sample"
+
+[deps]
+
+source_file="res://StageJantung/assets/sounds/Mengibas angis.wav"
+dest_files=["res://.godot/imported/Mengibas angis.wav-61f79343ab70181f9d6a70ade14b91cb.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

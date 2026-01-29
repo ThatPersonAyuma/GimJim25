@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cnfbwpbl5gavq"]
+[gd_scene load_steps=21 format=3 uid="uid://cnfbwpbl5gavq"]
 
 [ext_resource type="Script" uid="uid://cuptowabfp0hb" path="res://StageTangan/Script/bossHandStage.gd" id="1_0n0qp"]
 [ext_resource type="Texture2D" uid="uid://cv1ncfbbbxt0t" path="res://StageTangan/Sprite/Final Hand Boss/handboss(Close).png" id="2_wn44p"]
@@ -101,6 +101,19 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_8lkl1"]
+radius = 50.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ufmwt"]
+radius = 25.0
+height = 80.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rkyto"]
+size = Vector2(60, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8lkl1"]
+size = Vector2(60, 30)
+
 [node name="Boss" type="CharacterBody2D"]
 scale = Vector2(0.3, 0.3)
 collision_layer = 8
@@ -113,7 +126,41 @@ scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_3goed")
 animation = &"Close Hand"
 autoplay = "Close Hand"
-frame_progress = 0.370984
+frame_progress = 0.0312468
+
+[node name="ColsMidFireBall" type="CollisionShape2D" parent="."]
+light_mask = 4
+visibility_layer = 0
+position = Vector2(0, 26)
+shape = SubResource("CircleShape2D_8lkl1")
+
+[node name="ColsRightHand" type="CollisionShape2D" parent="."]
+light_mask = 4
+visibility_layer = 0
+position = Vector2(46, -19)
+rotation = -0.602139
+shape = SubResource("CapsuleShape2D_ufmwt")
+
+[node name="ColsLeftHand" type="CollisionShape2D" parent="."]
+light_mask = 4
+visibility_layer = 0
+position = Vector2(-47, -20)
+rotation = -2.51676
+shape = SubResource("CapsuleShape2D_ufmwt")
+
+[node name="ColsRightArm" type="CollisionShape2D" parent="."]
+light_mask = 4
+visibility_layer = 0
+position = Vector2(117, 32)
+rotation = 0.331613
+shape = SubResource("RectangleShape2D_rkyto")
+
+[node name="ColsLeftArm" type="CollisionShape2D" parent="."]
+light_mask = 4
+visibility_layer = 0
+position = Vector2(-122, 36)
+rotation = -0.287979
+shape = SubResource("RectangleShape2D_8lkl1")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(0, 11)
