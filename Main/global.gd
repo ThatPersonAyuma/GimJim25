@@ -10,7 +10,7 @@ var knocback_pow: float = 0
 var knockback_direction: Vector2 = Vector2(0,0)
 var is_invincible: bool = false
 var Enemy: CharacterBody2D
-
+var is_death = false
 
 func _ready() -> void:
 	Dialogic.timeline_ended.connect(_on_timeline_ended)
@@ -27,8 +27,11 @@ func change_scene(path: String):
 	get_tree().change_scene_to_file.call_deferred(path)
 
 func McDeath():
+	self.Player.camera.reparent(get_tree().current_scene, true)
 	var node = preload("res://Main/death_scene.tscn").instantiate()
-	self.Player.add_child(node)
+	Player.camera.add_child(node)
+	is_death = true
+	CanCharMove = false
 	
 func char_stun(duration: float):
 	self.CanCharMove = false
@@ -53,5 +56,4 @@ func McKnockBack(power: float, obj_glob_pstn:Vector2):
 
 func McDrag(power: float, obj_glob_pstn: Vector2):
 	knockback_direction = (obj_glob_pstn - Player.global_position).normalized()
-	print("direction: ", knockback_direction)
 	knocback_pow = power

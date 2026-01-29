@@ -1963,3 +1963,7 @@ scale = Vector2(1.9, 1.9)
 [node name="Player" parent="." instance=ExtResource("5_ep4v2")]
 position = Vector2(254, 362)
 scale = Vector2(0.5, 0.5)
+max_cam_left = -20
+max_cam_top = 0
+max_cam_right = 550
+max_cam_bottom = 575

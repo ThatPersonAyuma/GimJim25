@@ -1,6 +1,6 @@
-[gd_scene load_steps=28 format=3 uid="uid://b4nxaprfcegg3"]
+[gd_scene load_steps=28 format=3 uid="uid://dro2o8u0x44jv"]
 
-[ext_resource type="Script" uid="uid://chmjgqw4t4uq8" path="res://StageKepala/BossKepala.gd" id="1_a84m7"]
+[ext_resource type="Script" path="res://StageKepala/BossKepala.gd" id="1_a84m7"]
 [ext_resource type="Texture2D" uid="uid://da2u5s1t0625n" path="res://StageKepala/Assets/smoke..png" id="2_bm8lo"]
 [ext_resource type="Texture2D" uid="uid://dtvdis1icf66i" path="res://StageKepala/Assets/pixel_art_small.png" id="2_bwosb"]
 

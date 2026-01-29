@@ -1,0 +1,76 @@
+Apa yang ingin kamu interaksi?
+- Pergi ke ruangan serba putih | [if {Barat.is_ruang_putih} != true] [else="disable"]
+	jump ruang_putih
+- Dekati dan baca teks di udara | [if {Barat.is_teks_diudara} != true] [else="disable"]
+	jump teks_diudara
+- Dengarkan suara hati(?) | [if {Barat.is_suara_diri} != true] [else="disable"]
+	jump suara_diri
+- Gerbang Boss
+	MC: Mungkin aku harus menggunakan sudut pandang lain.
+	MC: Tanpa meninggalkannya.
+	- Masuk dan hadapi penjaga
+		[signal arg="fight"]
+		[end_timeline]
+	- Kembali menjelajahi dungeon
+		jump 
+label teks_diudara
+Kamu melihat ke atas dan dapat melihat sebuah tulisan.
+MC: “ANTARES BUKAN DEWA.”
+MC: Terimakasih tapi aku sudah tahu dari awal.
+Kamu melihat angka-angka acak.
+MC: "2.71 8281 8284 5904 5235 3602 8747"
+MC: e
+[signal arg="is_teks_diudara"]
+jump 
+label suara_diri
+“Apakah kau siap menghilang?”, suara yang familiar untukmu
+“Kau akan gagal. Jadi kenapa perlu berusaha.”, fakta yang kau percaya dan juga benci.
+Kamu menemukan sebuah catatan.
+MC: "Terkadang iblis lebih pandai menyamar. Dia bisa jadi siapa saja, malaikat bahkan dirimu sendiri"
+[signal arg="is_suara_diri"]
+jump 
+label ruang_putih
+Kamu memasuki ruangan serba putih.
+MC: Tidak ada arah…
+MC: Tidak ada kebohongan.
+MC: Semuanya sama.
+- Cek cermin di ujung ruangan | [if {Utara.is_1B} != true] [else="disable"]
+	MC: Hidup yang dipinjam…
+	Nadi ini melilit seluruh ruangan.
+	- Menerima refleksi
+		[background fade="0.0"]
+		Kamu mendapatkan Artefak\: Blindseer Relic
+		Efek dari Blindseer Relic\:\
+		-
+		[signal arg="4A"]
+		[signal arg="is_ruang_putih"]
+		MC: Meski inginku berpaling.
+		MC: Itu tetaplah aku.
+		MC: Bukan berarti aku tidak bisa berubah.
+		Kamu kembali dengan artefak tersebut.
+		jump 
+	- Abaikan dan kembali
+		[signal arg="is_4A"]
+	jump ruang_putih
+- Meditasi sejenak | [if {Utara.is_1A} != true] [else="disable"]
+	Kamu berdiam dan memfokuskan diri.
+	MC: Banyak penyesalan yang telah aku lakukan.
+	MC: Untuk kali ini saja aku tidak ingin menyesal....
+	MC: Tidak untuknya.
+	- Mengambil simbol pikiran | [else="disable"]
+		[background fade="0.0"]
+		Kamu mendapatkan Crownless Thought
+		Efek dari Crownless Thought\:\
+		-
+		[signal arg="4B"]
+		[signal arg="is_ruang_putih"]
+		Pikiran merupakan hal yang sangat kuat dan berharga.
+		Dalam hidup, hanya itu yang dapat kamu kendalikan
+		Kamu kembali dengan artefak tersebut.
+		jump 
+	- Abaikan dan kembali
+		[signal arg="is_4B"]
+	jump ruang_putih
+- Abaikan dan kembali
+	[signal arg="is_ruang_putih"]
+	jump

@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://n23yng8jsymk" path="res://Main/mc.tscn" id="1_0jbw6"]
 [ext_resource type="Texture2D" uid="uid://bfkpcuwwlk44c" path="res://StageKaki/assets/Dungeon_Tileset.png" id="2_4mywy"]
-[ext_resource type="PackedScene" path="res://StageKaki/boss_leg.tscn" id="3_31g71"]
+[ext_resource type="PackedScene" uid="uid://cnhsgjmqse37w" path="res://StageKaki/boss_leg.tscn" id="3_31g71"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4mywy"]
 texture = ExtResource("2_4mywy")
@@ -241,10 +241,11 @@ scale = Vector2(0.867944, 0.771771)
 [node name="Player" parent="." instance=ExtResource("1_0jbw6")]
 position = Vector2(0, 200)
 collision_mask = 11
-max_cam_left = -390
-max_cam_top = -300
-max_cam_right = 390
-max_cam_bottom = 300
+is_corrupted = false
+max_cam_left = -350
+max_cam_top = -260
+max_cam_right = 350
+max_cam_bottom = 260
 
 [node name="BossLeg" parent="." instance=ExtResource("3_31g71")]
 z_index = 15

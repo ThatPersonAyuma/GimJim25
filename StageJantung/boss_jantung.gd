@@ -249,6 +249,7 @@ func attack():
 func process_attack():
 	na.monitoring = true
 	if Global.Player not in na.get_overlapping_bodies():
+		na.monitoring = false
 		look_at_player()
 
 func look_at_player():
@@ -274,6 +275,7 @@ func look_at_player():
 	$"Nearby Attack/CollisionShape2D".rotate(rotation_needed)
 	$"Nearby Attack/AnimatedSprite2D".rotate(rotation_needed)
 	$"Nearby Attack/AnimatedSprite2D".visible = true
+	na.monitoring = true
 	is_na_ready = true
 	await get_tree().create_timer(1).timeout # timer attack
 	if not is_instance_valid(self):
@@ -317,6 +319,7 @@ func take_damage(amount: int):
 		free_resource()
 		
 func free_resource():
+	arrows_node.free_Arrows()
 	for item in wind_slashs:
 		if is_instance_valid(item):
 			item.queue_free()
@@ -328,6 +331,7 @@ func free_resource():
 	for item in wind_walls:
 		if is_instance_valid(item):
 			item.queue_free()
+	
 
 	wind_slashs.clear()
 	whirlwinds.clear()
