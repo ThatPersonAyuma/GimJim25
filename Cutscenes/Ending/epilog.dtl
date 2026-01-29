@@ -1,0 +1,18 @@
+[background arg="res://Cutscenes/Ilustrasis/Untitled701_20260128185401.png" fade="1.0" wait="true"]
+Shaina terbangun di altar.
+Kekasih: Kenapa aku ada di sini?
+Kekasih: Aku tadi merasa ada seseorang di sini.
+[background arg="res://Cutscenes/Ilustrasis/Untitled701_20260128191941.png" fade="1.0"]
+Shaina melihat ke arah pedang yang tertancap.
+[wait time="1.0"]
+[background arg="res://Cutscenes/Ilustrasis/Untitled701_20260128222805.png" fade="0.5"]
+Ia berjalan keluar dari tanah terlarang.
+Langit kembali biru.
+Di kejauhan, rumput bergoyang seolah menghembuskan napas terakhir seseorang.
+Beberapa waktu kemudian
+[background arg="res://Cutscenes/Ilustrasis/Untitled701_20260128225239.png" fade="1.0"]
+Di altar pusat, tumbuh satu bunga kecil berbentuk bintang.
+Saat angin berhembus, bunganya bergoyang pelan—
+[background arg="res://Cutscenes/Ilustrasis/Untitled701_20260128225218.png" fade="1.0"]
+seolah seseorang masih bernapas… namun tidak lagi menderita.
+[wait time="0.5"]

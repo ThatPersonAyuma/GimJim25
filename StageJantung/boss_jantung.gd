@@ -108,7 +108,8 @@ func _ready() -> void:
 	get_direction()
 	root.add_child.call_deferred(blizz_effect)
 	self.remove_child(blizz_effect)
-	
+	Global.boss_debuff = Global.BossDebuff.Jantung
+	Global.reset()
 	get_tree().create_timer(intro_duration).timeout.connect(func():
 		is_active = true)
 	get_tree().create_timer(slash_cooldown).timeout.connect(func():
@@ -323,7 +324,7 @@ func free_resource():
 	for item in wind_slashs:
 		if is_instance_valid(item):
 			item.queue_free()
-
+	
 	for item in whirlwinds:
 		if is_instance_valid(item):
 			item.queue_free()

@@ -49,6 +49,8 @@ func _ready():
 	Global.Enemy = self
 	stomp_hitbox.monitoring = false
 	basic_hitbox.monitoring = false
+	Global.boss_debuff = Global.BossDebuff.Kaki
+	Global.reset()
 
 func _physics_process(delta):
 	if is_dead:

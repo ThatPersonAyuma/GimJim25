@@ -15,13 +15,13 @@ signal mc_death
 var death_scene = null
 var boss_scene_path: String = ""
 enum BossDebuff {
-	None = 0,
-	Kaki = 1,
+	Kaki = 0,
+	Kepala = 1,
 	Badan = 2,
-	Kepala = 3,
-	Jantung = 4
+	Jantung = 3,
+	Whole = 4
 }
-var boss_debuff = BossDebuff.None
+var boss_debuff = BossDebuff.Kaki
 
 func reset():
 	McHealth = 100
@@ -32,32 +32,44 @@ func reset():
 	knockback_direction = Vector2(0,0)
 	is_invincible = false
 	is_death = false
+	apply_debuff()
 	
 func apply_debuff():
-	if boss_debuff >= BossDebuff.Kaki:
-		apply_kaki()
+	if is_instance_valid(self.Player):
+		if boss_debuff >= BossDebuff.Kepala:
+			Player.Speed *= 0.85 
+			Player.dash_power *= 0.85
+			print("Efek Kaki")
 
-	if boss_debuff >= BossDebuff.Badan:
-		apply_badan()
+		if boss_debuff >= BossDebuff.Jantung:
+			Player.heavy_attack_cooldown *=1.4 
+			Player.melee_cooldown *=1.25 
+			Player.arrow_cooldown *=1.2 
+			print("Efek Badan")
+			
+		if boss_debuff >= BossDebuff.Badan:
+			Player.arrow_cooldown *=1.2
+			Player.cam_zoom *= 1.2
+			Player.range_attack_radius *= 0.85
+			print("Efek Kepala")
 
-	if boss_debuff >= BossDebuff.Kepala:
-		apply_kepala()
-
-	if boss_debuff >= BossDebuff.Jantung:
-		apply_jantung()
+		if boss_debuff >= BossDebuff.Whole:
+			McHealth *= 0.85
+			Player.dash_cooldown *= 1.2
+			print("Efek Jantung")
 
 # debuff
-func apply_kaki():
-	pass
-	
-func apply_badan():
-	pass
-	
-func apply_kepala():
-	pass
-	
-func apply_jantung():
-	pass
+#func apply_kaki():
+	#pass
+	#
+#func apply_badan():
+	#pass
+	#
+#func apply_kepala():
+	#pass
+	#
+#func apply_jantung():
+	#pass
 
 
 func _ready() -> void:

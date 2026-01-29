@@ -17,6 +17,7 @@ func setup():
 	
 func _process(delta):
 	if Global.Enemy == null:
+		self.queue_free()
 		return
 	if is_travel: 
 		var step  = direction * Global.Enemy.arrow_speed * delta

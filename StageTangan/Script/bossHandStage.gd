@@ -76,6 +76,8 @@ func _ready() -> void:
 	
 	_play_hand_anim(HandAnim.CLOSE)
 	_apply_phase_effects()
+	Global.boss_debuff = Global.BossDebuff.
+	Global.reset()
 
 func _physics_process(delta: float) -> void:
 	if Global.McHealth <= 0:

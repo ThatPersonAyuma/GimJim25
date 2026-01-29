@@ -41,6 +41,8 @@ func _ready() -> void:
 
 	Global.Enemy = self
 	OnIdle()
+	Global.boss_debuff = Global.BossDebuff.Kepala
+	Global.reset()
 
 func _physics_process(_delta):
 	if Global.McHealth <= 0:

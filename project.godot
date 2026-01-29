@@ -23,6 +23,7 @@ Global="*res://Main/global.gd"
 [dialogic]
 
 directories/dch_directory={
+"Entity": "res://Cutscenes/Characters/Entity.dch",
 "Kekasih": "res://Cutscenes/Characters/Kekasih.dch",
 "MC": "res://Main/MC.dch",
 "SuaraMisterius": "res://Cutscenes/Characters/SuaraMisterius.dch",
@@ -36,11 +37,14 @@ directories/dtl_directory={
 "DungeonUtara1A": "res://Cutscenes/Dialog/Explorasi/DungeonUtara1A.dtl",
 "DungeonUtara1B": "res://Cutscenes/Dialog/Explorasi/DungeonUtara1B.dtl",
 "EmpatDungeon": "res://Cutscenes/EmpatDungeon.dtl",
+"Ending": "res://Cutscenes/Ending/Ending.dtl",
 "Explorasi/Coba": "res://Explorasi/Coba.dtl",
+"Kebenaran": "res://Cutscenes/Kebenaran.dtl",
 "KutukanPertama": "res://Cutscenes/KutukanPertama.dtl",
 "Main": "res://Cutscenes/Dialog/Explorasi/DungeonUtara/Main.dtl",
 "SelatanTL": "res://Explorasi/Selatan/SelatanTL.dtl",
 "UtaraMain": "res://Explorasi/Timur/UtaraMain.dtl",
+"epilog": "res://Cutscenes/Ending/epilog.dtl",
 "prolog1": "res://Cutscenes/Dialog/prolog1.dtl",
 "prolog2": "res://Cutscenes/prolog2.dtl"
 }

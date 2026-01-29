@@ -18,7 +18,7 @@ func _ready() -> void:
 	
 func free_arrows():
 	for arrow in arrows:
-		arrow.queue_free()
+		if is_instance_valid(arrow) : arrow.queue_free()
 	
 func launch():
 	for arrow in arrows:

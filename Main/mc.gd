@@ -15,10 +15,9 @@ extends CharacterBody2D
 @onready var camera = $Camera2D
 @onready var anim_player = $Animation
 @onready var anim_sprite = $AnimatedSprite2D
-@onready var melee_attack_cooldown = $MeeleCooldownTimer
-@onready var arrow_cooldown = $RangeCooldownTimer
-@onready var dash_cooldown = $DashCooldownTimer
-
+@onready var melee_attack_cooldown_timer: Timer = $MeeleCooldownTimer
+@onready var arrow_cooldown_timer = $RangeCooldownTimer
+@onready var dash_cooldown_timer = $DashCooldownTimer
 
 var is_attacking = false
 var attacks_max = 4
@@ -37,9 +36,13 @@ var attacks_corrupted = ["attack1_corrupted", "attack2_corrupted", "attack3_corr
 var is_hurt = false
 
 var heavy_attack_damage = 50 
-var heavy_attack_cooldown = 5
 var is_heavy_attack_ready = true
 var is_heavy_running = false
+
+var heavy_attack_cooldown = 5
+var melee_cooldown = 2
+var arrow_cooldown = 5
+var dash_cooldown = 8
 
 
 func _enter_tree():
@@ -51,7 +54,9 @@ func _ready() -> void:
 	camera.limit_right = max_cam_right
 	camera.limit_bottom = max_cam_bottom
 	camera.zoom = Vector2(cam_zoom, cam_zoom)
-	
+	melee_attack_cooldown_timer.wait_time = melee_cooldown
+	arrow_cooldown_timer.wait_time = arrow_cooldown
+	dash_cooldown_timer.wait_time = dash_cooldown
 	$Area2D.connect("body_entered", give_damage)
 	anim_player.animation_finished.connect(_on_animation_player_animation_finished)
 	var arrow = preload("res://Main/arrow.tscn")
@@ -62,6 +67,8 @@ func _ready() -> void:
 		temp_arrow.self_index = i
 		temp_arrow.max_distance = self.range_attack_radius
 		arrows.push_back(temp_arrow)
+		
+	
 
 func _physics_process(delta):
 	if not Global.is_death:
@@ -82,7 +89,7 @@ func _physics_process(delta):
 		move_and_slide()
 
 func DetectAttack():
-	if not is_heavy_running and melee_attack_cooldown.is_stopped() and Input.is_action_just_pressed("attack_sword"):
+	if not is_heavy_running and melee_attack_cooldown_timer.is_stopped() and Input.is_action_just_pressed("attack_sword"):
 		if attack_count == 0:
 			attack_count += 1
 			is_attacking = true
@@ -91,7 +98,7 @@ func DetectAttack():
 				attack_count += 1
 				is_next_attack = true
 	
-	elif arrow_cooldown.is_stopped() and Input.is_action_just_pressed("attack_bow") and attack_count == 0:
+	elif arrow_cooldown_timer.is_stopped() and Input.is_action_just_pressed("attack_bow") and attack_count == 0:
 		if is_range_attack_available(): do_range_attack()
 	elif is_heavy_attack_ready and Input.is_action_just_pressed("attack_heavy"):
 		do_heavy_attack()
@@ -111,7 +118,7 @@ func is_range_attack_available() -> bool:
 	return (self.global_position - Global.Enemy.global_position).length() <= range_attack_radius
 
 func do_range_attack():
-	arrow_cooldown.start()
+	arrow_cooldown_timer.start()
 	self.travel_arrow_count += 1
 	for i in range(max_arrow):
 		if available_arrows[i]:
@@ -148,7 +155,7 @@ func _on_animation_player_animation_finished(anim_name):
 		
 		
 func restart_attack():
-	melee_attack_cooldown.start()
+	melee_attack_cooldown_timer.start()
 	self.is_attacking = false
 	self.attack_count = 0
 	self.attack_melee_interval = 0
@@ -172,7 +179,7 @@ func Movement():
 	if direction.x != 0:
 		anim_sprite.flip_h = true if direction.x == -1 else false
 
-	if dash_cooldown.is_stopped() and Input.is_action_just_pressed("dash"):
+	if dash_cooldown_timer.is_stopped() and Input.is_action_just_pressed("dash"):
 		Dash(direction)
 		anim_sprite.play("walk" if not is_corrupted else "walk_corrupted")
 	else:
@@ -186,7 +193,7 @@ func Movement():
 
 func Dash(direction: Vector2):
 	self.is_dashing = true
-	dash_cooldown.start()
+	dash_cooldown_timer.start()
 	if direction == Vector2.ZERO:
 		direction.x = -1 if anim_sprite.flip_h else 1
 	self.dash = direction*dash_power

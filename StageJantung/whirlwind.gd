@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var speed: float = 0.05
+@export var speed: float = 0.03
 @export var damage: int = 10
 @export var drag_power = 0.4
 var is_running = false

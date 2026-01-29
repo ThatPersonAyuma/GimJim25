@@ -1,0 +1,67 @@
+[background arg="#9b9b9bff" fade="0.5" wait="true"]
+[background arg="res://Cutscenes/Komiks/scene3.png" fade="0.5"]
+Langit retak.
+[background arg="res://Cutscenes/Ilustrasis/Tak berjudul52_20260123170742.jpg" fade="0.0"]
+Empat bagian Antares menggeliat dari tubuhnya.
+[background arg="res://Cutscenes/Ilustrasis/Tak berjudul53_20260124112321.png" fade="0.5" wait="true"]
+[wait_input]
+[background arg="res://Cutscenes/Ilustrasis/Tak berjudul56_20260124150524.png" fade="0.5" wait="true"]
+[wait_input]
+[background arg="res://Cutscenes/Ilustrasis/Tak berjudul58_20260125231018.png" fade="0.5" wait="true"]
+[wait_input]
+[background arg="res://Cutscenes/Ilustrasis/Tak berjudul55_20260124224512.png" fade="0.5" wait="true"]
+[wait_input]
+Mereka berpencar, menghilang dalam sekejap.
+[background arg="res://Cutscenes/Komiks/scene3.png" fade="0.5"]
+Dihadapanmu bayangan Antares tersisa.
+Entity: Kau hanyalah makhluk lemah.
+Entity: Bagaimana mungkin!?
+Dia bukan dewa.
+[background arg="res://Cutscenes/Ilustrasis/Untitled700_20260128004854.png" fade="1.0"]
+Entity: Kau sudah tidak bisa hidup lama lagi.
+Entity: Kau memiliki seseorang yang ingin kau selamatkan, bukan?
+Entity: Biarkan aku menjadi jalanmu, maka aku akan menyelamatkanmu.
+Entity: Kau mau itu bukan?
+Kamu merasa ada sesuatu dibalik kata-katanya.
+Sesuatu seperti rasa takut akan kematian.
+[background arg="res://Cutscenes/Ilustrasis/Untitled700_20260128004903.png" fade="1.0"]
+Ash berdiri dan berjalan dengan sempoyongan menuju altar.
+MC: Kau benar.....
+MC: hidupku sudah tidak lama lagi.
+MC: Pada saat aku.....
+MC: menerima ajakanmu....
+MC: nasibku sudah ditentukan.
+Entity: Maka dari itu serahkan tubuhmu padaku. Kita akan menguasi semuanya.
+Entity: Kau akan selamat, bahkan kekasihmu juga.
+MC: Omong kosong
+Entity: Apa kau tidak akan menyesalinya? Tidak bisa menyelamatkan kekasihmu.
+Dalam sekejap altar bersinar. Cahaya menjulang ke langit.
+Cahaya pucat yang terasa hangat.
+MC: (Aku mengerti sekarang.)
+[background arg="res://Cutscenes/Ilustrasis/Untitled700_20260128004911.png" fade="1.0"]
+MC: (Kutukan ini, bukan hukuman. Ini segel untuk menyegelnya.)
+MC: (Segel yang memerlukan nyawa sebagai bayaran.)
+MC: (Tubuhku dirasuki olehnya. Dia ingin tubuh ini.)
+MC: (Aku adalah wadah dari parasit itu.)
+Antares tidak bisa mati  kecuali wadahnya dihancurkan sepenuhnya.
+Ash mendekati dan memeluk kekasihnya.
+MC: Maaf aku tidak bisa menyelamatkanmu.
+MC: (Seingatku tubuhnya tidak sehangat ini)
+Ash mendekati inti altar.
+Entity: HEY APA YANG MAU KAU LAKUKAN!?
+Entity: TANPA AKU, KAU TIDAK ADA!
+Entity: ITU BUNUH DIRI. MEMBUNUHKU SAMA DENGAN MEMBUNUHMU.
+MC: Justru itu.
+Ash menusukkan dirinya sendiri ke inti altar.
+[background arg="#dddcd9ff" fade="1.0"]
+Cahaya menyambar Ash dari langit.
+Antares perlahan hancur.
+....begitu pula Ash. Tubuhnya hancur menjadi debu.
+Dalam waktu singkat itu, Ash melihat sosok familiar.
+[background arg="res://Cutscenes/Ilustrasis/Untitled701_20260128185401.png" fade="0.5"]
+Shaina...bangkit.
+MC: (Mata itu...dan perasaan ini.)
+MC: (Ini cukup bagiku.)
+[background arg="#000000ff" fade="1.0" wait="true"]
+[wait time="2.0"]
+jump epilog/
