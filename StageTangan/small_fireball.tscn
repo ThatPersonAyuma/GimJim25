@@ -1,7 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://marm2c1404bj"]
+[gd_scene load_steps=20 format=3 uid="uid://marm2c1404bj"]
 
 [ext_resource type="Script" uid="uid://btf7jtyiv0i42" path="res://StageTangan/Script/small_fireball.gd" id="1_b3qar"]
 [ext_resource type="Texture2D" uid="uid://dv6fo8d1fk3tg" path="res://StageTangan/Sprite/Playground/Shockwave/1656.png" id="2_b3qar"]
+[ext_resource type="AudioStream" uid="uid://dpty1v5p1faw4" path="res://StageTangan/Sound/Mengibas api.wav" id="3_yg55b"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yg55b"]
 atlas = ExtResource("2_b3qar")
@@ -126,3 +127,7 @@ collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxArea"]
 shape = SubResource("CircleShape2D_rayxa")
+
+[node name="SFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_yg55b")
+volume_db = 10.0
